@@ -1,0 +1,11 @@
+@media (max-width: 768px) {
+  .main-section__div,
+  .subsection__div {
+    flex-direction: column;
+  }
+  .main-section__title,
+  .subsection__title {
+    margin-left: 30px;
+    font-size: 20px;
+  }
+}
