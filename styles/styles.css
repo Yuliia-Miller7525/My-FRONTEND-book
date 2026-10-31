@@ -41,6 +41,12 @@ body {
 main {
   flex-grow: 1;
 }
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
 .flex {
   display: flex;
 }
@@ -136,5 +142,16 @@ main {
 .subsection__link {
   font-size: 14px;
   font-weight: 700;
+}
+.main-section__link svg,
+.subsection__link svg {
+  transform: translateY(1px);
+}
+.main-section__icon-htlm,
+.main-section__icon-css,
+.subsection__icon-git,
+.subsection__icon-vscode {
+  top: 15px;
+  right: 15px;
 }
 /* ---------------------------- MAIN PAGE END ------------------------------*/
