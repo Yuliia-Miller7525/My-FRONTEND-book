@@ -7,6 +7,9 @@ a,
 a:hover {
   text-decoration: none;
 }
+li {
+  list-style: none;
+}
 img {
   max-width: 100%;
 }
@@ -62,9 +65,9 @@ main {
 .gap-small {
   gap: 5px;
 }
-.grid {
+/* .grid {
   display: grid;
-}
+} */
 .center-txt {
   text-align: center;
 }
@@ -75,7 +78,10 @@ main {
   justify-content: space-between;
 }
 .basic-padding {
-  padding: 30px 10px;
+  padding: 30px;
+}
+.p15 {
+  padding: 15px;
 }
 .background {
   background-color: #fffde5;
@@ -86,6 +92,9 @@ main {
 .fig-nectar {
   color: #8c3c4a;
 }
+.fig-nectar-bg {
+  background-color: #8c3c4a;
+}
 .peach-veil {
   color: #fffde5;
 }
@@ -95,20 +104,35 @@ main {
 .card-border {
   border: 5px solid #8c3c4a;
 }
-
-/* ---------------------------- MAIN PAGE START ----------------------------*/
-.header__title {
+.fw700 {
+  font-weight: 700;
+}
+.fs35 {
   font-size: 35px;
-  font-weight: 700;
 }
-.header__description {
-  font-size: 18px;
-}
-.main-section__title,
-.subsection__title {
-  margin-left: 90px;
+.fs30 {
   font-size: 30px;
-  font-weight: 700;
+}
+.fs25 {
+  font-size: 25px;
+}
+.fs20 {
+  font-size: 20px;
+}
+.fs15 {
+  font-size: 15px;
+}
+.fs12 {
+  font-size: 12px;
+}
+.border-radius {
+  border-radius: 20px;
+}
+-------------------------------------------------------------------------------------------------------------------------------------
+  .main-section__title,
+.subsection__title,
+.vscode_section__title {
+  margin-left: 90px;
 }
 .main-section__div,
 .subsection__div {
@@ -121,28 +145,8 @@ main {
 .subsection__card {
   width: 100%;
   max-width: 350px;
-  border-radius: 20px;
-  padding: 15px;
 }
-.main-section__number,
-.subsection__number {
-  font-size: 25px;
-  font-weight: 700;
-}
-.main-section__subtitle,
-.subsection__subtitle {
-  font-size: 20px;
-  font-weight: 700;
-}
-.main-section__description,
-.subsection__description {
-  font-size: 12px;
-}
-.main-section__link,
-.subsection__link {
-  font-size: 14px;
-  font-weight: 700;
-}
+
 .main-section__link svg,
 .subsection__link svg {
   transform: translateY(1px);
@@ -154,4 +158,27 @@ main {
   top: 15px;
   right: 15px;
 }
-/* ---------------------------- MAIN PAGE END ------------------------------*/
+.vscode_section__card {
+  margin: 15px 0;
+}
+.vscode_section__table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 15px auto;
+  border: 3px solid #fffde5;
+  border-collapse: collapse;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.vscode_section__tr {
+  border: 3px solid #fffde5;
+}
+.vscode_section__tr td {
+  padding: 15px;
+  border-right: 3px solid #fffde5;
+}
+.vscode_section__name {
+  width: 400px;
+  white-space: nowrap;
+}

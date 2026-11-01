@@ -1,3 +1,12 @@
+@media (max-width: 1024px) {
+  .vscode_section__name {
+    width: 300px;
+  }
+  .vscode_section__title {
+    font-size: 25px;
+  }
+}
+
 @media (max-width: 768px) {
   .main-section__div,
   .subsection__div {
@@ -7,5 +16,22 @@
   .subsection__title {
     margin-left: 30px;
     font-size: 20px;
+  }
+  .vscode_section__title {
+    margin-left: 30px;
+    font-size: 20px;
+  }
+}
+@media (max-width: 648px) {
+  .vscode_section__name {
+    width: 200px;
+  }
+  .vscode_section__name {
+    font-size: 15px;
+  }
+}
+@media (max-width: 475px) {
+  .vscode_section__name {
+    width: 100px;
   }
 }
