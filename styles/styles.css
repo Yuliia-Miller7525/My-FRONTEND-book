@@ -65,6 +65,9 @@ main {
 .gap-small {
   gap: 5px;
 }
+.gap-big {
+  gap: 200px;
+}
 /* .grid {
   display: grid;
 } */
@@ -76,6 +79,9 @@ main {
 }
 .space-between {
   justify-content: space-between;
+}
+.space-center {
+  justify-content: center;
 }
 .basic-padding {
   padding: 30px;
@@ -181,4 +187,8 @@ main {
 .vscode_section__name {
   width: 400px;
   white-space: nowrap;
+}
+.git-section1__div {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
