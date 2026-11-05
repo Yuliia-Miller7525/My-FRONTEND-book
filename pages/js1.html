@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVA SCRIPT</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">JAVA SCRIPT</h1>
+          <p class="header__description peach-veil fs15">
+            a high-level, interpreted programming language that adds
+            interactivity, dynamic behavior, and logic to websites, working
+            alongside HTML (structure) and CSS (styling).
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="background basic-padding">
+      <section class="v8">
+        <div class="container border-bottom p15 flex column gap">
+          <h2 class="v8__title">Що таке V8?</h2>
+          <p class="v8__paragraph">
+            <span>V8</span> - движок JavaScript з відкритим вихідним кодом, що
+            розробляється датським відділенням компанії Google .
+          </p>
+          <h3 class="v8__subtitle velvet-dusk">Де використовується?</h3>
+          <p class="v8__paragraph">
+            Використовується в браузерах на основі Chromium , а також Maxthon 3
+            .
+          </p>
+        </div>
+      </section>
+      <section class="basic">
+        <div class="container border-bottom p15">
+          <h2 class="basic__title m-b15">Підключення JS до HTML</h2>
+          <div class="basic__div flex row space-between gap">
+            <div class="basic__block">
+              <p class="basic__paragraph">
+                1. Створюємо файл з розширенням .js і підключається через src.
+              </p>
+              <div
+                class="basic__code-box fig-nectar-bg border-radius p15 m-t-b20"
+              >
+                <h3 class="basic__code-title m-b15">HTML</h3>
+                <pre><code>&lt;!-- index.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Мій проект&lt;/title&gt;
+  <b class="peach-veil">&lt;!-- Підключення файлу main.js --&gt;</b>
+  <b class="peach-veil">&lt;script src="main.js" defer&gt;&lt;/script&gt;</b>
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Привіт, світ!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </div>
+              <div class="basic__text flex column gap-small">
+                <p class="basic__paragraph">
+                  <span>Порада:</span>
+                  Атрибут
+                  <span>defer</span> каже браузеру завантажувати скрипт у
+                  фоновому режимі й виконувати його тільки після того, як весь
+                  HTML-документ буде повністю завантажений. 2. Внутрішній скрипт
+                </p>
+                <p class="basic__paragraph">
+                  Атрибут
+                  <span>async</span> каже браузеру завантажувати скрипт у
+                  фоновому режимі паралельно з парсингом HTML. Щойно файл
+                  завантажується — браузер одразу зупиняє побудову HTML і
+                  виконує скрипт, тобто той скрипт, що завантажився швидше,
+                  виконається першим.
+                </p>
+              </div>
+
+              <h3 class="basic__subtitle velvet-dusk m-t-b20">
+                Важливе порівняння (async vs defer):
+              </h3>
+              <ul class="basic__list">
+                <li class="basic__item">
+                  <span>Звичайний скрипт (без нічого): </span>Браузер зупиняє
+                  завантаження HTML, завантажує файл, виконує файл, продовжує
+                  HTML.
+                </li>
+                <li class="basic__item">
+                  <span>async:</span> HTML і файл завантажуються паралельно.
+                  Файл виконується одразу по готовності (HTML на цей час
+                  зупиняється).
+                </li>
+                <li class="basic__item">
+                  <span>defer:</span> HTML і файл завантажуються паралельно.
+                  Файл чекає, поки весь HTML повністю побудується, і виконується
+                  в кінці.
+                </li>
+              </ul>
+            </div>
+            <div class="basic__block">
+              <p class="basic__paragraph">
+                2. Код пишеться безпосередньо всередині HTML-тегу script.
+              </p>
+              <div
+                class="basic__code-box fig-nectar-bg border-radius p15 m-t-b20"
+              >
+                <h3 class="basic__code-title m-b15">HTML</h3>
+                <pre><code><b class="peach-veil">&lt;script&gt;</b>
+    <b class="peach-veil">console.log("Це внутрішній скрипт!");</b>
+<b class="peach-veil">&lt;/script&gt;</b>
+</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="variables">
+        <div class="container border-bottom p15">
+          <h2 class="variables__title m-b15">Змінні (Variables)</h2>
+          <p class="variables__paragraph m-t-b20">
+            <span>Змінна</span> - це "контейнер" для збереження даних.
+          </p>
+          <div class="variables__div flex row space-between gap-small">
+            <div
+              class="variables__card card-border border-radius p15 flex column gap-small"
+            >
+              <h3 class="variables__name velvet-dusk center-txt">var</h3>
+              <p class="variables__description">
+                Перший спосіб оголошення змінних у JavaScript - уже застарілий.
+              </p>
+              <p class="variables__description">
+                Не рекомендується в сучасному JS через проблеми з зоною
+                видимості - зазвичай ми взагалі не використовуємо його.
+              </p>
+            </div>
+            <div
+              class="variables__card card-border border-radius p15 flex column gap-small"
+            >
+              <h3 class="variables__name velvet-dusk center-txt">let</h3>
+              <p class="variables__description">
+                Було введене у стандарті ECMAScript 6 (ES6) і стало покращенням
+                у порівнянні з var - найсучасніший спосіб оголошення.
+              </p>
+              <p class="variables__description">
+                Мають блоковий обсяг видимості, що означає, що вони доступні
+                лише у блоку коду, в якому були оголошені.
+              </p>
+            </div>
+            <div
+              class="variables__card card-border border-radius p15 flex column gap-small"
+            >
+              <h3 class="variables__name velvet-dusk center-txt">const</h3>
+              <p class="variables__description">
+                Схоже на let, але значення змінної неспроможна змінюватися.
+              </p>
+              <p class="variables__description">
+                Має блоковий обсяг видимості, але він вимагає обов'язкового
+                присвоєння значення при оголошенні.
+              </p>
+            </div>
+          </div>
+          <div class="variables__declaration">
+            <p class="variables__paragraph m-t-b20">
+              Для стислості можна поєднати оголошення змінної та запис даних в
+              один рядок:
+            </p>
+            <div
+              class="variables__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let user = 'Josh', age = 25, message = 'Hello';
+</code></pre>
+            </div>
+            <p class="variables__paragraph m-t-b20">
+              Багаторядковий варіант трохи довший, але легший для читання:
+            </p>
+            <div
+              class="variables__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let user = 'Josh';
+let age = 25;
+let message = 'Hello';
+</code></pre>
+            </div>
+          </div>
+          <div class="variables__naming">
+            <h3 class="variables__subtitle velvet-dusk m-t-b20">
+              Іменування змінних
+            </h3>
+            <p class="variables__paragraph">
+              В JavaScript є два обмеження, які стосуються імен змінних:
+            </p>
+            <ol class="variables__list p15">
+              <li class="variables__item">
+                Ім’я має містити лише букви, цифри або символи $ і _.
+              </li>
+              <li class="variables__item">Перший символ не має бути числом.</li>
+            </ol>
+            <p class="variables__paragraph">
+              Для написання імені, яке містить декілька слів, зазвичай
+              використовують <span>“верблюжий регістр” (camelCase)</span>. Тобто
+              слова йдуть одне за одним, і кожне слово пишуть із великої букви й
+              без пробілів: <span>myVeryLongName</span>. Зауважте, що перше
+              слово пишеться з маленької букви.
+            </p>
+          </div>
+          <div class="variables__reserved-words">
+            <h3 class="variables__subtitle velvet-dusk m-t-b20">
+              Зарезервовані слова (Reserved Words)
+            </h3>
+            <p class="variables__paragraph">
+              Є список зарезервованих слів, які не можна використовувати як
+              імена змінних, тому що ці слова використовує сама мова -
+              <a
+                class="fig-nectar fw700 uppercase"
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#%D0%9A%D0%BB%D1%8E%D1%87%D0%BE%D0%B2%D1%96_%D1%81%D0%BB%D0%BE%D0%B2%D0%B0"
+                target="_blank"
+                rel="noopener noreferrer"
+                >дізнатися більше.</a
+              >
+            </p>
+            <div class="variables__grid grid m-t-b20">
+              <span>break</span>
+              <span>case</span>
+              <span>catch</span>
+              <span>class</span>
+              <span>const</span>
+              <span>continue</span>
+              <span>debugger</span>
+              <span>default</span>
+              <span>delete</span>
+              <span>do</span>
+              <span>else</span>
+              <span>export</span>
+              <span>extends</span>
+              <span>false</span>
+              <span>finally</span>
+              <span>for</span>
+              <span>function</span>
+              <span>if</span>
+              <span>import</span>
+              <span>in</span>
+              <span>instanceof</span>
+              <span>new</span>
+              <span>null</span>
+              <span>return</span>
+              <span>super</span>
+              <span>switch</span>
+              <span>this</span>
+              <span>throw</span>
+              <span>true</span>
+              <span>try</span>
+              <span>typeof</span>
+              <span>var</span>
+              <span>void</span>
+              <span>while</span>
+              <span>with</span>
+              <span>enum</span>
+              <span>implements</span>
+              <span>interface</span>
+              <span>package</span>
+              <span>private</span>
+              <span>protected</span>
+              <span>public</span>
+              <span>static</span>
+              <span>let</span>
+              <span>yield</span>
+              <span>await</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="data-types">
+        <div class="container border-bottom p15">
+          <h2 class="data-types__title m-b15">Типи даних (Data Types)</h2>
+          <div class="data-types__div flex row space-berween gap-small">
+            <div class="data-types__box card-border border-radius p15">
+              <h3 class="data-types__subtitle center-txt velvet-dusk m-b15">
+                Примітивні Типи Даних
+              </h3>
+              <p class="data-types__description">
+                Вони володіють простою структурою та передаються за значенням,
+                що означає, що при копіюванні одного значення в інше створюється
+                нова копія даних.
+              </p>
+              <ul class="data-types__list list m-t-b20 flex column gap-small">
+                <li class="data-types__item">
+                  <span>Number</span> - використовується для представлення
+                  числових значень, як цілих, так і чисел з плаваючою крапкою:
+                  42, 3.14.
+                </li>
+                <li class="data-types__item">
+                  <span>BigInt</span> - озволяє представляти дуже великі цілі
+                  числа, які не можуть бути точно виражені типом Number.
+                </li>
+                <li class="data-types__item">
+                  <span>String </span> - це набір символів, які використовуються
+                  для представлення текстової інформації. Вони можуть бути
+                  створені, використовуючи одинарні (''), подвійні ("") або
+                  навіть багаторядкові (``) лапки.
+                </li>
+                <li class="data-types__item">
+                  <span>Boolean </span>є фундаментальними для умовного виконання
+                  коду та виразів. У JavaScript існують два можливих значення
+                  булевого типу: true (істина) і false (неправда).
+                </li>
+                <li class="data-types__item">
+                  <span>Null</span> - вказує на відсутність значення,
+                  використовується для присвоєння змінної порожнього або
+                  невідомого значення.
+                </li>
+                <li class="data-types__item">
+                  <span>Undefined</span> - вказує на змінну, яка була оголошена,
+                  але не має значення, використовується для перевірок, чи була
+                  змінна призначена.
+                </li>
+                <li class="data-types__item">
+                  <span>Symbol</span> - використовується для створення
+                  унікальних ідентифікаторів в об'єктах.
+                </li>
+              </ul>
+            </div>
+            <div class="data-types__box card-border border-radius p15">
+              <h3 class="data-types__subtitle center-txt velvet-dusk m-b15">
+                Об'єктні Типи Даних
+              </h3>
+              <p class="data-types__description">
+                Вони володіють складною структурою та передаються за посиланням,
+                що означає, що при копіюванні створюється посилання на той самий
+                об'єкт.
+              </p>
+              <ul class="data-types__list list m-t-b20 flex column gap-small">
+                <li class="data-types__item">
+                  <span>Object</span> — це самостійна одиниця, що має
+                  властивості і методи. Порівняємо, наприклад, із чашкою. У
+                  чашки є колір, форма, вага, матеріал, з якого вона
+                  виготовлена, і т.д. Так само, об'єкти JavaScript мають
+                  властивості, які визначають їх характеристики.
+                </li>
+                <li class="data-types__item">
+                  <span>Array (масив - частина типа Object) </span> — це
+                  впорядкована колекція значень. Значення в масиві називаються
+                  елементами, і кожен елемент характеризується числовою позицією
+                  в масиві, яка називається індексом.
+                  <br />
+                  Масиви в мові JavaScript є не типізованими: елементи масиву
+                  можуть мати будь-який тип, причому різні елементи одного і
+                  того ж масиву можуть мати різні типи. Та не мають окремого
+                  типу, бо відносяться до об'єкта.
+                </li>
+                <li class="data-types__item">
+                  <span>Function (Функції)</span> — об'єкти, які є викливаними
+                  (callable). Вони можуть мати власні властивості та методи.
+                </li>
+                <li class="data-types__item">
+                  <span>Вбудовані об'єкти</span> — Date (робота з датами та
+                  часом), RegExp (регулярні вирази), Map та Set (колекції з
+                  унікальними значеннями та довільними ключами).
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="operators">
+        <div class="container border-bottom p15">
+          <h2 class="operators__title m-b15">Оператори (Operators)</h2>
+          <p class="operators__description">
+            <span>Оператори в JavaScript</span> — це спеціальні символи або
+            ключові слова, які вказують комп'ютеру, яку саме дію (операцію)
+            потрібно виконати над одним або кількома значеннями (операндами).
+          </p>
+          <div class="operators__div">
+            <h3 class="operators__subtitle uppercase velvet-dusk m-t-b20">
+              1. Арифметичні оператори (Arithmetic Operators)
+            </h3>
+            <p class="operators__description">
+              JavaScript підтримує різні арифметичні оператори, які можуть бути
+              використані для виконання математичних обчислень.
+            </p>
+            <br />
+            <ul class="operators__list m-list">
+              <li class="operators__item">
+                <span>+</span>
+                (додавання або конкатенація рядків)
+              </li>
+              <li class="operators__item"><span>-</span> (віднімання)</li>
+              <li class="operators__item"><span>*</span> (множення)</li>
+              <li class="operators__item"><span>/</span> (ділення)</li>
+              <li class="operators__item">
+                <span>%</span> (статок від ділення / модуль)
+              </li>
+              <li class="operators__item">
+                <span>**</span> (піднесення до степеня, наприклад, 2 ** 3 це 8)
+              </li>
+            </ul>
+            <br />
+            <span>Зверни увагу!</span>
+            <br />
+            <br />
+            <p class="operators__paragrah">
+              Оператор % (його називають Remainder Operator або оператором
+              залишку від ділення) повертає залишок від цілочисельного ділення
+              одного числа на інше. У програмуванні % обчислює саме те, що
+              «залишилося» після того, як ми максимально поділили число.
+            </p>
+            <br />
+            <p class="operators__paragrah">
+              Цей оператор часто використовують для перевірки парності числа.
+            </p>
+          </div>
+          <div class="operators__div">
+            <h3 class="operators__subtitle uppercase velvet-dusk m-t-b20">
+              2. Оператори порівняння (Comparison Operators)
+            </h3>
+            <p class="operators__description">
+              Дозволяють визначати відносини між об'єктами та даними і
+              відповідають на питання, чи вірне одне значення відносно іншого. З
+              математики ми знаємо їх як більше та менше. Проте в JavaScript ми
+              маємо їх дещо більше:
+            </p>
+            <br />
+            <table class="operators__table">
+              <thead>
+                <tr>
+                  <th>Оператор</th>
+                  <th>Назва</th>
+                  <th>Приклад</th>
+                  <th>Результат</th>
+                  <th>Опис</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&gt;</code></td>
+                  <td>Більше</td>
+                  <td><code>10 &gt; 5</code></td>
+                  <td><code>true</code></td>
+                  <td>Перевіряє, чи перше значення більше за друге.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;</code></td>
+                  <td>Менше</td>
+                  <td><code>10 &lt; 5</code></td>
+                  <td><code>false</code></td>
+                  <td>Перевіряє, чи перше значення менше за друге.</td>
+                </tr>
+                <tr>
+                  <td><code>&gt;=</code></td>
+                  <td>Більше або дорівнює</td>
+                  <td><code>10 &gt;= 10</code></td>
+                  <td><code>true</code></td>
+                  <td>
+                    Перевіряє, чи перше значення більше або дорівнює другому.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>&lt;=</code></td>
+                  <td>Менше або дорівнює</td>
+                  <td><code>5 &lt;= 10</code></td>
+                  <td><code>true</code></td>
+                  <td>
+                    Перевіряє, чи перше значення менше або дорівнює другому.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>===</code></td>
+                  <td>Строга рівність</td>
+                  <td><code>5 === 5</code></td>
+                  <td><code>true</code></td>
+                  <td>Перевіряє рівність значень та їхніх типів.</td>
+                </tr>
+                <tr>
+                  <td><code>!==</code></td>
+                  <td>Строга нерівність</td>
+                  <td><code>5 !== "5"</code></td>
+                  <td><code>true</code></td>
+                  <td>Перевіряє, чи значення або їхні типи відрізняються.</td>
+                </tr>
+                <tr>
+                  <td><code>==</code></td>
+                  <td>Нестрога рівність</td>
+                  <td><code>5 == "5"</code></td>
+                  <td><code>true</code></td>
+                  <td>Порівнює значення з автоматичним перетворенням типів.</td>
+                </tr>
+                <tr>
+                  <td><code>!=</code></td>
+                  <td>Нестрога нерівність</td>
+                  <td><code>5 != 10</code></td>
+                  <td><code>true</code></td>
+                  <td>
+                    Перевіряє нерівність значень з можливим перетворенням типів.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <span>Важливий нюанс:</span>
+            <br />
+            <br />
+            <p>
+              для порівняння в JavaScript рекомендовано використовувати === та
+              !==, а == і != застосовувати лише тоді, коли тобі потрібне
+              автоматичне перетворення типів.
+            </p>
+          </div>
+          <div class="operators__div">
+            <h3 class="operators__subtitle uppercase velvet-dusk m-t-b20">
+              3. Логічні оператори (Logical Operators)
+            </h3>
+            <p class="operators__description">
+              Логічні оператори повертають логічні значення true або false в
+              залежності від результату порівняння. Вони дозволяють виконувати
+              умовні операції та створювати складні умови.
+            </p>
+            <br />
+            <ul class="operators__list m-list">
+              <li class="operators__item">
+                <span>&& (І / AND):</span>
+                повертає true, якщо всі операнди істинні.
+              </li>
+              <li class="operators__item">
+                <span>|| (АБО / OR): </span>повертає true, якщо хоча б один
+                операнд істинний.
+              </li>
+              <li class="operators__item">
+                <span>! (НЕ / NOT): </span>інвертує логічне значення (true
+                перетворює на false і навпаки).
+              </li>
+              <li class="operators__item">
+                <span>?? (Nullish Coalescing):</span> повертає правий операнд,
+                якщо лівий є null або undefined.
+              </li>
+            </ul>
+          </div>
+          <div class="operators__div">
+            <h3 class="operators__subtitle uppercase velvet-dusk m-t-b20">
+              4. Оператори присвоєння (Assignment Operators)
+            </h3>
+            <p class="operators__description">
+              Використовуються для присвоєння значень змінним.
+            </p>
+            <br />
+            <table class="operators__table">
+              <thead>
+                <tr>
+                  <th>Operator</th>
+                  <th>Example</th>
+                  <th>Equivalent</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>=</code></td>
+                  <td><code>x = 10</code></td>
+                  <td><code>x = 10</code></td>
+                  <td>Присвоює значення змінній</td>
+                </tr>
+                <tr>
+                  <td><code>+=</code></td>
+                  <td><code>x += 5</code></td>
+                  <td><code>x = x + 5</code></td>
+                  <td>Додає значення до змінної</td>
+                </tr>
+                <tr>
+                  <td><code>-=</code></td>
+                  <td><code>x -= 5</code></td>
+                  <td><code>x = x - 5</code></td>
+                  <td>Віднімає значення від змінної</td>
+                </tr>
+                <tr>
+                  <td><code>*=</code></td>
+                  <td><code>x *= 5</code></td>
+                  <td><code>x = x * 5</code></td>
+                  <td>Множить змінну на значення</td>
+                </tr>
+                <tr>
+                  <td><code>/=</code></td>
+                  <td><code>x /= 5</code></td>
+                  <td><code>x = x / 5</code></td>
+                  <td>Ділить змінну на значення</td>
+                </tr>
+                <tr>
+                  <td><code>%=</code></td>
+                  <td><code>x %= 3</code></td>
+                  <td><code>x = x % 3</code></td>
+                  <td>Присвоює остачу від ділення</td>
+                </tr>
+                <tr>
+                  <td><code>**=</code></td>
+                  <td><code>x **= 2</code></td>
+                  <td><code>x = x ** 2</code></td>
+                  <td>Підносить змінну до степеня</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="operators__div">
+            <h3 class="operators__subtitle uppercase velvet-dusk m-t-b20">
+              5. Тернарний оператор (Ternary Operator)
+            </h3>
+            <p class="operators__description">
+              <span>Тернарний оператор (?)</span>
+              — це скорочений спосіб запису конструкції if...else.
+            </p>
+            <div
+              class="operators__code-box fig-nectar-bg border-radius p15 peach-veil m-t-b20"
+            >
+              <pre><code>condition ? expressionIfTrue : expressionIfFalse;</code></pre>
+            </div>
+            <h3 class="operators__subtitle velvet-dusk fs15">
+              Приклад використання
+            </h3>
+            <div
+              class="operators__code-box fig-nectar-bg border-radius p15 peach-veil m-t-b20"
+            >
+              <pre><code>let age = 20;
+let result = age >= 18 ? "Повнолітній" : "Неповнолітній";
+console.log(result);// "Повнолітній"
+</code></pre>
+            </div>
+            <h3 class="operators__subtitle velvet-dusk fs15">Як це працює?</h3>
+            <br />
+            <p>Якщо умова true — повертається перше значення.</p>
+            <p>Якщо умова false — повертається друге значення.</p>
+          </div>
+          <div class="operators__div">
+            <h3 class="operators__subtitle uppercase velvet-dusk m-t-b20">
+              6. Унарні оператори (Unary operators)
+            </h3>
+            <p class="operators__description">
+              <span>Унарні оператори</span> — це такі оператори в JavaScript,
+              які працюють лише з одним операндом (одним значенням або змінною).
+            </p>
+            <br />
+            <p class="operators__description">
+              Унарні оператори можуть бути двох типів:
+            </p>
+            <br />
+            <ul class="operators__list m-list">
+              <li class="operators__item">
+                <span>Передоператор (Prefix)</span> - оператор, який
+                розташовується перед операндом. Наприклад, ++x.
+              </li>
+              <li class="operators__item">
+                <span>Постоператор (Postfix)</span>
+                - оператор, який розташовується після операнда. Наприклад, x++.
+              </li>
+            </ul>
+            <div class="operators__subdiv flex row space-between gap m-t15">
+              <div class="operators__card card-border border-radius p15">
+                <h3 class="operators__subtitle velvet-dusk center-txt">
+                  Унарний плюс (+)
+                </h3>
+                <br />
+                <p class="operators__description">
+                  Перетворює операнд у число, якщо це можливо.
+                </p>
+                <br />
+                <div class="basic__code-box fig-nectar">
+                  <pre><code>let num = "42";
+let convertedNum = +num;
+// Тепер convertedNum має тип number,
+а не string.
+</code></pre>
+                </div>
+              </div>
+              <div class="operators__card card-border border-radius p15">
+                <h3 class="operators__subtitle velvet-dusk center-txt">
+                  Унарний мінус (-)
+                </h3>
+                <br />
+                <p class="operators__description">
+                  Змінює знак числа на протилежний.
+                </p>
+                <br />
+                <div class="basic__code-box fig-nectar">
+                  <pre><code>let x = 10;
+let y = -x; // у містить -10.
+</code></pre>
+                </div>
+              </div>
+              <div class="operators__card card-border border-radius p15">
+                <h3 class="operators__subtitle velvet-dusk center-txt">
+                  Унарний оператор заперечення (!)
+                </h3>
+                <br />
+                <p class="operators__description">
+                  Інвертує логічне значення: перетворює true на false, а false
+                  на true.
+                </p>
+                <br />
+                <div class="basic__code-box fig-nectar">
+                  <pre><code>let isTrue = true;
+let isFalse = !isTrue;
+// isFalse містить false.
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="operators__subdiv flex row space-center gap m-t15">
+            <div class="operators__card card-border border-radius p15">
+              <h3 class="operators__subtitle velvet-dusk center-txt">
+                Інкремент (++)
+              </h3>
+              <br />
+              <p class="operators__description">
+                Збільшує значення змінної на 1.
+              </p>
+              <br />
+              <div class="basic__code-box fig-nectar">
+                <pre><code>let x = 5;
+x++; // x містить 6.</code></pre>
+              </div>
+            </div>
+
+            <div class="operators__card card-border border-radius p15">
+              <h3 class="operators__subtitle velvet-dusk center-txt">
+                Декремент (--)
+              </h3>
+              <br />
+              <p class="operators__description">
+                Зменшує значення змінної на 1.
+              </p>
+              <br />
+              <div class="basic__code-box fig-nectar">
+                <pre><code>let x = 5;
+x--; // x містить 4.</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="operators__subdiv">
+            <h3 class="operators__subtitle uppercase velvet-dusk m-t-b20">
+              Оператор typeof
+            </h3>
+            <p class="operators__description">
+              <span>Typeof</span> - це оператор, який дозволяє визначити тип
+              даних змінної або виразу в JavaScript. Це корисний інструмент для
+              валідації даних та керування логікою вашого коду.
+            </p>
+            <div
+              class="basic__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>let age = 25;
+console.log(typeof age); // "number"
+
+let name = "Josh";
+console.log(typeof name); // "string"
+
+let isStudent = true;
+console.log(typeof isStudent); // "boolean"
+</code></pre>
+            </div>
+            <p class="operators__description">
+              Доречно буде сказати, що він працює як скобками, так і без. Проте
+              при використанні () він спочатку буде виконувати код, а вже потім
+              буде перевіряти тип результату:
+            </p>
+            <div
+              class="basic__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>let age = 25;
+console.log(typeof (age)); // "number"
+</code></pre>
+            </div>
+          </div>
+
+          <div class="operators__subdiv">
+            <h3 class="operators__subtitle uppercase velvet-dusk m-t-b20">
+              Оператор delete
+            </h3>
+            <p class="operators__description">
+              <span>Delete</span> - це оператор, який дозволяє видалити
+              властивість об'єкта в JavaScript. Він повертає true, якщо
+              властивість була успішно видалена, та false, якщо її видалити
+              неможливо.
+            </p>
+            <div
+              class="basic__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>let user = {
+  name: "Josh",
+  age: 25
+};
+
+delete user.age;
+
+console.log(user); // { name: "Josh" }
+console.log(user.age); // undefined
+</code></pre>
+            </div>
+            <p class="operators__description">
+              Оператор delete видаляє саме властивість об'єкта, а не сам об'єкт
+              або змінну. Також він не видаляє елементи масиву, а лише їхні
+              властивості, залишаючи порожнє місце.
+            </p>
+          </div>
+
+          <div class="operators__subdiv">
+            <h3 class="operators__subtitle uppercase velvet-dusk m-t-b20">
+              Оператор void
+            </h3>
+            <p class="operators__description">
+              <span>Void</span> - це оператор, який обчислює вираз та повертає
+              undefined незалежно від результату його виконання. Він
+              використовується, коли потрібно виконати код, але не отримувати
+              його результат.
+            </p>
+            <div
+              class="basic__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>let result = void (10 + 5);
+
+console.log(result); // undefined
+
+console.log(void 0); // undefined
+console.log(void "Hello"); // undefined
+</code></pre>
+            </div>
+            <p class="operators__description">
+              Оператор void не зупиняє виконання виразу, а лише ігнорує його
+              результат. Він може використовуватися як із дужками, так і без
+              них.
+            </p>
+            <div
+              class="basic__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>console.log(void (2 + 3)); // undefined
+
+console.log(void 2 + 3); // NaN
+</code></pre>
+            </div>
+          </div>
+
+          <div class="operators__div">
+            <h3 class="operators__subtitle uppercase velvet-dusk m-t-b20">
+              7. Пріоритет операторів (Operator Precedence)
+            </h3>
+            <p class="operators__description">
+              <span>Operator Precedence</span> - це порядок, у якому оператори
+              виконуються в JavaScript. Оператори з вищим пріоритетом
+              виконуються раніше, ніж оператори з нижчим пріоритетом. Якщо
+              оператори мають однаковий пріоритет, порядок їх виконання залежить
+              від асоціативності.
+            </p>
+            <div
+              class="basic__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>let result = 2 + 3 * 4;
+
+console.log(result); // 14
+
+// Спочатку виконується множення (3 * 4),
+// а потім додавання (2 + 12).
+</code></pre>
+            </div>
+            <p class="operators__description">
+              Дужки () дозволяють змінити стандартний порядок виконання
+              операторів. Вираз у дужках виконується першим.
+            </p>
+            <div
+              class="basic__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>let result = (2 + 3) * 4;
+
+console.log(result); // 20
+
+// Спочатку виконується додавання (2 + 3),
+// а потім множення (5 * 4).
+</code></pre>
+            </div>
+            <p class="operators__description">
+              Оператори присвоєння мають нижчий пріоритет, ніж арифметичні
+              оператори. Тому спочатку обчислюється вираз, а потім його
+              результат присвоюється змінній.
+            </p>
+            <div
+              class="basic__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>let x = 10 + 5 * 2;
+
+console.log(x); // 20
+
+// Спочатку 5 * 2 = 10
+// Потім 10 + 10 = 20
+// Результат присвоюється змінній x.
+</code></pre>
+            </div>
+            <p class="operators__description">
+              Якщо потрібно зробити порядок виконання більш зрозумілим,
+              рекомендується використовувати дужки, навіть якщо вони не є
+              обов'язковими.
+            </p>
+            <div
+              class="basic__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>let result = 10 - 2 - 3;
+
+console.log(result); // 5
+
+// Оператори віднімання мають однаковий пріоритет
+// і виконуються зліва направо:
+// (10 - 2) - 3 = 5
+</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

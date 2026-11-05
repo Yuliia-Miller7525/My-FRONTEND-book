@@ -7,14 +7,11 @@ a,
 a:hover {
   text-decoration: none;
 }
-li {
-  list-style: none;
-}
 img {
   max-width: 100%;
 }
 .container {
-  max-width: 1920px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -36,6 +33,22 @@ li {
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
+h1 {
+  font-weight: 700;
+  font-size: 35px;
+  color: #fffde5;
+}
+h2 {
+  font-weight: 700;
+  font-size: 30px;
+  color: #674874;
+  text-transform: uppercase;
+  text-align: center;
+}
+h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
 body {
   min-height: 100vh;
   display: flex;
@@ -43,6 +56,11 @@ body {
 }
 main {
   flex-grow: 1;
+}
+span {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #8c3c4a;
 }
 .relative {
   position: relative;
@@ -59,6 +77,9 @@ main {
 .row {
   flex-direction: row;
 }
+.grid {
+  display: grid;
+}
 .gap {
   gap: 15px;
 }
@@ -68,9 +89,6 @@ main {
 .gap-big {
   gap: 200px;
 }
-/* .grid {
-  display: grid;
-} */
 .center-txt {
   text-align: center;
 }
@@ -88,6 +106,18 @@ main {
 }
 .p15 {
   padding: 15px;
+}
+.m-b15 {
+  margin-bottom: 15px;
+}
+.m-t15 {
+  margin-top: 15px;
+}
+.m-list {
+  margin-left: 70px;
+}
+.m-t-b20 {
+  margin: 20px 0;
 }
 .background {
   background-color: #fffde5;
@@ -113,17 +143,8 @@ main {
 .fw700 {
   font-weight: 700;
 }
-.fs35 {
-  font-size: 35px;
-}
-.fs30 {
-  font-size: 30px;
-}
 .fs25 {
   font-size: 25px;
-}
-.fs20 {
-  font-size: 20px;
 }
 .fs15 {
   font-size: 15px;
@@ -134,25 +155,32 @@ main {
 .border-radius {
   border-radius: 20px;
 }
--------------------------------------------------------------------------------------------------------------------------------------
-  .main-section__title,
+.uppercase {
+  text-transform: uppercase;
+}
+.border-bottom {
+  border-bottom: 5px solid #674874;
+}
+.list {
+  list-style: none;
+}
+/* --------------------------------------------------- PAGES STYLES ---------------------------------------------------*/
+.main-section__title,
 .subsection__title,
 .vscode_section__title {
   margin-left: 90px;
 }
 .main-section__div,
-.subsection__div {
+.subsection__div,
+.operators__subdiv {
   margin: 30px 60px;
 }
-.subsection__div {
-  justify-content: space-around;
-}
 .main-section__card,
-.subsection__card {
+.subsection__card,
+.operators__card {
   width: 100%;
   max-width: 350px;
 }
-
 .main-section__link svg,
 .subsection__link svg {
   transform: translateY(1px);
@@ -188,7 +216,46 @@ main {
   width: 400px;
   white-space: nowrap;
 }
-.git-section1__div {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.js-section__item {
+  list-style: decimal;
+}
+.basic__block,
+.data-types__box {
+  width: 100%;
+  max-width: 700px;
+}
+.variables__grid {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+.variables__grid span {
+  padding: 10px;
+  text-align: center;
+  color: #fffde5;
+  background-color: #8c3c4a;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.operators__table {
+  width: 100%;
+  max-width: 700px;
+  border-collapse: collapse;
+  text-align: center;
+}
+.operators__table th,
+.operators__table td {
+  padding: 14px 16px;
+  border: 1px solid #8c3c4a;
+}
+.operators__table th {
+  background-color: #8c3c4a;
+  color: #fffde5;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.operators__table code {
+  padding: 3px 6px;
+  background-color: #8c3c4a;
+  border-radius: 4px;
+  color: #fffde5;
 }
