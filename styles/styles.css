@@ -236,18 +236,25 @@ span {
   border-radius: 6px;
   font-size: 12px;
 }
-.operators__table {
+.operators__table,
+.js-section__table {
   width: 100%;
   max-width: 700px;
   border-collapse: collapse;
   text-align: center;
 }
+.js-section__table {
+  text-align: left;
+}
 .operators__table th,
-.operators__table td {
+.operators__table td,
+.js-section__table th,
+.js-section__table td {
   padding: 14px 16px;
   border: 1px solid #8c3c4a;
 }
-.operators__table th {
+.operators__table th,
+.js-section__table th {
   background-color: #8c3c4a;
   color: #fffde5;
   font-weight: 700;
@@ -258,4 +265,8 @@ span {
   background-color: #8c3c4a;
   border-radius: 4px;
   color: #fffde5;
+}
+.data-types__subdiv {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }

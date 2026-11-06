@@ -22,20 +22,6 @@
       </div>
     </header>
     <main class="background basic-padding">
-      <section class="v8">
-        <div class="container border-bottom p15 flex column gap">
-          <h2 class="v8__title">Що таке V8?</h2>
-          <p class="v8__paragraph">
-            <span>V8</span> - движок JavaScript з відкритим вихідним кодом, що
-            розробляється датським відділенням компанії Google .
-          </p>
-          <h3 class="v8__subtitle velvet-dusk">Де використовується?</h3>
-          <p class="v8__paragraph">
-            Використовується в браузерах на основі Chromium , а також Maxthon 3
-            .
-          </p>
-        </div>
-      </section>
       <section class="basic">
         <div class="container border-bottom p15">
           <h2 class="basic__title m-b15">Підключення JS до HTML</h2>
@@ -47,18 +33,19 @@
               <div
                 class="basic__code-box fig-nectar-bg border-radius p15 m-t-b20"
               >
-                <h3 class="basic__code-title m-b15">HTML</h3>
                 <pre><code>&lt;!-- index.html --&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html lang="uk"&gt;
 &lt;head&gt;
   &lt;meta charset="UTF-8"&gt;
   &lt;title&gt;Мій проект&lt;/title&gt;
-  <b class="peach-veil">&lt;!-- Підключення файлу main.js --&gt;</b>
+  <b class="peach-veil">&lt;!-- Підключення файлу main.js в head --&gt;</b>
   <b class="peach-veil">&lt;script src="main.js" defer&gt;&lt;/script&gt;</b>
 &lt;/head&gt;
 &lt;body&gt;
   &lt;h1&gt;Привіт, світ!&lt;/h1&gt;
+  <b class="peach-veil">&lt;!-- Підключення файлу main.js перед &lt;/body&gt;--&gt;</b>
+  <b class="peach-veil">&lt;script src="main.js"&gt;&lt;/script&gt;</b>
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
               </div>
@@ -68,7 +55,7 @@
                   Атрибут
                   <span>defer</span> каже браузеру завантажувати скрипт у
                   фоновому режимі й виконувати його тільки після того, як весь
-                  HTML-документ буде повністю завантажений. 2. Внутрішній скрипт
+                  HTML-документ буде повністю завантажений.
                 </p>
                 <p class="basic__paragraph">
                   Атрибут
@@ -108,7 +95,6 @@
               <div
                 class="basic__code-box fig-nectar-bg border-radius p15 m-t-b20"
               >
-                <h3 class="basic__code-title m-b15">HTML</h3>
                 <pre><code><b class="peach-veil">&lt;script&gt;</b>
     <b class="peach-veil">console.log("Це внутрішній скрипт!");</b>
 <b class="peach-veil">&lt;/script&gt;</b>
@@ -146,8 +132,8 @@
                 у порівнянні з var - найсучасніший спосіб оголошення.
               </p>
               <p class="variables__description">
-                Мають блоковий обсяг видимості, що означає, що вони доступні
-                лише у блоку коду, в якому були оголошені.
+                Використовується для оголошення змінної, значення якої можна
+                змінювати.
               </p>
             </div>
             <div
@@ -155,11 +141,8 @@
             >
               <h3 class="variables__name velvet-dusk center-txt">const</h3>
               <p class="variables__description">
-                Схоже на let, але значення змінної неспроможна змінюватися.
-              </p>
-              <p class="variables__description">
-                Має блоковий обсяг видимості, але він вимагає обов'язкового
-                присвоєння значення при оголошенні.
+                Схоже на let, але використовується для оголошення змінної, яку
+                не можна повторно переприсвоїти.
               </p>
             </div>
           </div>
@@ -363,6 +346,312 @@ let message = 'Hello';
               </ul>
             </div>
           </div>
+
+          <div class="data-types__div">
+            <h3
+              class="data-types__subtitle uppercase center-txt velvet-dusk m-t-b20"
+            >
+              Перетворення типів (Type Conversion)
+            </h3>
+
+            <p class="data-types__description m-b15">
+              <span>Перетворення типів</span>
+              — це процес зміни типу даних одного значення на інший.
+            </p>
+            <p class="data-types__description m-b15">
+              У JavaScript існує явне та неявне перетворення типів.
+            </p>
+
+            <p class="data-types__description m-b15">
+              <span>Явне перетворення типів (Explicit Type Conversion)</span>
+              — це перетворення типу даних, яке програміст виконує самостійно за
+              допомогою спеціальних функцій або методів.
+            </p>
+            <div
+              class="data-types__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let value = "25";
+
+let number = Number(value);
+let text = String(100);
+let boolean = Boolean(1);
+
+console.log(number);  // 25
+console.log(text);    // "100"
+console.log(boolean); // true</code></pre>
+            </div>
+
+            <br />
+            <p class="data-types__description m-b15">
+              <span>Неявне перетворення типів (Implicit Type Conversion)</span>
+              — це автоматична зміна типу даних, яку JavaScript виконує під час
+              обчислення виразів або виконання операцій.
+            </p>
+            <div
+              class="data-types__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>console.log("5" + 2);  // "52"
+console.log("5" - 2);  // 3
+console.log(5 == "5"); // true
+console.log(5 === "5"); // false</code></pre>
+            </div>
+          </div>
+
+          <div class="data-types__div">
+            <h3
+              class="data-types__subtitle uppercase center-txt velvet-dusk m-t-b20"
+            >
+              Округлення чисел (Number Rounding)
+            </h3>
+            <div class="data-types__subdiv grid">
+              <div class="data-types__box card-border border-radius p15">
+                <h3 class="data-types__subtitle velvet-dusk center-txt">
+                  Math.round()
+                </h3>
+                <br />
+                <p class="data-types__description">
+                  Округлює число до найближчого цілого. Якщо дробова частина
+                  дорівнює 0.5 або більше, число округлюється до більшого
+                  цілого.
+                </p>
+                <br />
+                <div class="data-types__code-box fig-nectar">
+                  <pre><code>console.log(Math.round(4.3)); // 4
+console.log(Math.round(4.7)); // 5
+console.log(Math.round(-4.5)); // -4
+</code></pre>
+                </div>
+              </div>
+
+              <div class="data-types__box card-border border-radius p15">
+                <h3 class="data-types__subtitle velvet-dusk center-txt">
+                  Math.floor()
+                </h3>
+                <br />
+                <p class="data-types__description">
+                  Округлює число вниз до найближчого цілого. Для від'ємних чисел
+                  округлення відбувається у напрямку меншого значення.
+                </p>
+                <br />
+                <div class="data-types__code-box fig-nectar">
+                  <pre><code>console.log(Math.floor(4.9)); // 4
+console.log(Math.floor(4.1)); // 4
+console.log(Math.floor(-4.2)); // -5
+</code></pre>
+                </div>
+              </div>
+
+              <div class="data-types__box card-border border-radius p15">
+                <h3 class="data-types__subtitle velvet-dusk center-txt">
+                  Math.ceil()
+                </h3>
+                <br />
+                <p class="data-types__description">
+                  Округлює число вгору до найближчого цілого. Для від'ємних
+                  чисел округлення відбувається у напрямку більшого значення.
+                </p>
+                <br />
+                <div class="data-types__code-box fig-nectar">
+                  <pre><code>console.log(Math.ceil(4.1)); // 5
+console.log(Math.ceil(4.9)); // 5
+console.log(Math.ceil(-4.8)); // -4
+</code></pre>
+                </div>
+              </div>
+
+              <div class="data-types__box card-border border-radius p15">
+                <h3 class="data-types__subtitle velvet-dusk center-txt">
+                  Math.trunc()
+                </h3>
+                <br />
+                <p class="data-types__description">
+                  Видаляє дробову частину числа без округлення, залишаючи лише
+                  цілу частину.
+                </p>
+                <br />
+                <div class="data-types__code-box fig-nectar">
+                  <pre><code>console.log(Math.trunc(4.9)); // 4
+console.log(Math.trunc(4.1)); // 4
+console.log(Math.trunc(-4.9)); // -4
+</code></pre>
+                </div>
+              </div>
+
+              <div class="data-types__box card-border border-radius p15">
+                <h3 class="data-types__subtitle velvet-dusk center-txt">
+                  toFixed()
+                </h3>
+                <br />
+                <p class="data-types__description">
+                  Округлює число до заданої кількості знаків після десяткової
+                  крапки та повертає результат у вигляді рядка (String).
+                </p>
+                <br />
+                <div class="basic__code-box fig-nectar">
+                  <pre><code>let number = 3.14159;
+
+console.log(number.toFixed(2)); // "3.14"
+console.log(number.toFixed(3)); // "3.142"
+console.log(number.toFixed(0)); // "3"
+</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="data-types__content">
+              <h3
+                class="data-types__subtitle uppercase center-txt velvet-dusk m-t-b20"
+              >
+                Робота з рядками (String)
+              </h3>
+
+              <h3 class="data-types__subtitle velvet-dusk m-b15">
+                Шаблонні рядки (Template Literals)
+              </h3>
+
+              <p class="data-types__description m-b15">
+                <span>Шаблонні рядки</span>
+                — це спосіб створення рядків за допомогою зворотних лапок (` `).
+                Вони дозволяють вставляти змінні та вирази всередину тексту за
+                допомогою конструкції ${expression}, а також створювати
+                багаторядкові рядки.
+              </p>
+              <div
+                class="data-types__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>let name = "Alex";
+let age = 25;
+
+let message = `Мене звати ${name}, мені ${age} років.`;
+
+console.log(message);</code></pre>
+              </div>
+              <br />
+
+              <h3 class="data-types__subtitle velvet-dusk m-b15">
+                Доступ до символів рядка
+              </h3>
+              <p class="data-types__description m-b15">
+                Доступ до окремих символів рядка здійснюється за допомогою
+                індексу. Індексація починається з 0. Для отримання символу можна
+                використовувати квадратні дужки [] або метод charAt().
+              </p>
+              <div
+                class="data-types__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>let text = "JavaScript";
+
+console.log(text[0]);      // "J"
+console.log(text[4]);      // "S"
+console.log(text.charAt(1)); // "a"</code></pre>
+              </div>
+              <br />
+
+              <h3 class="data-types__subtitle velvet-dusk m-b15">
+                Властивість length
+              </h3>
+              <p class="data-types__description m-b15">
+                <span>length</span>
+                — властивість, яка повертає кількість UTF-16 кодових одиниць у
+                рядку.
+              </p>
+              <div
+                class="data-types__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>let text = "Hello";
+
+console.log(text.length); // 5</code></pre>
+              </div>
+              <br />
+
+              <h3 class="data-types__subtitle velvet-dusk m-b15">
+                Заміна підстроки (replace(), replaceAll())
+              </h3>
+              <p class="data-types__description m-b15">
+                <span>replace()</span>
+                — метод, який повертає новий рядок із заміненим першим
+                входженням заданої підстроки.
+              </p>
+              <div
+                class="data-types__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>let text = "Hello World";
+
+console.log(text.replace("World", "JavaScript"));
+// "Hello JavaScript"</code></pre>
+              </div>
+              <br />
+
+              <p class="data-types__description m-b15">
+                <span>replaceAll()</span>
+                — метод, який повертає новий рядок, у якому замінено всі
+                входження заданої підстроки.
+              </p>
+              <div
+                class="variables__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>let text = "apple apple apple";
+
+console.log(text.replaceAll("apple", "orange"));
+// "orange orange orange"</code></pre>
+              </div>
+              <br />
+
+              <h3 class="data-types__subtitle velvet-dusk m-b15">
+                Копіювання підрядка (slice(), substring())
+              </h3>
+              <p class="data-types__description m-b15">
+                <span>slice()</span>
+                — метод, який повертає частину рядка між початковим та кінцевим
+                індексами. Кінцевий індекс не включається. Метод також підтримує
+                від'ємні індекси.
+              </p>
+              <div
+                class="data-types__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>let text = "JavaScript";
+
+console.log(text.slice(0, 4)); // "Java"
+console.log(text.slice(4));    // "Script"
+console.log(text.slice(-6));   // "Script"</code></pre>
+              </div>
+              <br />
+              <p class="data-types__description m-b15">
+                <span>substring()</span>
+                — метод, який повертає частину рядка між двома індексами.
+                Кінцевий індекс не включається. Від'ємні значення індексів
+                трактуються як 0.
+              </p>
+              <div
+                class="data-types__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>let text = "JavaScript";
+
+console.log(text.substring(0, 4));  // "Java"
+console.log(text.substring(4, 10)); // "Script"</code></pre>
+              </div>
+              <br />
+
+              <h3 class="data-types__subtitle velvet-dusk m-b15">
+                Видалення частини рядка
+              </h3>
+              <p class="data-types__description m-b15">
+                Рядки в JavaScript є незмінними (immutable), тому видалення
+                частини рядка відбувається шляхом створення нового рядка без
+                потрібних символів. Для цього можна використовувати slice().
+              </p>
+              <div
+                class="data-types__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>let text = "Hello World";
+
+let result = text.slice(0, 6);
+
+console.log(result); // "Hello "
+console.log(text);   // "Hello World"</code></pre>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section class="operators">
@@ -536,6 +825,14 @@ let message = 'Hello';
                 якщо лівий є null або undefined.
               </li>
             </ul>
+            <br />
+            <span>Зверни увагу!</span>
+            <br />
+            <p>
+              Логічні оператори && та || повертають одне з операндних значень
+              залежно від результату перевірки. Оператор ! повертає логічне
+              значення.
+            </p>
           </div>
           <div class="operators__div">
             <h3 class="operators__subtitle uppercase velvet-dusk m-t-b20">
