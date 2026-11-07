@@ -288,3 +288,6 @@ span {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
+.conditions__img {
+  width: 500px;
+}

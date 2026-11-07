@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVA SCRIPT</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Conditional Statements</h1>
+          <p class="header__description peach-veil fs15">
+            are statements that let a program execute different code depending
+            on a condition
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="conditions">
+        <div class="container">
+          <p class="conditions__description">
+            <span>Умовні конструкції (Conditional Statements)</span>
+            — це конструкції мови JavaScript, які дозволяють виконувати різні
+            блоки коду залежно від того, чи є певна умова істинною (true) або
+            хибною (false). Простими словами, програма перевіряє певну умову і
+            вирішує, який код потрібно виконати.
+          </p>
+          <div class="conditions__schematic center-txt">
+            <img
+              class="conditions__img"
+              src="../images/conditional_statements.png"
+              alt="conditional statements"
+            />
+          </div>
+
+          <div class="conditions__div">
+            <h2 class="conditions__title m-t-b20">1. Конструкція if</h2>
+            <p class="conditions__description">
+              <span>if</span> — це умовна конструкція, яка виконує блок коду
+              лише тоді, коли задана умова є істинною (true).
+            </p>
+            <br />
+            <div class="conditions__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>if (condition) {
+  // Code to execute if the condition is true
+}</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="conditions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let age = 20;
+
+if (age >= 18) {
+  console.log("You are an adult.");
+}
+//Буде виведено повідомлення - 
+You are an adult.
+
+------------------------------------
+
+let age = 16;
+
+if (age >= 18) {
+  console.log("You are an adult.");
+}
+//У цьому випадку повідомлення не буде виведено,
+оскільки умова повертає false.</code></pre>
+            </div>
+            <br />
+            <p class="conditions__description">
+              <span>Важливо:</span> якщо умова if є хибною, блок коду просто
+              пропускається.
+            </p>
+          </div>
+
+          <div class="conditions__div">
+            <h2 class="conditions__title m-t-b20">2. Конструкція if...else</h2>
+            <p class="conditions__description">
+              <span>if...else</span> — це умовна конструкція, яка дозволяє
+              виконати один блок коду, якщо умова істинна (true), або інший блок
+              коду, якщо умова хибна (false).
+            </p>
+            <br />
+            <div class="conditions__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>if (condition) {
+  // Code if condition is true
+} else {
+  // Code if condition is false
+}</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="conditions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let age = 16;
+
+if (age >= 18) {
+  console.log("You are an adult.");
+} else {
+  console.log("You are a minor.");
+}
+//You are a minor.</code></pre>
+            </div>
+            <br />
+            <p class="conditions__description">
+              <span>Важливо:</span> JavaScript перевіряє умову, якщо умова true,
+              виконується блок if, якщо умова false, виконується блок else,
+              тобто виконується лише один із двох блоків.
+            </p>
+          </div>
+
+          <div class="conditions__div">
+            <h2 class="conditions__title m-t-b20">
+              3. Конструкція if...else if...else
+            </h2>
+            <p class="conditions__description">
+              <span>if...else if...else</span> — це умовна конструкція, яка
+              дозволяє перевіряти декілька умов послідовно.
+            </p>
+            <br />
+            <p class="conditions__description">
+              Вона використовується, коли потрібно обрати один із декількох
+              варіантів.
+            </p>
+            <br />
+            <div class="conditions__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>if (condition1) {
+  // Code if condition1 is true
+} else if (condition2) {
+  // Code if condition2 is true
+} else if (condition3) {
+  // Code if condition3 is true
+} else {
+  // Code if all conditions are false
+}</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="conditions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let score = 75;
+
+if (score >= 90) {
+  console.log("Grade: A");
+} else if (score >= 80) {
+  console.log("Grade: B");
+} else if (score >= 70) {
+  console.log("Grade: C");
+} else if (score >= 60) {
+  console.log("Grade: D");
+} else {
+  console.log("Grade: F");
+}
+//Grade: C</code></pre>
+            </div>
+            <br />
+            <p class="conditions__description">
+              <span>Важливо:</span> у конструкції if...else if...else
+              виконується лише перший блок, умова якого є істинною, тобто
+              JavaScript виконує перший блок і не переходить до наступної умови.
+            </p>
+            <br />
+            <p class="conditions__description">
+              Тому умови потрібно розташовувати від найбільш специфічних або
+              суворих до менш суворих.
+            </p>
+          </div>
+
+          <div class="conditions__div">
+            <h2 class="conditions__title m-t-b20">
+              4. Вкладені умовні конструкції (Nested if)
+            </h2>
+            <p class="conditions__description">
+              <span>Вкладена умовна конструкція (Nested if)</span> — це умовна
+              конструкція if, яка знаходиться всередині іншої умовної
+              конструкції. Вона дозволяє перевіряти додаткові умови лише після
+              виконання попередньої.
+            </p>
+            <br />
+            <div class="conditions__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>if (condition1) {
+  if (condition2) {
+    // Code if both conditions are true
+  }
+}</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="conditions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let age = 20;
+let hasTicket = true;
+
+if (age >= 18) {
+  if (hasTicket) {
+    console.log("You can enter.");
+  }
+}
+//You can enter.</code></pre>
+            </div>
+            <br />
+            <div
+              class="conditions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let age = 16;
+
+if (age >= 18) {
+  console.log("You are an adult.");
+} else {
+  if (age >= 13) {
+    console.log("You are a teenager.");
+  } else {
+    console.log("You are a child.");
+  }
+}
+//You are a teenager.</code></pre>
+            </div>
+            <br />
+            <p class="conditions__description">
+              <span>Важливо:</span> вкладені конструкції варто використовувати
+              тоді, коли вони роблять логіку зрозумілішою. Надмірна кількість
+              вкладень ускладнює читання коду.
+            </p>
+          </div>
+
+          <div class="conditions__div">
+            <h2 class="conditions__title m-t-b20">5. Конструкція switch</h2>
+            <p class="conditions__description">
+              <span>switch</span> — це умовна конструкція, яка використовується
+              для вибору одного з декількох блоків коду залежно від значення
+              певного виразу.
+            </p>
+            <br />
+            <p class="conditions__description">
+              Вона може бути зручнішою за if...else if, коли потрібно порівняти
+              одну змінну з кількома конкретними значеннями.
+            </p>
+            <br />
+            <div class="conditions__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>switch (expression) {
+  case value1:
+    // Code for value1
+    break;
+
+  case value2:
+    // Code for value2
+    break;
+
+  default:
+    // Code if no case matches
+}</b></code></pre>
+            </div>
+            <br />
+            <div class="conditions__subdiv">
+              <h3 class="conditions__subtitle velvet-dusk">
+                Розберемо кожен елемент:
+              </h3>
+              <p class="conditions__desription">
+                <span>switch</span> - починає конструкцію вибору.
+              </p>
+              <p class="conditions__desription">
+                <span>expression</span> - вираз, значення якого перевіряється.
+              </p>
+              <p class="conditions__desription">
+                <span>case</span> - варіант значення для порівняння.
+              </p>
+              <p class="conditions__desription">
+                <span>break</span> - завершує виконання switch.
+              </p>
+              <p class="conditions__desription">
+                <span>default</span> - виконується, якщо жоден case не збігся.
+              </p>
+            </div>
+            <br />
+            <div
+              class="conditions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let day = 3;
+
+switch (day) {
+  case 1:
+    console.log("Monday");
+    break;
+
+  case 2:
+    console.log("Tuesday");
+    break;
+
+  case 3:
+    console.log("Wednesday");
+    break;
+
+  default:
+    console.log("Unknown day");
+}
+//Wednesday</code></pre>
+            </div>
+            <br />
+            <div class="conditions__subdiv">
+              <h3 class="conditions__subtitle velvet-dusk">
+                Для чого потрібен break?
+              </h3>
+              <br />
+              <p class="conditions__desription">
+                <span>break</span> - зупиняє виконання конструкції switch. Якщо
+                його не використати, JavaScript продовжить виконувати наступні
+                case, навіть якщо вони не збігаються з початковим значенням. Це
+                називається fall-through.
+              </p>
+            </div>
+            <br />
+            <div class="conditions__subdiv">
+              <h3 class="conditions__subtitle velvet-dusk">
+                Особливість switch
+              </h3>
+              <br />
+              <p class="conditions__desription">
+                <span>switch</span> - використовує строге порівняння (===).
+              </p>
+              <br />
+              <div
+                class="conditions__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>let value = "1";
+
+switch (value) {
+  case 1:
+    console.log("Number");
+    break;
+
+  case "1":
+    console.log("String");
+    break;
+}
+//String
+
+//Тому що "1" — це рядок, а 1 — число.</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="conditions__div">
+            <h2 class="conditions__title m-t-b20">
+              6. Логічні значення в умовах (Truthy and Falsy)
+            </h2>
+            <p class="conditions__description">
+              В JavaScript умова не обов'язково повинна бути безпосередньо true
+              або false. JavaScript може перетворювати інші значення на логічні
+              під час перевірки умови.
+            </p>
+            <br />
+            <div class="conditions__subdiv flex row space-center gap">
+              <div class="conditions__box card-border border-radius p15">
+                <h3 class="conditions__subtitle velvet-dusk center-txt">
+                  Truthy
+                </h3>
+                <p class="conditions__description center-txt">
+                  значення, які в умовному контексті стають true
+                </p>
+                <br />
+                <p>
+                  Приклади значень, які є Truthy:
+                  <span>true</span> (логічне істинне значення),
+                  <span>1</span> (число), <span>-1</span> (від'ємне число),
+                  <span>"Hello"</span> (непорожній рядок),
+                  <span>"0"</span> (рядок, що містить нуль),
+                  <span>[]</span> (порожній масив), <span>{}</span> (порожній
+                  об'єкт)
+                </p>
+                <br />
+                <div class="conditions__code-box fig-nectar">
+                  <pre><code>let username = "Alex";
+
+if (username) {
+  console.log("Username exists.");
+} else {
+  console.log("Username is empty.");
+}
+//Username exists.
+</code></pre>
+                </div>
+              </div>
+
+              <div class="conditions__box card-border border-radius p15">
+                <h3 class="conditions__subtitle velvet-dusk center-txt">
+                  Falsy
+                </h3>
+                <p class="conditions__description center-txt">
+                  значення, які в умовному контексті стають false
+                </p>
+                <br />
+                <p>
+                  До Falsy значень належать: <span>false</span> (логічне хибне
+                  значення), <span>0</span> (число нуль),
+                  <span>-0</span> (від'ємний нуль), <span>0n</span> (вigInt
+                  нуль), <span>""</span> (порожній рядок),
+                  <span>null</span> (відсутність значення),
+                  <span>undefined</span> (значення не визначене),
+                  <span>NaN</span> (не є числом)
+                </p>
+                <br />
+                <div class="conditions__code-box fig-nectar">
+                  <pre><code>let username = "";
+
+if (username) {
+  console.log("Username exists.");
+} else {
+  console.log("Username is empty.");
+}
+//Username is empty.
+//Оскільки порожній рядок "" є Falsy,
+виконується блок else.
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -10,6 +10,9 @@
   .console__div {
     grid-template-columns: repeat(2, 1fr);
   }
+  .conditions__subdiv {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 768px) {
@@ -105,7 +108,11 @@
   .data-types__code-box,
   .operators__code-box,
   .syntax__code-box,
-  .console__code-box {
+  .console__code-box,
+  .conditions__code-box {
     font-size: 10px;
+  }
+  .conditions__title {
+    font-size: 20px;
   }
 }
