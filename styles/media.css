@@ -76,4 +76,36 @@
   .syntax__subdiv {
     flex-direction: column;
   }
+  .basic__code-box,
+  .variables__code-box,
+  .data-types__code-box,
+  .operators__code-box,
+  .syntax__code-box,
+  .console__code-box {
+    font-size: 11px;
+  }
+  .operators__table code {
+    padding: 0;
+    background-color: transparent;
+    color: #8c3c4a;
+  }
+  .syntax__table {
+    font-size: 12px;
+  }
+}
+@media (max-width: 404px) {
+  .js-section__title {
+    font-size: 25px;
+  }
+  .js-section__item {
+    font-size: 20px;
+  }
+  .basic__code-box,
+  .variables__code-box,
+  .data-types__code-box,
+  .operators__code-box,
+  .syntax__code-box,
+  .console__code-box {
+    font-size: 10px;
+  }
 }

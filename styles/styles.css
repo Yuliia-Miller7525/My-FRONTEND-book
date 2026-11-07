@@ -108,6 +108,9 @@ span {
 .m-list {
   margin-left: 70px;
 }
+.m-list-small {
+  margin-left: 10px;
+}
 .m-t-b20 {
   margin: 20px 0;
 }
