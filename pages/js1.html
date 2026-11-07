@@ -12,17 +12,20 @@
     <header class="header background-accent center-txt basic-padding">
       <div class="container">
         <div class="header__div flex column gap">
-          <h1 class="header__title">JAVA SCRIPT</h1>
-          <p class="header__description peach-veil fs15">
-            a high-level, interpreted programming language that adds
-            interactivity, dynamic behavior, and logic to websites, working
-            alongside HTML (structure) and CSS (styling).
-          </p>
+          <h1 class="header__title">Basics of the Java script</h1>
+          <nav class="header__nav flex space-between">
+            <a class="header__link" href="#basic">Connecting JS</a>
+            <a class="header__link" href="#variables">Variables</a>
+            <a class="header__link" href="#data-types">Data-types</a>
+            <a class="header__link" href="#operators">Operators</a>
+            <a class="header__link" href="#syntax">Syntax</a>
+            <a class="header__link" href="#console">Console</a>
+          </nav>
         </div>
       </div>
     </header>
     <main class="background basic-padding">
-      <section class="basic">
+      <section id="basic" class="basic">
         <div class="container border-bottom p15">
           <h2 class="basic__title m-b15">Підключення JS до HTML</h2>
           <div class="basic__div flex row space-between gap">
@@ -104,13 +107,13 @@
           </div>
         </div>
       </section>
-      <section class="variables">
+      <section id="variables" class="variables">
         <div class="container border-bottom p15">
           <h2 class="variables__title m-b15">Змінні (Variables)</h2>
           <p class="variables__paragraph m-t-b20">
             <span>Змінна</span> - це "контейнер" для збереження даних.
           </p>
-          <div class="variables__div flex row space-between gap-small">
+          <div class="variables__div grid">
             <div
               class="variables__card card-border border-radius p15 flex column gap-small"
             >
@@ -168,27 +171,6 @@ let age = 25;
 let message = 'Hello';
 </code></pre>
             </div>
-          </div>
-          <div class="variables__naming">
-            <h3 class="variables__subtitle velvet-dusk m-t-b20">
-              Іменування змінних
-            </h3>
-            <p class="variables__paragraph">
-              В JavaScript є два обмеження, які стосуються імен змінних:
-            </p>
-            <ol class="variables__list p15">
-              <li class="variables__item">
-                Ім’я має містити лише букви, цифри або символи $ і _.
-              </li>
-              <li class="variables__item">Перший символ не має бути числом.</li>
-            </ol>
-            <p class="variables__paragraph">
-              Для написання імені, яке містить декілька слів, зазвичай
-              використовують <span>“верблюжий регістр” (camelCase)</span>. Тобто
-              слова йдуть одне за одним, і кожне слово пишуть із великої букви й
-              без пробілів: <span>myVeryLongName</span>. Зауважте, що перше
-              слово пишеться з маленької букви.
-            </p>
           </div>
           <div class="variables__reserved-words">
             <h3 class="variables__subtitle velvet-dusk m-t-b20">
@@ -256,7 +238,7 @@ let message = 'Hello';
           </div>
         </div>
       </section>
-      <section class="data-types">
+      <section id="data-types" class="data-types">
         <div class="container border-bottom p15">
           <h2 class="data-types__title m-b15">Типи даних (Data Types)</h2>
           <div class="data-types__div flex row space-berween gap-small">
@@ -283,7 +265,8 @@ let message = 'Hello';
                   <span>String </span> - це набір символів, які використовуються
                   для представлення текстової інформації. Вони можуть бути
                   створені, використовуючи одинарні (''), подвійні ("") або
-                  навіть багаторядкові (``) лапки.
+                  навіть багаторядкові (``) лапки, які дозволяють вставляти
+                  змінні та вирази всередину рядка через ${}.
                 </li>
                 <li class="data-types__item">
                   <span>Boolean </span>є фундаментальними для умовного виконання
@@ -654,7 +637,7 @@ console.log(text);   // "Hello World"</code></pre>
           </div>
         </div>
       </section>
-      <section class="operators">
+      <section id="operators" class="operators">
         <div class="container border-bottom p15">
           <h2 class="operators__title m-b15">Оператори (Operators)</h2>
           <p class="operators__description">
@@ -712,81 +695,87 @@ console.log(text);   // "Hello World"</code></pre>
               маємо їх дещо більше:
             </p>
             <br />
-            <table class="operators__table">
-              <thead>
-                <tr>
-                  <th>Оператор</th>
-                  <th>Назва</th>
-                  <th>Приклад</th>
-                  <th>Результат</th>
-                  <th>Опис</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>&gt;</code></td>
-                  <td>Більше</td>
-                  <td><code>10 &gt; 5</code></td>
-                  <td><code>true</code></td>
-                  <td>Перевіряє, чи перше значення більше за друге.</td>
-                </tr>
-                <tr>
-                  <td><code>&lt;</code></td>
-                  <td>Менше</td>
-                  <td><code>10 &lt; 5</code></td>
-                  <td><code>false</code></td>
-                  <td>Перевіряє, чи перше значення менше за друге.</td>
-                </tr>
-                <tr>
-                  <td><code>&gt;=</code></td>
-                  <td>Більше або дорівнює</td>
-                  <td><code>10 &gt;= 10</code></td>
-                  <td><code>true</code></td>
-                  <td>
-                    Перевіряє, чи перше значення більше або дорівнює другому.
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>&lt;=</code></td>
-                  <td>Менше або дорівнює</td>
-                  <td><code>5 &lt;= 10</code></td>
-                  <td><code>true</code></td>
-                  <td>
-                    Перевіряє, чи перше значення менше або дорівнює другому.
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>===</code></td>
-                  <td>Строга рівність</td>
-                  <td><code>5 === 5</code></td>
-                  <td><code>true</code></td>
-                  <td>Перевіряє рівність значень та їхніх типів.</td>
-                </tr>
-                <tr>
-                  <td><code>!==</code></td>
-                  <td>Строга нерівність</td>
-                  <td><code>5 !== "5"</code></td>
-                  <td><code>true</code></td>
-                  <td>Перевіряє, чи значення або їхні типи відрізняються.</td>
-                </tr>
-                <tr>
-                  <td><code>==</code></td>
-                  <td>Нестрога рівність</td>
-                  <td><code>5 == "5"</code></td>
-                  <td><code>true</code></td>
-                  <td>Порівнює значення з автоматичним перетворенням типів.</td>
-                </tr>
-                <tr>
-                  <td><code>!=</code></td>
-                  <td>Нестрога нерівність</td>
-                  <td><code>5 != 10</code></td>
-                  <td><code>true</code></td>
-                  <td>
-                    Перевіряє нерівність значень з можливим перетворенням типів.
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="operators__subdiv flex space-center">
+              <table class="operators__table">
+                <thead>
+                  <tr>
+                    <th>Оператор</th>
+                    <th>Назва</th>
+                    <th>Приклад</th>
+                    <th>Результат</th>
+                    <th>Опис</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&gt;</code></td>
+                    <td>Більше</td>
+                    <td><code>10 &gt; 5</code></td>
+                    <td><code>true</code></td>
+                    <td>Перевіряє, чи перше значення більше за друге.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;</code></td>
+                    <td>Менше</td>
+                    <td><code>10 &lt; 5</code></td>
+                    <td><code>false</code></td>
+                    <td>Перевіряє, чи перше значення менше за друге.</td>
+                  </tr>
+                  <tr>
+                    <td><code>&gt;=</code></td>
+                    <td>Більше або дорівнює</td>
+                    <td><code>10 &gt;= 10</code></td>
+                    <td><code>true</code></td>
+                    <td>
+                      Перевіряє, чи перше значення більше або дорівнює другому.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;=</code></td>
+                    <td>Менше або дорівнює</td>
+                    <td><code>5 &lt;= 10</code></td>
+                    <td><code>true</code></td>
+                    <td>
+                      Перевіряє, чи перше значення менше або дорівнює другому.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>===</code></td>
+                    <td>Строга рівність</td>
+                    <td><code>5 === 5</code></td>
+                    <td><code>true</code></td>
+                    <td>Перевіряє рівність значень та їхніх типів.</td>
+                  </tr>
+                  <tr>
+                    <td><code>!==</code></td>
+                    <td>Строга нерівність</td>
+                    <td><code>5 !== "5"</code></td>
+                    <td><code>true</code></td>
+                    <td>Перевіряє, чи значення або їхні типи відрізняються.</td>
+                  </tr>
+                  <tr>
+                    <td><code>==</code></td>
+                    <td>Нестрога рівність</td>
+                    <td><code>5 == "5"</code></td>
+                    <td><code>true</code></td>
+                    <td>
+                      Порівнює значення з автоматичним перетворенням типів.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>!=</code></td>
+                    <td>Нестрога нерівність</td>
+                    <td><code>5 != 10</code></td>
+                    <td><code>true</code></td>
+                    <td>
+                      Перевіряє нерівність значень з можливим перетворенням
+                      типів.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
             <br />
             <span>Важливий нюанс:</span>
             <br />
@@ -802,9 +791,12 @@ console.log(text);   // "Hello World"</code></pre>
               3. Логічні оператори (Logical Operators)
             </h3>
             <p class="operators__description">
-              Логічні оператори повертають логічні значення true або false в
-              залежності від результату порівняння. Вони дозволяють виконувати
-              умовні операції та створювати складні умови.
+              Логічні оператори - це оператори, які допомагають перевіряти умови
+              та визначати, чи є вони правдивими або неправдивими.
+            </p>
+            <p>
+              У JavaScript є два основних логічних значення:
+              <span>true</span> та <span>false</span>
             </p>
             <br />
             <ul class="operators__list m-list">
@@ -842,60 +834,62 @@ console.log(text);   // "Hello World"</code></pre>
               Використовуються для присвоєння значень змінним.
             </p>
             <br />
-            <table class="operators__table">
-              <thead>
-                <tr>
-                  <th>Operator</th>
-                  <th>Example</th>
-                  <th>Equivalent</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>=</code></td>
-                  <td><code>x = 10</code></td>
-                  <td><code>x = 10</code></td>
-                  <td>Присвоює значення змінній</td>
-                </tr>
-                <tr>
-                  <td><code>+=</code></td>
-                  <td><code>x += 5</code></td>
-                  <td><code>x = x + 5</code></td>
-                  <td>Додає значення до змінної</td>
-                </tr>
-                <tr>
-                  <td><code>-=</code></td>
-                  <td><code>x -= 5</code></td>
-                  <td><code>x = x - 5</code></td>
-                  <td>Віднімає значення від змінної</td>
-                </tr>
-                <tr>
-                  <td><code>*=</code></td>
-                  <td><code>x *= 5</code></td>
-                  <td><code>x = x * 5</code></td>
-                  <td>Множить змінну на значення</td>
-                </tr>
-                <tr>
-                  <td><code>/=</code></td>
-                  <td><code>x /= 5</code></td>
-                  <td><code>x = x / 5</code></td>
-                  <td>Ділить змінну на значення</td>
-                </tr>
-                <tr>
-                  <td><code>%=</code></td>
-                  <td><code>x %= 3</code></td>
-                  <td><code>x = x % 3</code></td>
-                  <td>Присвоює остачу від ділення</td>
-                </tr>
-                <tr>
-                  <td><code>**=</code></td>
-                  <td><code>x **= 2</code></td>
-                  <td><code>x = x ** 2</code></td>
-                  <td>Підносить змінну до степеня</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="operators__subdiv flex space-center">
+              <table class="operators__table">
+                <thead>
+                  <tr>
+                    <th>Operator</th>
+                    <th>Example</th>
+                    <th>Equivalent</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>=</code></td>
+                    <td><code>x = 10</code></td>
+                    <td><code>x = 10</code></td>
+                    <td>Присвоює значення змінній</td>
+                  </tr>
+                  <tr>
+                    <td><code>+=</code></td>
+                    <td><code>x += 5</code></td>
+                    <td><code>x = x + 5</code></td>
+                    <td>Додає значення до змінної</td>
+                  </tr>
+                  <tr>
+                    <td><code>-=</code></td>
+                    <td><code>x -= 5</code></td>
+                    <td><code>x = x - 5</code></td>
+                    <td>Віднімає значення від змінної</td>
+                  </tr>
+                  <tr>
+                    <td><code>*=</code></td>
+                    <td><code>x *= 5</code></td>
+                    <td><code>x = x * 5</code></td>
+                    <td>Множить змінну на значення</td>
+                  </tr>
+                  <tr>
+                    <td><code>/=</code></td>
+                    <td><code>x /= 5</code></td>
+                    <td><code>x = x / 5</code></td>
+                    <td>Ділить змінну на значення</td>
+                  </tr>
+                  <tr>
+                    <td><code>%=</code></td>
+                    <td><code>x %= 3</code></td>
+                    <td><code>x = x % 3</code></td>
+                    <td>Присвоює остачу від ділення</td>
+                  </tr>
+                  <tr>
+                    <td><code>**=</code></td>
+                    <td><code>x **= 2</code></td>
+                    <td><code>x = x ** 2</code></td>
+                    <td>Підносить змінну до степеня</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
           <div class="operators__div">
             <h3 class="operators__subtitle uppercase velvet-dusk m-t-b20">
@@ -949,7 +943,7 @@ console.log(result);// "Повнолітній"
                 - оператор, який розташовується після операнда. Наприклад, x++.
               </li>
             </ul>
-            <div class="operators__subdiv flex row space-between gap m-t15">
+            <div class="operators__box grid m-t15">
               <div class="operators__card card-border border-radius p15">
                 <h3 class="operators__subtitle velvet-dusk center-txt">
                   Унарний плюс (+)
@@ -999,36 +993,34 @@ let isFalse = !isTrue;
 </code></pre>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="operators__subdiv flex row space-center gap m-t15">
-            <div class="operators__card card-border border-radius p15">
-              <h3 class="operators__subtitle velvet-dusk center-txt">
-                Інкремент (++)
-              </h3>
-              <br />
-              <p class="operators__description">
-                Збільшує значення змінної на 1.
-              </p>
-              <br />
-              <div class="basic__code-box fig-nectar">
-                <pre><code>let x = 5;
+              <div class="operators__card card-border border-radius p15">
+                <h3 class="operators__subtitle velvet-dusk center-txt">
+                  Інкремент (++)
+                </h3>
+                <br />
+                <p class="operators__description">
+                  Збільшує значення змінної на 1.
+                </p>
+                <br />
+                <div class="basic__code-box fig-nectar">
+                  <pre><code>let x = 5;
 x++; // x містить 6.</code></pre>
+                </div>
               </div>
-            </div>
 
-            <div class="operators__card card-border border-radius p15">
-              <h3 class="operators__subtitle velvet-dusk center-txt">
-                Декремент (--)
-              </h3>
-              <br />
-              <p class="operators__description">
-                Зменшує значення змінної на 1.
-              </p>
-              <br />
-              <div class="basic__code-box fig-nectar">
-                <pre><code>let x = 5;
+              <div class="operators__card card-border border-radius p15">
+                <h3 class="operators__subtitle velvet-dusk center-txt">
+                  Декремент (--)
+                </h3>
+                <br />
+                <p class="operators__description">
+                  Зменшує значення змінної на 1.
+                </p>
+                <br />
+                <div class="basic__code-box fig-nectar">
+                  <pre><code>let x = 5;
 x--; // x містить 4.</code></pre>
+                </div>
               </div>
             </div>
           </div>
@@ -1206,6 +1198,447 @@ console.log(result); // 5
 // і виконуються зліва направо:
 // (10 - 2) - 3 = 5
 </code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="syntax" class="syntax">
+        <div class="container border-bottom p15">
+          <h2 class="syntax__title m-b15">Базовий синтаксис (Basic Syntax)</h2>
+          <div class="syntax__div m-t-b20">
+            <p class="syntax__description m-b15">
+              <span>Синтаксис (Syntax)</span> — це набір правил, за якими
+              потрібно писати код певною мовою програмування.
+            </p>
+            <p class="syntax__description m-b15">
+              У JavaScript синтаксис визначає:
+            </p>
+            <ul class="syntax__list m-list">
+              <li class="syntax__item">як оголошувати змінні;</li>
+              <li class="syntax__item">як записувати команди;</li>
+              <li class="syntax__item">як використовувати оператори;</li>
+              <li class="syntax__item">як оформлювати блоки коду;</li>
+              <li class="syntax__item">як правильно писати функції.</li>
+            </ul>
+            <div
+              class="syntax__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>const userName = "Anna";
+console.log(userName);
+// Приклад правильного написання.
+</code></pre>
+            </div>
+          </div>
+          <div class="syntax__div m-t-b20">
+            <p class="syntax__description m-b15">
+              <span>1. Statement (інструкція)</span> — це команда, яку
+              JavaScript виконує.
+            </p>
+            <p class="syntax__description">
+              Кожен рядок містить окрему інструкцію, по закінченню якої потрібно
+              ставити <span>крапку з комою (;)</span>.
+            </p>
+            <p class="syntax__description">
+              JavaScript може автоматично вставляти крапки з комою (Automatic
+              Semicolon Insertion — ASI), але рекомендується явно ставити їх
+              наприкінці інструкцій.
+            </p>
+            <div
+              class="syntax__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>const age = 25;
+let userName = "Anna";
+
+console.log(age);
+console.log(userName);
+</code></pre>
+            </div>
+          </div>
+          <div class="syntax__div m-t-b20">
+            <p class="syntax__description m-b15">
+              <span>2. Expression (вираз)</span> — це частина коду, яка
+              обчислюється та повертає певне значення.
+            </p>
+            <div class="syntax__subdiv flex row gap m-b15">
+              <h3 class="syntax__subtitle">Приклади:</h3>
+              <div class="syntax__card card-border border-radius p15">
+                <p class="syntax__description">10 + 5</p>
+                <p class="syntax__description">Результат: 15</p>
+              </div>
+              <div class="syntax__card card-border border-radius p15">
+                <p class="syntax__description">"Hello" + " World"</p>
+                <p class="syntax__description">Результат: "Hello World"</p>
+              </div>
+              <div class="syntax__card card-border border-radius p15">
+                <p class="syntax__description">5 > 3</p>
+                <p class="syntax__description">Результат: true</p>
+              </div>
+            </div>
+            <p class="syntax__description m-b15">
+              Вираз можна використати для присвоєння значення змінній:
+            </p>
+            <div
+              class="syntax__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>const result = 10 + 5;
+console.log(result); // 15
+</code></pre>
+            </div>
+          </div>
+          <div class="syntax__div m-t-b20">
+            <p class="syntax__description m-b15">
+              <span>3. Коментарі (Comments)</span> — використовуються для
+              пояснення коду. JavaScript не виконує їх.
+            </p>
+            <p class="syntax__description m-b15">
+              Існіє <span>однорядковий коментар //</span> (починається з // і
+              триває до кінця рядка) та
+              <span>багаторядковий коментар /* */</span>.
+            </p>
+          </div>
+          <div class="syntax__div m-t-b20">
+            <p class="syntax__description m-b15">
+              <span>4. Identifier (ідентифікатор)</span> - це назва змінної,
+              функції або іншого елемента в коді.
+            </p>
+            <h3 class="syntax__subtitle velvet-dusk m-b15">
+              Правила створення ідентифікаторів
+            </h3>
+            <ol class="syntax__list m-list m-b15">
+              <li class="syntax__item">
+                Назва може містити літери, цифри, _ та $.
+              </li>
+              <li class="syntax__item">Назва не може починатися з цифри.</li>
+              <li class="syntax__item">
+                Не можна використовувати зарезервовані слова JavaScript.
+              </li>
+              <li class="syntax__item">Назви чутливі до регістру.</li>
+              <li class="syntax__item">
+                Назви повинні бути зрозумілими та описувати призначення
+                елемента.
+              </li>
+            </ol>
+            <p class="variables__description">
+              Для написання імені, яке містить декілька слів, зазвичай
+              використовують <span>“верблюжий регістр” (camelCase)</span>. Тобто
+              слова йдуть одне за одним, і кожне слово пишуть із великої букви й
+              без пробілів: <span>myVeryLongName</span>. Зауважте, що перше
+              слово пишеться з маленької букви.
+            </p>
+          </div>
+          <div class="syntax__div m-t-b20">
+            <p class="syntax__description m-b15">
+              <span>5. Block (блок коду)</span> — це група інструкцій,
+              об'єднаних фігурними дужками.
+            </p>
+            <p class="syntax__description m-b15">
+              Блоки коду використовуються, зокрема, у:
+              <span>if...else, циклах, функціях, класах</span>.
+            </p>
+            <div
+              class="syntax__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>if (true) {
+  console.log("Hello");
+  console.log("JavaScript");
+}
+</code></pre>
+            </div>
+          </div>
+          <div class="syntax__div m-t-b20">
+            <p class="syntax__description m-b15">
+              <span>6. Виведення інформації (Output)</span> — для виведення
+              інформації в консоль використовують console.log().
+            </p>
+            <p class="syntax__description m-b15">
+              Можна виводити декілька значень одночасно:
+            </p>
+            <div
+              class="syntax__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>const firstName = "Anna";
+const age = 25;
+
+console.log(firstName, age); // Anna 25
+</code></pre>
+            </div>
+          </div>
+          <div class="syntax__div m-t-b20">
+            <p class="syntax__description m-b15">
+              <span>7. Введення даних (Input)</span> — для отримання інформації
+              від користувача в браузері можна використовувати prompt().
+            </p>
+            <div
+              class="syntax__code-box fig-nectar-bg peach-veil border-radius p15 m-t-b20"
+            >
+              <pre><code>const userName = prompt("Enter your name:");
+
+console.log(userName);
+</code></pre>
+            </div>
+            <p class="syntax__description m-b15">
+              Користувач вводить ім'я, після чого воно записується у змінну.
+            </p>
+            <p class="syntax__description m-b15">
+              Prompt() повертає рядок (String), навіть якщо користувач вводить
+              число, тому для перетворення рядка на число використовують
+              <span>Number()</span>.
+            </p>
+          </div>
+          <div class="syntax__div m-t-b20 flex column center">
+            <h3 class="syntax__subtitle velvet-dusk m-b15 center-txt uppercase">
+              Коротка шпаргалка
+            </h3>
+            <table class="syntax__table">
+              <thead class="syntax__table-head">
+                <tr class="syntax__table-row">
+                  <th class="syntax__table-heading">Конструкція</th>
+                  <th class="syntax__table-heading">Призначення</th>
+                </tr>
+              </thead>
+
+              <tbody class="syntax__table-body">
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>const</code>
+                  </td>
+                  <td class="syntax__table-cell">
+                    Оголошення змінної, яку не можна переназначити.
+                  </td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>let</code>
+                  </td>
+                  <td class="syntax__table-cell">
+                    Оголошення змінної, яку можна переназначити.
+                  </td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>;</code>
+                  </td>
+                  <td class="syntax__table-cell">Завершення інструкції.</td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>//</code>
+                  </td>
+                  <td class="syntax__table-cell">Однорядковий коментар.</td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>/* */</code>
+                  </td>
+                  <td class="syntax__table-cell">Багаторядковий коментар.</td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>{ }</code>
+                  </td>
+                  <td class="syntax__table-cell">Блок коду або об'єкт.</td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>( )</code>
+                  </td>
+                  <td class="syntax__table-cell">
+                    Групування виразів або параметри функції.
+                  </td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>[ ]</code>
+                  </td>
+                  <td class="syntax__table-cell">
+                    Масив або доступ до його елемента.
+                  </td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>" "</code>
+                  </td>
+                  <td class="syntax__table-cell">Створення рядка (String).</td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>` `</code>
+                  </td>
+                  <td class="syntax__table-cell">
+                    Створення шаблонного рядка (Template Literal).
+                  </td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>${}</code>
+                  </td>
+                  <td class="syntax__table-cell">
+                    Вставлення значення або виразу у шаблонний рядок.
+                  </td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>console.log()</code>
+                  </td>
+                  <td class="syntax__table-cell">
+                    Виведення інформації в консоль.
+                  </td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>prompt()</code>
+                  </td>
+                  <td class="syntax__table-cell">
+                    Отримання введення від користувача.
+                  </td>
+                </tr>
+
+                <tr class="syntax__table-row">
+                  <td class="syntax__table-cell">
+                    <code>Number()</code>
+                  </td>
+                  <td class="syntax__table-cell">
+                    Перетворення значення на число.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section id="console" class="console">
+        <div class="container p15">
+          <h2 class="console__title m-b15">Консоль (Console)</h2>
+          <p class="console__description">
+            <span>Console</span> — це інструмент розробника, який дозволяє
+            виводити інформацію, перевіряти результати виконання JavaScript-коду
+            та знаходити помилки.
+          </p>
+
+          <div class="console__div grid m-t15">
+            <div class="console__card card-border border-radius p15">
+              <h3 class="console__subtitle velvet-dusk center-txt">
+                console.log()
+              </h3>
+              <br />
+              <p class="console__description">Виводить інформацію в консоль.</p>
+              <br />
+              <div class="console__code-box fig-nectar">
+                <pre><code>console.log("Hello, JavaScript!");
+console.log(10 + 5);</code></pre>
+              </div>
+            </div>
+
+            <div class="console__card card-border border-radius p15">
+              <h3 class="console__subtitle velvet-dusk center-txt">
+                console.error()
+              </h3>
+              <br />
+              <p class="console__description">
+                Виводить повідомлення про помилку.
+              </p>
+              <br />
+              <div class="console__code-box fig-nectar">
+                <pre><code>console.error("Something went wrong!");</code></pre>
+              </div>
+            </div>
+
+            <div class="console__card card-border border-radius p15">
+              <h3 class="console__subtitle velvet-dusk center-txt">
+                console.warn()
+              </h3>
+              <br />
+              <p class="console__description">Виводить попередження.</p>
+              <br />
+              <div class="console__code-box fig-nectar">
+                <pre><code>console.warn("Be careful!");</code></pre>
+              </div>
+            </div>
+
+            <div class="console__card card-border border-radius p15">
+              <h3 class="console__subtitle velvet-dusk center-txt">
+                console.info()
+              </h3>
+              <br />
+              <p class="console__description">
+                Виводить інформаційне повідомлення.
+              </p>
+              <br />
+              <div class="console__code-box fig-nectar">
+                <pre><code>console.info("Application started");</code></pre>
+              </div>
+            </div>
+
+            <div class="console__card card-border border-radius p15">
+              <h3 class="console__subtitle velvet-dusk center-txt">
+                console.table()
+              </h3>
+              <br />
+              <p class="console__description">
+                Виводить дані у вигляді таблиці.
+              </p>
+              <br />
+              <div class="console__code-box fig-nectar">
+                <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+};
+console.table(user);</code></pre>
+              </div>
+            </div>
+
+            <div class="console__card card-border border-radius p15">
+              <h3 class="console__subtitle velvet-dusk center-txt">
+                console.clear()
+              </h3>
+              <br />
+              <p class="console__description">
+                Очищує консоль від повідомлень.
+              </p>
+              <br />
+              <div class="console__code-box fig-nectar">
+                <pre><code>console.clear();</code></pre>
+              </div>
+            </div>
+
+            <div class="console__card card-border border-radius p15">
+              <h3 class="console__subtitle velvet-dusk center-txt">
+                console.group()
+              </h3>
+              <br />
+              <p class="console__description">Групує повідомлення в консолі.</p>
+              <br />
+              <div class="console__code-box fig-nectar">
+                <pre><code>console.group("User");
+console.log("Anna");
+console.log(25);
+console.groupEnd();</code></pre>
+              </div>
+            </div>
+
+            <div class="console__card card-border border-radius p15">
+              <h3 class="console__subtitle velvet-dusk center-txt">
+                console.count()
+              </h3>
+              <br />
+              <p class="console__description">Підраховує кількість викликів.</p>
+              <br />
+              <div class="console__code-box fig-nectar">
+                <pre><code>console.count("Click");
+console.count("Click");</code></pre>
+              </div>
             </div>
           </div>
         </div>
