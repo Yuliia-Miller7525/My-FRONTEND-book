@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVA SCRIPT</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Loops</h1>
+          <p class="header__description peach-veil fs15">
+            are statements that allow a program to repeat a block of code as
+            long as a condition is met
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="loops">
+        <div class="container">
+          <div class="loops__div border-bottom p15">
+            <p class="loops__description">
+              <span>Цикли</span> — це конструкції програмування, які дозволяють
+              багаторазово виконувати певний блок коду, поки виконується задана
+              умова або протягом певної кількості повторень.
+            </p>
+            <br />
+            <h3 class="loops__subtitle velvet-dusk">Цикли дозволяють:</h3>
+            <br />
+            <ul class="loops__list m-list">
+              <li class="loops__item">
+                повторювати виконання коду без його дублювання;
+              </li>
+              <li class="loops__item">перебирати елементи масивів;</li>
+              <li class="loops__item">виконувати операції з даними;</li>
+              <li class="loops__item">автоматизувати повторювані завдання.</li>
+            </ul>
+            <br />
+            <div
+              class="loops__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>Приклад без циклу</b>
+                
+console.log("Hello!");
+console.log("Hello!");
+console.log("Hello!");
+console.log("Hello!");
+console.log("Hello!");
+//У цьому випадку ми 5 разів пишемо однаковий код.
+
+<b>Приклад із циклом</b>
+
+for (let i = 0; i < 5; i++) {
+  console.log("Hello!");
+}
+//Hello!
+  Hello!
+  Hello!
+  Hello!
+  Hello!</code></pre>
+            </div>
+            <br />
+            <p class="loops__description">
+              <span>Висновок:</span> цикл дозволяє виконати одну й ту саму дію
+              п'ять разів, використовуючи лише одну конструкцію.
+            </p>
+          </div>
+
+          <div class="loops__div border-bottom p15">
+            <h2 class="loops__title m-t-b20">1. The for loop</h2>
+            <p class="loops__description">
+              <span>Цикл for</span> - повторює виконання блоку коду, поки задана
+              умова залишається істинною. Він складається з трьох частин:
+              ініціалізації, умови та зміни значення лічильника.
+            </p>
+            <br />
+            <div class="loops__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>for (initialization; condition; update) {
+  // Code to execute
+}</b></code></pre>
+            </div>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">
+                Розберемо кожен елемент:
+              </h3>
+              <p class="loops__desription">
+                <span>initialization</span> - створення та початкове значення
+                лічильника.
+              </p>
+              <p class="loops__desription">
+                <span>condition</span> - визначає, чи потрібно виконувати цикл.
+              </p>
+              <p class="loops__desription">
+                <span>update</span> - змінює значення лічильника після кожного
+                повторення.
+              </p>
+              <p class="loops__desription">
+                <span>{ }</span> - блок коду, який виконується повторно.
+              </p>
+            </div>
+            <br />
+            <div
+              class="loops__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+//0
+  1
+  2
+  3
+  4</code></pre>
+            </div>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">Розберемо по кроках:</h3>
+              <p class="loops__desription">
+                <span>let i = 0</span> - створюється змінна i зі значенням 0.
+              </p>
+              <p class="loops__desription">
+                <span>i < 5</span> - перевіряється, чи менше значення i за 5.
+              </p>
+              <p class="loops__desription">
+                Якщо умова true, виконується <span>console.log(i)</span>.
+              </p>
+              <p class="loops__desription">
+                <span>i++</span> - значення i збільшується на 1.
+              </p>
+              <p class="loops__desription">
+                Цикл повертається до перевірки умови.
+              </p>
+              <p class="loops__desription">
+                Коли <span>i стає 5, умова i < 5 повертає false</span> , і цикл
+                завершується.
+              </p>
+            </div>
+            <br />
+            <p class="loops__desription">
+              <span>Важливо:</span> ініціалізація виконується лише один раз.
+              Умова перевіряється перед кожним повторенням, а update виконується
+              після тіла циклу.
+            </p>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">
+                Коли ми використовуємо цикл for?
+              </h3>
+              <br />
+              <ol class="loops__list m-list">
+                <li class="loops__item">відома кількість повторень;</li>
+                <li class="loops__item">необхідно працювати з лічильником;</li>
+                <li class="loops__item">потрібно перебрати індекси масиву;</li>
+                <li class="loops__item">
+                  потрібно виконати певну кількість математичних операцій.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="loops__div border-bottom p15">
+            <h2 class="loops__title m-t-b20">2. The while loop</h2>
+            <p class="loops__description">
+              <span>Цикл while</span> - виконує блок коду доти, доки задана
+              умова є істинною (true).
+            </p>
+            <br />
+            <div class="loops__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>while (condition) {
+  // Code to execute
+}</b></code></pre>
+            </div>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">
+                Розберемо кожен елемент:
+              </h3>
+              <p class="loops__desription">
+                <span>condition</span> - умова, яка перевіряється перед
+                виконанням тіла циклу.
+              </p>
+              <p class="loops__desription">
+                Якщо умова <span>true</span>, код виконується.
+              </p>
+              <p class="loops__desription">
+                Якщо умова <span>false</span>, цикл не виконується або
+                завершується.
+              </p>
+            </div>
+            <br />
+            <div
+              class="loops__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let i = 0;
+
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+//0
+  1
+  2
+  3
+  4</code></pre>
+            </div>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">Розберемо по кроках:</h3>
+              <p class="loops__desription">
+                Створюємо змінну <span>i</span> зі значенням <span>0</span>.
+              </p>
+              <p class="loops__desription">
+                Перевіряємо умову <span>i < 5</span>.
+              </p>
+              <p class="loops__desription">
+                Якщо вона істинна, <span>виводимо значення i.</span>
+              </p>
+              <p class="loops__desription">Збільшуємо <span>i на 1</span>.</p>
+              <p class="loops__desription">Знову перевіряємо умову.</p>
+              <p class="loops__desription">
+                Коли <span>i дорівнює 5</span>, цикл завершується.
+              </p>
+            </div>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">
+                Коли ми використовуємо цикл while?
+              </h3>
+              <br />
+              <ol class="loops__list m-list">
+                <li class="loops__item">
+                  кількість повторень заздалегідь невідома;
+                </li>
+                <li class="loops__item">
+                  виконання залежить від певної умови;
+                </li>
+                <li class="loops__item">
+                  потрібно повторювати операцію, поки не настане певна подія.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="loops__div border-bottom p15">
+            <h2 class="loops__title m-t-b20">3. The do...while loop</h2>
+            <p class="loops__description">
+              <span>Цикл do...while</span> - виконує блок коду щонайменше один
+              раз, а потім перевіряє умову. Якщо умова істинна, виконання
+              повторюється.
+            </p>
+            <br />
+            <div class="loops__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>do {
+  // Code to execute
+} while (condition);</b></code></pre>
+            </div>
+            <br />
+            <p class="loops__description">
+              <span>Основна відмінність:</span> у do...while перевірка умови
+              відбувається після виконання тіла циклу.
+            </p>
+            <br />
+            <div
+              class="loops__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let i = 0;
+
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+//0
+  1
+  2
+  3
+  4</code></pre>
+            </div>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">
+                Коли ми використовуємо цикл while?
+              </h3>
+              <br />
+              <ol class="loops__list m-list">
+                <li class="loops__item">
+                  Коли потрібно виконати код хоча б один раз.
+                </li>
+                <li class="loops__item">
+                  Коли потрібно показати меню користувачу, а потім перевірити,
+                  чи потрібно повторити.
+                </li>
+                <li class="loops__item">
+                  Коли потрібно спочатку виконати дію, а потім перевірити
+                  результат.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="loops__div border-bottom p15">
+            <h2 class="loops__title m-t-b20">4. The for...of loop</h2>
+            <p class="loops__description">
+              <span>Цикл for...of</span> - перебирає значення елементів
+              ітерованих об'єктів, наприклад масивів та рядків.
+            </p>
+            <br />
+            <div class="loops__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>for (const element of iterable) {
+  // Code to execute
+}</b></code></pre>
+            </div>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">
+                Розберемо кожен елемент:
+              </h3>
+              <p class="loops__desription">
+                <span>const element</span> - змінна, яка отримує поточне
+                значення елемента.
+              </p>
+              <p class="loops__desription">
+                <span>of</span> - ключове слово, яке використовується для
+                перебору значень.
+              </p>
+              <p class="loops__desription">
+                <span>iterable</span> - об'єкт, значення якого перебираються.
+                завершується.
+              </p>
+              <p class="loops__desription">
+                <span>{ }</span> - тіло циклу. завершується.
+              </p>
+            </div>
+            <br />
+            <div
+              class="loops__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+
+for (const fruit of fruits) {
+  console.log(fruit);
+}
+//Apple
+  Banana
+  Orange</code></pre>
+            </div>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">Розберемо по кроках:</h3>
+              <p class="loops__desription">
+                <span>fruits</span> — масив, який містить три елементи.
+              </p>
+              <p class="loops__desription">
+                <span>fruit</span> — змінна, яка отримує значення поточного
+                елемента.
+              </p>
+              <p class="loops__desription">
+                Під час першого повторення <span>fruit дорівнює "Apple".</span>
+              </p>
+              <p class="loops__desription">
+                Під час другого повторення <span>fruit дорівнює "Banana".</span>
+              </p>
+              <p class="loops__desription">
+                Під час третього повторення
+                <span>fruit дорівнює "Orange".</span>
+              </p>
+              <p class="loops__desription">
+                Після перебору всіх елементів цикл завершується.
+              </p>
+            </div>
+            <br />
+            <p class="loops__desription">
+              <span>Перевага:</span> for...of дозволяє перебирати значення без
+              необхідності вручну створювати лічильник.
+            </p>
+          </div>
+
+          <div class="loops__div border-bottom p15">
+            <h2 class="loops__title m-t-b20">5. The for...in loop</h2>
+            <p class="loops__description">
+              <span>Цикл for...in</span> - перебирає ключі (назви властивостей)
+              об'єкта.
+            </p>
+            <br />
+            <div class="loops__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>for (const key in object) {
+  // Code to execute
+}</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="loops__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Alex",
+  age: 25,
+  city: "Kyiv"
+};
+
+for (const key in user) {
+  console.log(key);
+}
+//name
+  age
+  city</code></pre>
+            </div>
+            <br />
+            <p class="loops__desription">
+              Якщо потрібно отримати не лише ключі, а й значення властивостей,
+              використовуємо квадратні дужки:
+            </p>
+            <br />
+            <div
+              class="loops__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Alex",
+  age: 25,
+  city: "Kyiv"
+};
+
+for (const key in user) {
+  console.log(user[key]);
+}
+//Alex
+  25
+  Kyiv</code></pre>
+            </div>
+            <br />
+            <p class="loops__desription">
+              <span>for...in</span> призначений переважно для перебору
+              властивостей об'єктів. Для масивів зазвичай краще використовувати
+              for...of, якщо потрібні значення елементів.
+            </p>
+          </div>
+
+          <div class="loops__div border-bottom p15">
+            <h2 class="loops__title m-t-b20">
+              6. Loop control — Керування циклами
+            </h2>
+            <p class="loops__description">
+              <span>break</span> - негайно завершує виконання поточного циклу.
+            </p>
+            <br />
+            <div
+              class="loops__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>for (let i = 1; i <= 10; i++) {
+  if (i === 5) {
+    break;
+  }
+
+  console.log(i);
+}
+//1
+  2
+  3
+  4</code></pre>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="loops__description">
+              <span>continue</span> - пропускає поточну ітерацію циклу та
+              переходить до наступного повторення.
+            </p>
+            <br />
+            <div
+              class="loops__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>for (let i = 1; i <= 5; i++) {
+  if (i === 3) {
+    continue;
+  }
+
+  console.log(i);
+}
+//1
+  2
+  4
+  5</code></pre>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="loops__description">
+              <span>return</span> - завершує виконання функції, а не просто
+              цикл.
+            </p>
+            <br />
+            <div
+              class="loops__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function findNumber() {
+  for (let i = 1; i <= 10; i++) {
+    if (i === 5) {
+      return i;
+    }
+  }
+}
+
+console.log(findNumber());
+//5</code></pre>
+            </div>
+          </div>
+
+          <div class="loops__div border-bottom p15">
+            <h2 class="loops__title m-t-b20">
+              7. Nested loops — Вкладені цикли
+            </h2>
+            <p class="loops__description">
+              <span>Вкладений цикл</span> - це цикл, розташований усередині
+              іншого циклу.
+            </p>
+            <br />
+            <div
+              class="loops__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>for (let i = 1; i <= 3; i++) {
+  for (let j = 1; j <= 2; j++) {
+    console.log(`i: ${i}, j: ${j}`);
+  }
+}
+//i: 1, j: 1
+  i: 1, j: 2
+  i: 2, j: 1
+  i: 2, j: 2
+  i: 3, j: 1
+  i: 3, j: 2</code></pre>
+            </div>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">Розберемо по кроках:</h3>
+              <p class="loops__desription">
+                <span>Зовнішній цикл i</span> виконується 3 рази.
+              </p>
+              <p class="loops__desription">
+                <span>Внутрішній цикл j</span> виконується 2 рази для кожного
+                повторення зовнішнього циклу.
+              </p>
+              <p class="loops__desription">
+                Загальна кількість виконань <span>console.log() — 6.</span>
+              </p>
+            </div>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">
+                Коли ми використовуємо nested loops?
+              </h3>
+              <br />
+              <ol class="loops__list m-list">
+                <li class="loops__item">Для перебору двовимірних масивів.</li>
+                <li class="loops__item">Для створення таблиць.</li>
+                <li class="loops__item">Для роботи з матрицями.</li>
+                <li class="loops__item">
+                  Для порівняння елементів різних колекцій.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="loops__div p15">
+            <h2 class="loops__title m-t-b20">
+              7. Infinite loops — Нескінченні цикли
+            </h2>
+            <p class="loops__description">
+              <span>Нескінченний цикл</span> - Нескінченний цикл
+            </p>
+            <br />
+            <div
+              class="loops__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let i = 0;
+
+while (i < 5) {
+  console.log(i);
+}
+</code></pre>
+            </div>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">Розберемо по кроках:</h3>
+              <p class="loops__desription">
+                У цьому коді відсутній <span>оператор i++</span>.
+              </p>
+              <p class="loops__desription">i завжди дорівнює 0;</p>
+              <p class="loops__desription">
+                умова <span>i < 5</span> завжди true;
+              </p>
+              <p class="loops__desription">цикл не завершується.</p>
+            </div>
+            <br />
+            <div class="loops__subdiv">
+              <h3 class="loops__subtitle velvet-dusk">
+                Як уникнути infinite loops?
+              </h3>
+              <br />
+              <ol class="loops__list m-list">
+                <li class="loops__item">
+                  Переконайся, що умова циклу може стати false.
+                </li>
+                <li class="loops__item">Перевір, чи змінюється лічильник.</li>
+                <li class="loops__item">
+                  Переконайся, що змінна оновлюється правильно.
+                </li>
+                <li class="loops__item">
+                  Не забувай про break, якщо цикл має завершитися за певної
+                  умови.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

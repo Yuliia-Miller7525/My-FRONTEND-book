@@ -109,10 +109,12 @@
   .operators__code-box,
   .syntax__code-box,
   .console__code-box,
-  .conditions__code-box {
+  .conditions__code-box,
+  .loops__code-box {
     font-size: 10px;
   }
-  .conditions__title {
+  .conditions__title,
+  .loops__title {
     font-size: 20px;
   }
 }
