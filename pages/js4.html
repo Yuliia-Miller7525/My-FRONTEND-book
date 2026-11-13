@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JAVA SCRIPT</title>
+    <title>basics of functions</title>
     <link rel="stylesheet" href="../fonts/stylesheet.css" />
     <link rel="stylesheet" href="../styles/styles.css" />
     <link rel="stylesheet" href="../styles/media.css" />
@@ -12,17 +12,23 @@
     <header class="header background-accent center-txt basic-padding">
       <div class="container">
         <div class="header__div flex column gap">
-          <h1 class="header__title">functions</h1>
-          <p class="header__description peach-veil fs15">
-            a reusable block of code that performs a specific task.
-          </p>
+          <h1 class="header__title">basics of functions</h1>
+          <nav class="header__nav3 flex space-between">
+            <a class="header__link" href="#functions">Functions</a>
+            <a class="header__link" href="#creation">Creation</a>
+            <a class="header__link" href="#invocation">Invocation</a>
+            <a class="header__link" href="#parameters-arguments"
+              >Parameters & Arguments</a
+            >
+            <a class="header__link" href="#return">Return</a>
+          </nav>
         </div>
       </div>
     </header>
     <main class="main background basic-padding">
       <section class="functions">
         <div class="functions__container container">
-          <div class="functions__div border-bottom p15">
+          <div id="functions" class="functions__div border-bottom p15">
             <h2 class="functions__title m-b15">
               1. Що таке функції (Functions)?
             </h2>
@@ -108,7 +114,7 @@ console.log(addNumbers(5, 3));
             </div>
           </div>
 
-          <div class="functions__div border-bottom p15">
+          <div id="creation" class="functions__div border-bottom p15">
             <h2 class="functions__title m-t-b20">
               2. Способи створення функцій (Function Creation)
             </h2>
@@ -316,7 +322,7 @@ greeting — власне ім'я функції.</code></pre>
             </div>
           </div>
 
-          <div class="functions__div border-bottom p15">
+          <div id="invocation" class="functions__div border-bottom p15">
             <h2 class="functions__title m-t-b20">
               3. Виклик функцій (Function Invocation)
             </h2>
@@ -462,7 +468,10 @@ calculateSum(5, 3);
             <br />
           </div>
 
-          <div class="functions__div border-bottom p15">
+          <div
+            id="parameters-arguments"
+            class="functions__div border-bottom p15"
+          >
             <h2 class="functions__title m-t-b20">
               4. Параметри та аргументи функцій (Parameters & Arguments)
             </h2>
@@ -579,7 +588,7 @@ greetUser();
             </p>
           </div>
 
-          <div class="functions__div p15">
+          <div id="return" class="functions__div p15">
             <h2 class="functions__title m-t-b20">
               5. Повернення значення з функції (Return Statement)
             </h2>

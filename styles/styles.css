@@ -181,12 +181,16 @@ span {
 }
 .main-section__div,
 .subsection__div,
-.operators__box {
+.operators__box,
+.js-section__div,
+.functions-common__div {
   margin: 30px 60px;
 }
 .main-section__card,
 .subsection__card,
-.operators__card {
+.operators__card,
+.js-section__card,
+.functions-common__card {
   width: 100%;
   max-width: 350px;
 }
@@ -298,7 +302,9 @@ span {
 .variables__div,
 .data-types__subdiv,
 .operators__box,
-.console__div {
+.console__div,
+.js-section__div,
+.functions-common__div {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }

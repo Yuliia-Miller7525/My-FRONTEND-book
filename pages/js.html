@@ -23,14 +23,14 @@
     </header>
     <main class="background basic-padding">
       <section class="js-section">
-        <div class="container">
-          <p>
+        <div class="js-section__container container">
+          <p class="js-section__desription">
             <span>JavaScript (JS)</span>
             — це мова програмування, яка дозволяє створювати інтерактивні та
             динамічні вебсторінки.
           </p>
           <br />
-          <p>
+          <p class="js-section__desription">
             <span> Простими словами:</span>
             JavaScript дозволяє вебсайту не просто відображати інформацію, а
             реагувати на дії користувача.
@@ -78,13 +78,13 @@
           <h3 class="js-section__subtitle velvet-dusk m-t-b20">
             Де виконується JavaScript?
           </h3>
-          <p>
+          <p class="js-section__desription">
             JavaScript може виконуватися в різних середовищах. Найчастіше ти
             зустрічатимеш два: <span>JavaScript у браузері</span> та
             <span>JavaScript у Node.js</span>
           </p>
           <br />
-          <p>
+          <p class="js-section__desription">
             <span>V8</span>
             — це JavaScript-двигун (JavaScript engine), розроблений Google. Він
             перетворює JavaScript-код на машинний код, який може виконуватися
@@ -95,68 +95,133 @@
           <h2 class="js-section__title m-t-b20">
             Обирай тему і дивись детільніше
           </h2>
-          <ol class="js-section__list m-list-small">
-            <li class="js-section__item fig-nectar fw700 fs25 uppercase">
-              <a class="fig-nectar" href="./js1.html"
-                >Основи Java Script (підключення, змінні, типи даних,
-                оператори)</a
-              >
-            </li>
-            <br />
-            <li class="js-section__item fig-nectar fw700 fs25 uppercase">
-              <a class="fig-nectar" href="js2.html"
-                >Умовні конструкції (Conditional Statements)</a
-              >
-            </li>
-            <br />
-            <li class="js-section__item fig-nectar fw700 fs25 uppercase">
-              <a class="fig-nectar" href="js3.html">Цикли (Loops)</a>
-            </li>
-            <br />
-            <li class="js-section__item fig-nectar fw700 fs25 uppercase">
-              <a class="fig-nectar" href="js4.html">Функції (Functions)</a>
-            </li>
-            <br />
-            <li class="js-section__item fig-nectar fw700 fs25 uppercase">
-              <a class="fig-nectar" href="js5.html"
-                >Види функцій (Types of functions)</a
-              >
-            </li>
-            <br />
-            <li class="js-section__item fig-nectar fw700 fs25 uppercase">
-              <a class="fig-nectar" href="js6.html"
-                >Вкладені функції та область видимості (Nested Functions &
-                Scope)</a
-              >
-            </li>
-            <br />
-            <li class="js-section__item fig-nectar fw700 fs25 uppercase">
-              <a class="fig-nectar" href="js7.html">Замикання (Closures)</a>
-            </li>
-            <br />
-            <li class="js-section__item fig-nectar fw700 fs25 uppercase">
-              <a class="fig-nectar" href="js8.html"
-                >Функції вищого порядку (Higher-Order Functions)</a
-              >
-            </li>
-            <br />
-            <li class="js-section__item fig-nectar fw700 fs25 uppercase">
-              <a class="fig-nectar" href="js9.html">Рекурсія (Recursion).</a>
-            </li>
-            <br />
-            <li class="js-section__item fig-nectar fw700 fs25 uppercase">
-              <a class="fig-nectar" href="#">Об'єкти (Objects)</a>
-            </li>
-            <br />
-            <li class="js-section__item fig-nectar fw700 fs25 uppercase">
-              <a class="fig-nectar" href="#">Масиви (Arrays)</a>
-            </li>
-            <br />
-            <li class="js-section__item fig-nectar fw700 fs25 uppercase">
-              <a class="fig-nectar" href="#"></a>
-            </li>
-            <br />
-          </ol>
+
+          <div class="js-section__div grid">
+            <div
+              class="js-section__card flex column gap card-border relative border-radius p15"
+            >
+              <p class="js-section__number fig-nectar fw700 fs25">01</p>
+              <h3 class="js-section__subtitle">Basics of Java Script</h3>
+              <p class="js-section__description fs12">(Основи Джава Скрипта)</p>
+              <a
+                class="js-section__link fig-nectar flex center fw700 fs15"
+                href="js1.html"
+                >Перейти
+                <svg
+                  width="12px"
+                  height="12px"
+                  viewBox="0 0 1024 1024"
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="#8c3c4a"
+                    d="M338.752 104.704a64 64 0 000 90.496l316.8 316.8-316.8 316.8a64 64 0 0090.496 90.496l362.048-362.048a64 64 0 000-90.496L429.248 104.704a64 64 0 00-90.496 0z"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div
+              class="js-section__card flex column gap card-border relative border-radius p15"
+            >
+              <p class="js-section__number fig-nectar fw700 fs25">02</p>
+              <h3 class="js-section__subtitle">Conditional Statements</h3>
+              <p class="js-section__description fs12">(Умовні конструкції)</p>
+              <a
+                class="js-section__link fig-nectar flex center fw700 fs15"
+                href="js2.html"
+                >Перейти
+                <svg
+                  width="12px"
+                  height="12px"
+                  viewBox="0 0 1024 1024"
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="#8c3c4a"
+                    d="M338.752 104.704a64 64 0 000 90.496l316.8 316.8-316.8 316.8a64 64 0 0090.496 90.496l362.048-362.048a64 64 0 000-90.496L429.248 104.704a64 64 0 00-90.496 0z"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div
+              class="js-section__card flex column gap card-border relative border-radius p15"
+            >
+              <p class="js-section__number fig-nectar fw700 fs25">03</p>
+              <h3 class="js-section__subtitle">Loops</h3>
+              <p class="js-section__description fs12">(Цикли)</p>
+              <a
+                class="js-section__link fig-nectar flex center fw700 fs15"
+                href="js3.html"
+                >Перейти
+                <svg
+                  width="12px"
+                  height="12px"
+                  viewBox="0 0 1024 1024"
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="#8c3c4a"
+                    d="M338.752 104.704a64 64 0 000 90.496l316.8 316.8-316.8 316.8a64 64 0 0090.496 90.496l362.048-362.048a64 64 0 000-90.496L429.248 104.704a64 64 0 00-90.496 0z"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div
+              class="js-section__card flex column gap card-border relative border-radius p15"
+            >
+              <p class="js-section__number fig-nectar fw700 fs25">04</p>
+              <h3 class="js-section__subtitle">Functions</h3>
+              <p class="js-section__description fs12">(Функції)</p>
+              <a
+                class="js-section__link fig-nectar flex center fw700 fs15"
+                href="js04.html"
+                >Перейти
+                <svg
+                  width="12px"
+                  height="12px"
+                  viewBox="0 0 1024 1024"
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="#8c3c4a"
+                    d="M338.752 104.704a64 64 0 000 90.496l316.8 316.8-316.8 316.8a64 64 0 0090.496 90.496l362.048-362.048a64 64 0 000-90.496L429.248 104.704a64 64 0 00-90.496 0z"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div
+              class="js-section__card flex column gap card-border relative border-radius p15"
+            >
+              <p class="js-section__number fig-nectar fw700 fs25">05</p>
+              <h3 class="js-section__subtitle">Objects & Arrays</h3>
+              <p class="js-section__description fs12">(Об'єкти та Масиви)</p>
+              <a
+                class="js-section__link fig-nectar flex center fw700 fs15"
+                href="js10.html"
+                >Перейти
+                <svg
+                  width="12px"
+                  height="12px"
+                  viewBox="0 0 1024 1024"
+                  class="icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill="#8c3c4a"
+                    d="M338.752 104.704a64 64 0 000 90.496l316.8 316.8-316.8 316.8a64 64 0 0090.496 90.496l362.048-362.048a64 64 0 000-90.496L429.248 104.704a64 64 0 00-90.496 0z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </main>

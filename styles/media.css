@@ -13,6 +13,10 @@
   .conditions__subdiv {
     flex-direction: column;
   }
+  .functions-common__div,
+  .js-section__div {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -20,6 +24,7 @@
   .subsection__div,
   .basic__div {
     flex-direction: column;
+    align-items: center;
   }
   .main-section__title,
   .subsection__title {
@@ -33,6 +38,11 @@
   .header__link {
     padding: 5px;
     font-size: 12px;
+  }
+  .functions-common__div,
+  .js-section__div {
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
   }
 }
 @media (max-width: 648px) {
@@ -68,7 +78,8 @@
     gap: 10px;
     white-space: nowrap;
   }
-  .header__nav2 {
+  .header__nav2,
+  .header__nav3 {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
