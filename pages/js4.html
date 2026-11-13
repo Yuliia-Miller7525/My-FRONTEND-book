@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVA SCRIPT</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">functions</h1>
+          <p class="header__description peach-veil fs15">
+            a reusable block of code that performs a specific task.
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="functions">
+        <div class="functions__container container">
+          <div class="functions__div border-bottom p15">
+            <h2 class="functions__title m-b15">
+              1. Що таке функції (Functions)?
+            </h2>
+            <p class="functions__description">
+              <span>Функція (functions)</span> — це окремий блок коду, який
+              виконує певну задачу та може використовуватися багато разів.
+            </p>
+            <br />
+            <p class="functions__description">
+              Простими словами, функція — це набір інструкцій, який ми створюємо
+              для виконання певної дії.
+            </p>
+            <br />
+            <h3 class="functions__subtitle velvet-dusk">
+              Наприклад, функція може:
+            </h3>
+            <br />
+            <ul class="functions__list m-list">
+              <li class="functions__item">додавати числа;</li>
+              <li class="functions__item">обчислювати середнє значення;</li>
+              <li class="functions__item">перевіряти, чи число парне;</li>
+              <li class="functions__item">виводити повідомлення;</li>
+              <li class="functions__item">генерувати випадковий пароль.</li>
+            </ul>
+            <br />
+            <h3 class="functions__subtitle velvet-dusk">
+              Для чого потрібні функції?
+            </h3>
+            <br />
+            <p class="functions__description">
+              <span>Повторно використовувати код</span> — не потрібно писати
+              однаковий код декілька разів.
+            </p>
+            <p class="functions__description">
+              <span>Організовувати код</span> — розділяти велику програму на
+              менші частини.
+            </p>
+            <p class="functions__description">
+              <span>Спрощувати програму</span> — кожна функція відповідає за
+              конкретну задачу.
+            </p>
+            <p class="functions__description">
+              <span>Полегшувати виправлення помилок</span> — можна працювати з
+              окремою функцією, не змінюючи всю програму.
+            </p>
+            <br />
+            <h3 class="functions__subtitle velvet-dusk">Як працює функція?</h3>
+            <br />
+            <p class="functions__description">
+              Уявімо, що функція — це маленький помічник. Її роботу можна умовно
+              поділити на <span>три етапи:</span>
+            </p>
+            <br />
+            <ol class="functions__list m-list">
+              <li class="functions__item">
+                <span>Вхідні дані (Input)</span> — функція отримує інформацію.
+              </li>
+              <li class="functions__item">
+                <span>Обробка (Process)</span> — виконує потрібні дії.
+              </li>
+              <li class="functions__item">
+                <span>Результат (Output)</span> — повертає або виводить
+                результат.
+              </li>
+            </ol>
+            <br />
+            <p class="functions__description">
+              <span>Важливо:</span> не кожна функція обов'язково отримує дані
+              або повертає результат. Це залежить від її призначення.
+            </p>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>functions addNumbers(a, b) {
+  let result = a + b;
+
+  return result;
+}
+
+console.log(addNumbers(5, 3));
+// 8</code></pre>
+            </div>
+          </div>
+
+          <div class="functions__div border-bottom p15">
+            <h2 class="functions__title m-t-b20">
+              2. Способи створення функцій (Function Creation)
+            </h2>
+            <br />
+            <p class="functions__description">
+              <span>functions Declaration (Оголошення функції)</span> — це
+              спосіб створення (оголошення) функції за допомогою ключового слова
+              functions, назви функції та блоку коду.
+            </p>
+            <br />
+            <p class="functions__description">
+              Простими словами, це спосіб повідомити JavaScript, що ми хочемо
+              створити функцію, яка виконуватиме певну задачу.
+            </p>
+            <br />
+            <div class="functions__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>functions functionsName() {
+}</b></code></pre>
+            </div>
+            <br />
+            <table class="functions__table">
+              <thead>
+                <tr>
+                  <th>Елемент</th>
+                  <th>Що означає</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>functions</code></td>
+                  <td>
+                    Ключове слово, яке використовується для створення функції.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>functionsName</code></td>
+                  <td>Назва функції.</td>
+                </tr>
+                <tr>
+                  <td><code>()</code></td>
+                  <td>Круглі дужки, у яких записуються параметри функції.</td>
+                </tr>
+                <tr>
+                  <td><code>{}</code></td>
+                  <td>
+                    Фігурні дужки, усередині яких записується тіло функції.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>Тіло функції</code></td>
+                  <td>
+                    Частина функції, у якій записуються команди, які вона
+                    повинна виконати.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <h3 class="functions__subtitle velvet-dusk">
+              Правила іменування функцій
+            </h3>
+            <br />
+            <ul class="functions__list m-list">
+              <li class="functions__item">
+                функції повинна описувати дію, яку виконує функція;
+              </li>
+              <li class="functions__item">починатися з літери, _ або $;</li>
+              <li class="functions__item">не містити пробілів;</li>
+              <li class="functions__item">
+                не бути зарезервованим словом JavaScript.
+              </li>
+            </ul>
+            <br />
+            <p class="functions__description">
+              <span>Важливо:</span> коли ми оголошуємо функцію, JavaScript
+              запам'ятовує її код, але не виконує його автоматично. Щоб функція
+              виконалася, її потрібно викликати.
+            </p>
+            <br />
+            <p class="functions__description">
+              Функцію, створену через Function Declaration, можна викликати ще
+              до її оголошення в коді. JavaScript заздалегідь обробляє
+              оголошення таких функцій, тому виклик до місця оголошення працює.
+            </p>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function showUserInfo(name, age, city) {
+  console.log(`Ім'я: ${name}`);
+  console.log(`Вік: ${age}`);
+  console.log(`Місто: ${city}`);
+}
+
+showUserInfo("Олександр", 25, "Київ");
+//Ім'я: Олександр
+  Вік: 25
+  Місто: Київ</code></pre>
+            </div>
+            <br />
+            <br />
+            <br />
+            <p class="functions__description">
+              <span>Function Expression</span> — це спосіб створення функції,
+              коли функція записується у змінну як значення. <br />
+            </p>
+            <br />
+            <p class="functions__description">
+              На відміну від Function Declaration, тут функція не оголошується
+              окремою конструкцією з ім'ям, а присвоюється змінній.
+            </p>
+            <br />
+            <div class="functions__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>const functionName = function(parameters) {
+  // Код, який виконує функція
+};</b></code></pre>
+            </div>
+            <br />
+            <table class="functions__table">
+              <thead>
+                <tr>
+                  <th>Елемент</th>
+                  <th>Що означає</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>const</code></td>
+                  <td>Cтворює змінну, якій присвоюється функція.</td>
+                </tr>
+                <tr>
+                  <td><code>functionName</code></td>
+                  <td>Ім'я змінної, через яку ми будемо викликати функцію.</td>
+                </tr>
+                <tr>
+                  <td><code>function</code></td>
+                  <td>ключове слово для створення функції.</td>
+                </tr>
+                <tr>
+                  <td><code>(parameters)</code></td>
+                  <td>Параметри функції.</td>
+                </tr>
+                <tr>
+                  <td><code>{Тіло функції}</code></td>
+                  <td>Тіло функції.</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const sayHello = function() {
+  console.log("Привіт!");
+};
+
+sayHello();
+//Привіт!</code></pre>
+            </div>
+            <br />
+            <p class="functions__description">
+              <span>Важливо:</span> Function Expression можна викликати тільки
+              після того, як функція була створена та присвоєна змінній. Якщо
+              спробувати викликати sayHello() до створення функції, виникне
+              помилка.
+            </p>
+            <br />
+            <h3 class="functions__subtitle velvet-dusk">
+              Function Expression може бути двох видів:
+            </h3>
+            <br />
+            <p class="functions__description">
+              <span>Анонімний (Anonymous Function)</span> — функція без власного
+              імені.
+            </p>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const sayHello = function() {
+  console.log("Привіт!");
+}
+//Тут функція не має власного імені.
+Для її виклику використовуємо
+ім'я змінної sayHello.</code></pre>
+            </div>
+            <br />
+            <p class="functions__description">
+              <span>Іменований (Named Function Expression)</span> — функція, яка
+              має власне ім'я.
+            </p>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const sayHello = function greeting() {
+  console.log("Привіт!");
+};
+
+sayHello();
+//sayHello — ім'я змінної,
+greeting — власне ім'я функції.</code></pre>
+            </div>
+          </div>
+
+          <div class="functions__div border-bottom p15">
+            <h2 class="functions__title m-t-b20">
+              3. Виклик функцій (Function Invocation)
+            </h2>
+            <br />
+            <p class="functions__description">
+              <span>Виклик функції (Function Invocation)</span> — це виконання
+              коду, який знаходиться всередині функції.
+            </p>
+            <br />
+            <p class="functions__description">
+              Коли ми створюємо функцію, JavaScript лише запам'ятовує її
+              інструкції. Сам код функції не виконується автоматично. Щоб
+              функція виконала свою роботу, її потрібно викликати.
+            </p>
+            <br />
+            <p class="functions__description">
+              Для виклику функції потрібно написати її
+              <span>назву та круглі дужки ().</span>
+            </p>
+            <br />
+            <div class="functions__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>functionName();</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function sayHello() {
+  console.log("Привіт!");
+}
+
+// Викликаємо функцію
+sayHello();
+Результат у консолі: Привіт!</code></pre>
+            </div>
+            <br />
+            <h3 class="functions__subtitle velvet-dusk">Як це працює?</h3>
+            <br />
+            <ol class="functions__list m-list">
+              <li class="functions__item">
+                JavaScript зустрічає оголошення функції sayHello().
+              </li>
+              <li class="functions__item">
+                Запам'ятовує код, який знаходиться всередині функції.
+              </li>
+              <li class="functions__item">
+                До моменту виклику функція не виконує свої інструкції.
+              </li>
+              <li class="functions__item">
+                Коли JavaScript зустрічає sayHello(), він переходить усередину
+                функції.
+              </li>
+              <li class="functions__item">
+                Виконує команду console.log("Привіт!").
+              </li>
+            </ol>
+            <br />
+            <p class="functions__description">
+              Ми можемо викликати функцію та передавати їй дані, з якими вона
+              повинна працювати. Для цього під час виклику функції в круглих
+              дужках () вказуємо <span>аргументи.</span>
+            </p>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function greetUser(name) {
+  console.log(`Привіт, ${name}!`);
+}
+
+// Викликаємо функцію та передаємо аргумент
+greetUser("Олена");
+Результат у консолі: Привіт, Олена!</code></pre>
+            </div>
+            <br />
+            <p class="functions__description">
+              Можна викликати одну й ту саму функцію декілька разів, передаючи
+              різні аргументи:
+            </p>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function greetUser(name) {
+  console.log(`Привіт, ${name}!`);
+}
+
+greetUser("Олена");
+greetUser("Андрій");
+greetUser("Марія");
+
+Результат у консолі:
+Привіт, Олена!
+Привіт, Андрій!
+Привіт, Марія!</code></pre>
+            </div>
+            <br />
+            <p class="functions__description">
+              Таким чином, нам не потрібно створювати окрему функцію для кожного
+              імені. Ми використовуємо одну функцію, але передаємо їй різні
+              дані.
+            </p>
+            <br />
+            <p class="functions__description">
+              Функція може приймати не один, а
+              <span>декілька аргументів.</span> У такому випадку під час виклику
+              ми
+              <span
+                >передаємо їх через кому, дотримуючись порядку параметрів.</span
+              >
+            </p>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function showMessage() {
+  console.log("Вітаю на нашому сайті!");
+}
+
+showMessage();
+Результат у консолі:
+Вітаю на нашому сайті!</code></pre>
+            </div>
+            <br />
+            <p class="functions__description">
+              Не кожна функція потребує отримання даних під час виклику. Якщо
+              функція <span>не має параметрів</span>, ми просто
+              <span>викликаємо її за допомогою назви та круглих дужок.</span>
+            </p>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function calculateSum(a, b) {
+  console.log(a + b);
+}
+
+// Викликаємо функцію
+calculateSum(5, 3);
+Результат у консолі: 8</code></pre>
+            </div>
+            <br />
+          </div>
+
+          <div class="functions__div border-bottom p15">
+            <h2 class="functions__title m-t-b20">
+              4. Параметри та аргументи функцій (Parameters & Arguments)
+            </h2>
+            <br />
+            <p class="functions__description">
+              Під час створення функції ми можемо передбачити спеціальні змінні,
+              у які будуть передаватися дані. Такі змінні називаються
+              <span>параметрами (Parameters).</span>
+            </p>
+            <br />
+            <p class="functions__description">
+              <span>Аргументи (Arguments)</span> — це конкретні значення, які ми
+              передаємо функції під час її виклику.
+            </p>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function greetUser(name) {
+  console.log(`Привіт, ${name}!`);
+}
+
+greetUser("Олена");
+
+//тут: name — параметр функції.
+"Олена" — аргумент.</code></pre>
+            </div>
+            <br />
+            <div
+              class="functions__subdiv card-border border-radius p15 center-txt"
+            >
+              <span>Запам'ятай різницю:</span>
+              <br />
+              <br />
+              <p class="functions__description">
+                <span>Параметр</span> — це змінна, яку ми вказуємо під час
+                створення функції.
+              </p>
+              <p class="functions__description">
+                <span>Аргумент </span>— це значення, яке ми передаємо під час
+                виклику функції.
+              </p>
+            </div>
+            <br />
+            <p class="functions__description">
+              Коли ми викликаємо функцію та передаємо їй аргументи, JavaScript
+              присвоює ці значення відповідним параметрам. Тобто кожен параметр
+              отримує значення аргументу, який стоїть на відповідній позиції.
+            </p>
+            <br />
+            <p class="functions__description">
+              Функція може мати декілька параметрів. Це дозволяє передавати їй
+              одразу кілька значень. Параметри вказуються через кому під час
+              створення функції, а аргументи — через кому під час її виклику.
+            </p>
+            <br />
+            <p class="functions__description">
+              Аргументи передаються параметрам послідовно, зліва направо. Якщо
+              переплутати порядок аргументів, функція отримає інші значення,
+              навіть якщо всі вони передані правильно.
+            </p>
+            <br />
+            <div
+              class="functions__subdiv card-border border-radius p15 center-txt"
+            >
+              <span>Запам'ятай:</span>
+              <br />
+              <br />
+              <p class="functions__description">
+                Перший аргумент передається першому параметру, другий — другому
+                і так далі.
+              </p>
+            </div>
+            <br />
+            <p class="functions__description">
+              Якщо під час виклику функції ми не передали значення для певного
+              параметра, JavaScript автоматично присвоює цьому параметру
+              значення <span>Undefined</span>. undefined означає, що значення не
+              було визначене.
+            </p>
+            <br />
+            <p class="functions__description">
+              Щоб замість undefined параметр отримував певне значення, ми можемо
+              задати йому
+              <span>значення за замовчуванням (Default Parameter).</span> Це
+              значення буде використовуватися тоді, коли під час виклику функції
+              аргумент не передали або передали undefined.
+            </p>
+            <br />
+            <div class="functions__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>function functionName(parameter = defaultValue) {
+  // Код функції
+}</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function greetUser(name = "Гість") {
+  console.log(`Привіт, ${name}!`);
+}
+
+greetUser();
+//Привіт, Гість!</code></pre>
+            </div>
+            <br />
+            <p class="functions__description">
+              Значення за замовчуванням використовується лише тоді, коли
+              аргумент відсутній або дорівнює undefined. Якщо передати
+              <span>null</span>, JavaScript використає саме
+              <span>null.</span> Тобто null не запускає використання значення за
+              замовчуванням.
+            </p>
+          </div>
+
+          <div class="functions__div p15">
+            <h2 class="functions__title m-t-b20">
+              5. Повернення значення з функції (Return Statement)
+            </h2>
+            <br />
+            <p class="functions__description">
+              <span>return</span> — це ключове слово JavaScript, яке
+              використовується для повернення результату роботи функції.
+            </p>
+            <br />
+            <p class="functions__description">
+              Простіше кажучи, за допомогою return функція може не просто
+              виконати певну дію, а й
+              <span
+                >передати отриманий результат назад у те місце, звідки її
+                викликали.</span
+              >
+            </p>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function calculateSum(a, b) {
+  return a + b;
+}
+
+calculateSum(5, 3);</code></pre>
+            </div>
+            <br />
+            <h3 class="functions__subtitle velvet-dusk">У цьому прикладі:</h3>
+            <br />
+            <ol class="functions__list m-list">
+              <li class="functions__item">
+                Створюємо функцію calculateSum() з параметрами a та b.
+              </li>
+              <li class="functions__item">
+                Під час виклику передаємо аргументи 5 та 3.
+              </li>
+              <li class="functions__item">Функція додає ці значення.</li>
+              <li class="functions__item">
+                Return повертає результат обчислення — 8.
+              </li>
+            </ol>
+            <br />
+            <p class="functions__description">
+              <span>return</span> дозволяє функції передати результат своєї
+              роботи туди, де її викликали. Повернене значення можна записати у
+              змінну, використати в іншому обчисленні або передати іншій
+              функції.
+            </p>
+            <br />
+            <h3 class="functions__subtitle velvet-dusk">
+              Різниця між return та console.log()
+            </h3>
+            <br />
+            <p class="functions__description">
+              Це один із найважливіших моментів, який потрібно зрозуміти. На
+              перший погляд може здатися, що
+              <span>return та console.log()</span> роблять одне й те саме, адже
+              обидва можуть показувати результат роботи функції.
+            </p>
+            <br />
+            <p class="functions__description">
+              Але насправді вони виконують різні завдання:
+            </p>
+            <br />
+            <ul class="functions__list m-list">
+              <li class="functions__item">
+                <span>console.log()</span> — виводить інформацію в консоль.
+              </li>
+              <li class="functions__item">
+                <span>return</span> — повертає значення з функції, щоб його
+                можна було використовувати далі в програмі.
+              </li>
+            </ul>
+            <br />
+            <br />
+            <p class="functions__description">
+              Коли функція повертає результат через return, ми можемо
+              використовувати його в інших частинах програми.
+            </p>
+            <br />
+            <p class="functions__description">
+              Є декілька поширених
+              <span>способів використання поверненого значення:</span>
+            </p>
+            <br />
+            <ol class="functions__list m-list">
+              <li class="functions__item">Записати результат у змінну.</li>
+              <br />
+              <div
+                class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>ffunction calculateSum(a, b) {
+  return a + b;
+}
+
+let result = calculateSum(10, 5);
+
+console.log(result);
+//15</code></pre>
+              </div>
+              <br />
+              <li class="functions__item">
+                Використати результат у математичних операціях.
+              </li>
+              <br />
+              <div
+                class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>function multiply(a, b) {
+  return a * b;
+}
+
+let result = multiply(5, 4) + 10;
+
+console.log(result);
+//30</code></pre>
+              </div>
+              <br />
+              <li class="functions__item">
+                Використати результат у математичних операціях.
+              </li>
+              <br />
+              <div
+                class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>function calculateSum(a, b) {
+  return a + b;
+}
+
+function showResult(result) {
+  console.log(`Результат: ${result}`);
+}
+
+showResult(calculateSum(10, 5));
+//Результат: 15</code></pre>
+              </div>
+              <br />
+            </ol>
+            <br />
+            <br />
+            <p class="functions__description">
+              Ще одна дуже важлива особливість return —
+              <span
+                >після його виконання функція одразу припиняє свою роботу.</span
+              >
+              Це означає, що команди, які знаходяться після return, уже не
+              виконуються.
+            </p>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function showMessage() {
+  console.log("Початок функції");
+
+  return "Привіт!";
+
+  console.log("Кінець функції");
+}
+
+let result = showMessage();
+
+console.log(result);
+//Початок функції
+  Привіт!</code></pre>
+            </div>
+            <br />
+            <br />
+            <p class="functions__description">
+              У JavaScript кожна функція повертає якесь значення. Навіть якщо ми
+              не прописали return самостійно. Якщо у функції немає оператора
+              return, JavaScript автоматично повертає спеціальне значення
+              <span>undefined.</span>
+            </p>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function sayHello() {
+  console.log("Привіт!");
+}
+
+let result = sayHello();
+
+console.log(result);
+//Привіт!
+  undefined</code></pre>
+            </div>
+            <br />
+            <div
+              class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function calculateSum(a, b) {
+  let sum = a + b;
+}
+
+let result = calculateSum(5, 3);
+
+console.log(result);
+//undefined</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

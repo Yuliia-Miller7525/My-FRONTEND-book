@@ -68,6 +68,12 @@
     gap: 10px;
     white-space: nowrap;
   }
+  .header__nav2 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    white-space: nowrap;
+  }
   .variables__div {
     grid-template-columns: repeat(1, 1fr);
   }
@@ -92,7 +98,8 @@
     background-color: transparent;
     color: #8c3c4a;
   }
-  .syntax__table {
+  .syntax__table,
+  .arrow__table {
     font-size: 12px;
   }
 }
@@ -110,11 +117,29 @@
   .syntax__code-box,
   .console__code-box,
   .conditions__code-box,
-  .loops__code-box {
+  .loops__code-box,
+  .functions__code-box,
+  .built-in__code-box,
+  .arrow__code-box,
+  .anonymous__code-box,
+  .nested-func__code-box,
+  .scope__code-box,
+  .lexical__code-box,
+  .higher-order__code-box,
+  .recursion__code-box {
     font-size: 10px;
   }
   .conditions__title,
-  .loops__title {
-    font-size: 20px;
+  .loops__title,
+  .functions__title,
+  .built-in__title,
+  .arrow__title,
+  .anonymous__title,
+  .nested-func__title,
+  .scope__title,
+  .lexical__title,
+  .higher-order__title,
+  .recursion__title {
+    font-size: 25px;
   }
 }

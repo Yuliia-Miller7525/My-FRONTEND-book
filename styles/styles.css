@@ -247,14 +247,19 @@ span {
 }
 .operators__table,
 .js-section__table,
-.syntax__table {
+.syntax__table,
+.functions__table,
+.arrow__table,
+.recursion__table {
   width: 100%;
   max-width: 700px;
   border-collapse: collapse;
   text-align: center;
 }
 .js-section__table,
-.syntax__table {
+.syntax__table,
+.functions__table,
+.arrow__table {
   text-align: left;
 }
 .operators__table th,
@@ -262,13 +267,22 @@ span {
 .js-section__table th,
 .js-section__table td,
 .syntax__table th,
-.syntax__table td {
-  padding: 14px 16px;
+.syntax__table td,
+.functions__table th,
+.functions__table td,
+.arrow__table th,
+.arrow__table td,
+.recursion__table th,
+.recursion__table td {
+  padding: 5px;
   border: 1px solid #8c3c4a;
 }
 .operators__table th,
 .js-section__table th,
-.syntax__table th {
+.syntax__table th,
+.functions__table th,
+.arrow__table th,
+.recursion__table th {
   background-color: #8c3c4a;
   color: #fffde5;
   font-weight: 700;
@@ -290,4 +304,11 @@ span {
 }
 .conditions__img {
   width: 500px;
+}
+.functions__subdiv,
+.nested-func__subdiv,
+.scope__subdiv {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
 }

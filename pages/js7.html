@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVA SCRIPT</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Closures</h1>
+          <p class="header__description peach-veil fs15">
+            a function that remembers variables from its outer closures, even
+            after the outer function has finished executing.
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="closures">
+        <div class="closures__container container">
+          <div class="closures__div p15">
+            <p class="closures__description">
+              <span>Замикання (Closure)</span> — це механізм JavaScript, завдяки
+              якому функція може запам'ятовувати змінні зі свого зовнішнього
+              оточення та використовувати їх навіть після того, як зовнішня
+              функція завершила своє виконання.
+            </p>
+            <br />
+            <p class="closures__description">
+              Простіше кажучи, функція може звертатися до змінних, які були
+              створені поза нею, навіть якщо функція, у якій ці змінні були
+              оголошені, вже завершила роботу.
+            </p>
+            <br />
+            <div
+              class="closures__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function outerFunction() {
+  let message = "Привіт!";
+
+  function innerFunction() {
+    console.log(message);
+  }
+
+  return innerFunction;
+}
+
+const myFunction = outerFunction();
+
+myFunction();
+//Привіт!
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="closures__subdiv card-border border-radius p15 center-txt"
+            >
+              <span>Запам'ятай:</span>
+              <br />
+              <br />
+              <p class="functions__description">
+                Коли JavaScript створює функцію, вона запам'ятовує своє лексичне
+                оточення (Lexical Environment) — тобто має доступ до змінних,
+                які були доступні їй під час створення.
+              </p>
+              <p class="functions__description">
+                Замикання дозволяє функції зберігати доступ до цих змінних
+                навіть після завершення зовнішньої функції.
+              </p>
+            </div>
+            <br />
+            <h3 class="closures__subtitle velvet-dusk">
+              Де використовуються замикання?
+            </h3>
+            <br />
+            <ol class="closures__list m-list">
+              <li class="closures__item">
+                <span>Збереження стану</span> — наприклад, створення
+                лічильників.
+              </li>
+              <li class="closures__item">
+                <span>Приховування даних</span> — обмеження прямого доступу до
+                змінних ззовні.
+              </li>
+              <li class="closures__item">
+                <span>Створення функцій із власними налаштуваннями</span> —
+                функції можуть запам'ятовувати передані параметри.
+              </li>
+              <li class="closures__item">
+                <span>Обробники подій</span> — функції можуть використовувати
+                змінні з навколишнього коду.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

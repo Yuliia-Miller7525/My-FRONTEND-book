@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVA SCRIPT</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Recursion</h1>
+          <p class="header__description peach-veil fs15">
+            a process in which a function calls itself to solve a problem.
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="recursion">
+        <div class="recursion__container container">
+          <div class="recursion__div border-bottom p15">
+            <h2 class="recursion__title m-b15">
+              1. Що таке рекурсія (Recursion)?
+            </h2>
+            <p class="recursion__description">
+              <span>Рекурсія</span> — це підхід у програмуванні, коли функція
+              викликає саму себе для розв'язання меншої частини тієї самої
+              задачі.
+            </p>
+            <br />
+            <p class="recursion__description">
+              Простими словами: функція викликає себе знову і знову, поки не
+              досягне умови зупинки.
+            </p>
+            <br />
+            <div
+              class="recursion__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function countdown(n) {
+    if (n === 0) {
+        console.log("Стоп!");
+        return;
+    }
+
+    console.log(n);
+    countdown(n - 1);
+}
+
+countdown(5);
+//5
+  4
+  3
+  2
+  1
+  Стоп!
+</code></pre>
+            </div>
+            <br />
+            <h3 class="recursion____subtitle velvet-dusk">
+              Як працює рекурсія всередині?
+            </h3>
+            <br />
+            <p class="recursion__description">
+              Коли функція викликає саму себе, попередній виклик не зникає. Він
+              чекає, поки вкладений виклик завершиться.
+            </p>
+            <br />
+            <p class="recursion__description">
+              Для цього використовується
+              <span>Call Stack (стек викликів)</span>.
+            </p>
+            <br />
+            <div
+              class="recursion__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function test(n) {
+    if (n === 0) return;
+
+    console.log("Start:", n);
+    test(n - 1);
+    console.log("End:", n);
+}
+
+test(3);
+//Start: 3
+  Start: 2
+  Start: 1
+  End: 1
+  End: 2
+  End: 3
+</code></pre>
+            </div>
+            <br />
+            <p class="recursion__description">
+              <span>Це дуже важливий момент:</span> спочатку рекурсія
+              заглиблюється, а потім повертається назад.
+            </p>
+            <br />
+          </div>
+
+          <div class="recursion__div p15">
+            <h2 class="recursion__title border=bottom m-b15">
+              2. Base Case та Recursive Case — як правильно будувати рекурсію
+            </h2>
+            <p class="recursion__description">
+              Щоб правильно створити рекурсивну функцію, потрібно розуміти дві
+              її основні складові: <span>Base Case (базовий випадок)</span> та
+              <span>Recursive Case (рекурсивний випадок)</span>.
+            </p>
+            <br />
+            <br />
+            <p class="recursion__description">
+              <span>Base Case</span> — це умова, за якої рекурсія припиняється і
+              функція більше не викликає саму себе.
+            </p>
+            <br />
+            <p class="recursion__description">
+              Простими словами: це точка зупинки рекурсії.
+            </p>
+            <br />
+            <div
+              class="recursion__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function count(n) {
+    if (n === 0) {
+        return;
+    }
+
+    console.log(n);
+    count(n - 1);
+}
+
+count(3);
+
+<b>У цьому прикладі:</b>
+if (n === 0) {
+    return;
+}
+<b>Це і є Base Case.</b>
+</code></pre>
+            </div>
+            <br />
+            <p class="recursion__description">
+              Коли значення n дорівнює 0, умова виконується, оператор return
+              завершує поточний виклик функції.
+            </p>
+            <br />
+            <p class="recursion__description">
+              Якщо не передбачити умову зупинки, функція продовжуватиме
+              викликати саму себе без кінця, доки JavaScript не видасть помилку
+              переповнення стека викликів (Maximum call stack size exceeded).
+            </p>
+            <br />
+            <br />
+            <p class="recursion__description">
+              <span>Recursive Case</span> — це частина функції, у якій
+              відбувається повторний виклик цієї самої функції з новими
+              аргументами.
+            </p>
+            <br />
+            <p class="recursion__description">
+              Простими словами: це те, що змушує функцію продовжувати виконання
+              задачі, поступово наближаючись до умови зупинки.
+            </p>
+            <br />
+            <div
+              class="recursion__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function count(n) {
+    if (n === 0) {
+        return;
+    }
+
+    console.log(n);
+    count(n - 1);
+}
+
+<b>Ось ця частина:</b>
+count(n - 1);
+<b>є Recursive Case.</b>
+</code></pre>
+            </div>
+            <br />
+            <p class="recursion__description">
+              <span>Це дуже важливий момент:</span> спочатку рекурсія
+              заглиблюється, а потім повертається назад.
+            </p>
+            <br />
+          </div>
+
+          <div class="recursion__div border-bottom p15">
+            <h3 class="recursion__subtitle velvet-dusk">
+              Приклад рекурсії: обчислення суми чисел
+            </h3>
+            <br />
+            <p class="recursion__description">
+              Створимо функцію <b>sum(n)</b>, яка обчислює суму всіх натуральних
+              чисел від 1 до переданого числа.
+            </p>
+            <p class="recursion__description">
+              Наприклад, якщо передати число 5, результатом буде:
+            </p>
+            <p class="recursion__example center-txt">1 + 2 + 3 + 4 + 5 = 15</p>
+            <br />
+            <div
+              class="recursion__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function sum(n) {
+    if (n === 1) {
+        return 1;
+    }
+
+    return n + sum(n - 1);
+}
+
+console.log(sum(5));
+// 15
+</code></pre>
+            </div>
+            <br />
+            <h3 class="recursion__subtitle velvet-dusk">Як працює цей код?</h3>
+            <br />
+            <p class="recursion__description">
+              <b>1. Виклик функції:</b>
+            </p>
+            <pre class="recursion__code"><code>
+sum(5);
+    </code></pre>
+            <p class="recursion__description">
+              Ми передаємо у функцію число 5. Тому змінна
+              <b>n</b> отримує значення 5.
+            </p>
+            <br />
+            <p class="recursion__description">
+              <b>2. Рекурсивні виклики:</b>
+            </p>
+            <br />
+            <p class="recursion__description">
+              Функція перевіряє умову <b>n === 1</b>. Оскільки 5 не дорівнює 1,
+              вона переходить до рекурсивного виклику:
+            </p>
+            <pre class="recursion__code"><code>
+return n + sum(n - 1);
+    </code></pre>
+            <p class="recursion__description">
+              JavaScript підставляє значення n = 5 та виконує віднімання 5 - 1.
+              Тому наступний виклик буде sum(4). Кожного разу функція викликає
+              себе з числом на одиницю менше.
+            </p>
+            <br />
+            <table class="recursion__table">
+              <thead>
+                <tr>
+                  <th>Виклик</th>
+                  <th>Значення n</th>
+                  <th>Наступна дія</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>sum(5)</td>
+                  <td>5</td>
+                  <td>sum(4)</td>
+                </tr>
+                <tr>
+                  <td>sum(4)</td>
+                  <td>4</td>
+                  <td>sum(3)</td>
+                </tr>
+                <tr>
+                  <td>sum(3)</td>
+                  <td>3</td>
+                  <td>sum(2)</td>
+                </tr>
+                <tr>
+                  <td>sum(2)</td>
+                  <td>2</td>
+                  <td>sum(1)</td>
+                </tr>
+                <tr>
+                  <td>sum(1)</td>
+                  <td>1</td>
+                  <td>Зупинка</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <p class="recursion__description">
+              <b>3. Умова зупинки (Base Case):</b>
+            </p>
+            <pre class="recursion__code"><code>
+if (n === 1) {
+    return 1;
+}
+    </code></pre>
+            <p class="recursion__description">
+              Коли n дорівнює 1, умова виконується. Функція повертає число 1 і
+              більше не викликає себе.
+            </p>
+            <br />
+            <p class="recursion__description">
+              <b>4. Повернення результатів:</b>
+            </p>
+            <br />
+            <p class="recursion__description">
+              Після досягнення умови зупинки функція починає повертатися до
+              попередніх викликів та виконувати відкладені обчислення.
+            </p>
+            <pre class="recursion__code"><code>
+sum(1) = 1
+sum(2) = 2 + 1  = 3
+sum(3) = 3 + 3  = 6
+sum(4) = 4 + 6  = 10
+sum(5) = 5 + 10 = 15
+    </code></pre>
+            <p class="recursion__description">
+              Кожен попередній виклик додає своє значення n до результату
+              наступного виклику.
+            </p>
+            <br />
+            <p class="recursion__description">
+              <span>Результат виконання:</span> sum(5) = 15
+            </p>
+            <br />
+            <h3 class="recursion__subtitle velvet-dusk">
+              Важливо запам'ятати:
+            </h3>
+            <br />
+            <ol class="recursion__list m-list-small">
+              <li>
+                Спочатку функція викликає себе з меншими значеннями та доходить
+                до Base Case.
+              </li>
+              <li>Base Case повертає початкове значення для обчислення — 1.</li>
+              <li>
+                Потім попередні виклики поступово виконують відкладені
+                обчислення.
+              </li>
+              <li>
+                Оператор return повертає результат наступного виклику, який
+                використовується для подальшого обчислення.
+              </li>
+            </ol>
+          </div>
+
+          <div class="recursion__div border-bottom p15">
+            <h2 class="recursion__title m-b15">
+              3. Call Stack (Стек викликів)
+            </h2>
+            <p class="recursion__description">
+              <span>Call Stack (стек викликів)</span> — це механізм JavaScript,
+              який відстежує виклики функцій та порядок їх виконання.
+            </p>
+            <br />
+            <p class="recursion__description">
+              Простими словами: коли одна функція викликає іншу, JavaScript
+              запам'ятовує, де потрібно продовжити виконання після завершення
+              вкладеної функції.
+            </p>
+            <br />
+            <p class="recursion__description">
+              Стек працює за принципом <span>LIFO (Last In, First Out)</span> —
+              останнім прийшов, першим вийшов. Тобто, остання функція, яка
+              потрапила у стек, виконається першою. Після її завершення
+              JavaScript повернеться до попередньої функції.
+            </p>
+            <br />
+            <div
+              class="recursion__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function first() {
+    console.log("Перша функція");
+}
+
+function second() {
+    first();
+    console.log("Друга функція");
+}
+
+function third() {
+    second();
+    console.log("Третя функція");
+}
+
+third();
+//Перша функція
+  Друга функція
+  Третя функція
+</code></pre>
+            </div>
+            <br />
+            <h3 class="recursion__subtitle velvet-dusk">
+              Чому саме в такому порядку?
+            </h3>
+            <br />
+            <ol class="recursion__list m-list-small">
+              <li>Викликається third().</li>
+              <li>Функція third() викликає second().</li>
+              <li>Функція second() викликає first().</li>
+              <li>first() завершується.</li>
+              <li>JavaScript повертається до second()</li>
+              <li>second() завершується.</li>
+              <li>JavaScript повертається до third().</li>
+            </ol>
+            <br />
+          </div>
+
+          <div class="recursion__div p15">
+            <h2 class="recursion__title border=bottom m-b15">
+              4. Factorial (Факторіал)
+            </h2>
+            <p class="recursion__description">
+              <span>Факторіал (Factorial)</span> — це добуток усіх натуральних
+              чисел від 1 до заданого числа.
+            </p>
+            <br />
+            <p class="recursion__description">
+              Факторіал позначається знаком <span>!</span>.
+            </p>
+            <br />
+            <p class="recursion__description">
+              <span>Наприклад:</span>
+            </p>
+            <br />
+            <p class="recursion__description">3! = 1 × 2 × 3 = 6</p>
+            <br />
+            <p class="recursion__description">4! = 1 × 2 × 3 × 4 = 24</p>
+            <br />
+            <p class="recursion__description">5! = 1 × 2 × 3 × 4 × 5 = 120</p>
+            <br />
+            <p class="recursion__description">0! = 1</p>
+            <br />
+            <div
+              class="recursion__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function factorial(n) {
+
+    if (n === 0 || n === 1) {
+        return 1;
+    }
+
+    return n * factorial(n - 1);
+}
+
+console.log(factorial(5));
+// 120
+</code></pre>
+            </div>
+            <br />
+            <h3 class="recursion__subtitle velvet-dusk">Як працює цей код?</h3>
+            <br />
+            <p class="recursion__description">
+              <b>1. Виклик функції:</b>
+            </p>
+            <pre class="recursion__code"><code>
+factorial(5);
+    </code></pre>
+            <p class="recursion__description">
+              Ми передаємо у функцію число 5. Тому змінна
+              <b>n</b> отримує значення 5.
+            </p>
+            <br />
+            <p class="recursion__description">
+              <b>2. Рекурсивні виклики:</b>
+            </p>
+            <br />
+            <p class="recursion__description">
+              Функція перевіряє умову <b>n === 0 || n === 1</b>. Оскільки 5 не
+              дорівнює 1/0, вона переходить до рекурсивного виклику:
+            </p>
+            <pre class="recursion__code"><code>
+  return n * factorial(n - 1);
+    </code></pre>
+            <p class="recursion__description">
+              JavaScript підставляє значення n = 5 та виконує віднімання 5 - 1.
+              Тому наступний виклик буде factorial(4). Кожного разу функція
+              викликає себе з числом на одиницю менше.
+            </p>
+            <br />
+            <table class="recursion__table">
+              <thead>
+                <tr>
+                  <th>Виклик</th>
+                  <th>Значення n</th>
+                  <th>Наступна дія</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>factorial(5)</td>
+                  <td>5</td>
+                  <td>factorial(4)</td>
+                </tr>
+                <tr>
+                  <td>factorial(4)</td>
+                  <td>4</td>
+                  <td>factorial(3)</td>
+                </tr>
+                <tr>
+                  <td>factorial(3)</td>
+                  <td>3</td>
+                  <td>factorial(2)</td>
+                </tr>
+                <tr>
+                  <td>factorial(2)</td>
+                  <td>2</td>
+                  <td>factorial(1)</td>
+                </tr>
+                <tr>
+                  <td>factorial(1)</td>
+                  <td>1</td>
+                  <td>Зупинка</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <p class="recursion__description">
+              <b>3. Умова зупинки (Base Case):</b>
+            </p>
+            <pre class="recursion__code"><code>
+if (n === 0 || n === 1) {
+    return 1;
+}
+    </code></pre>
+            <p class="recursion__description">
+              Коли n дорівнює 1 або 0, умова виконується. Функція повертає число
+              1 і більше не викликає себе.
+            </p>
+            <br />
+            <p class="recursion__description">
+              <b>4. Повернення результатів:</b>
+            </p>
+            <br />
+            <p class="recursion__description">
+              Після досягнення умови зупинки функція починає повертатися до
+              попередніх викликів та виконувати відкладені обчислення.
+            </p>
+            <pre class="recursion__code"><code>
+factorial(1) = 1
+factorial(2) = 2 * 1  = 2
+factorial(3) = 3 * 2  = 6
+factorial(4) = 4 * 6  = 24
+factorial(5) = 5 * 24 = 120
+    </code></pre>
+            <p class="recursion__description">
+              Кожен попередній виклик множить своє значення n до результату
+              наступного виклику.
+            </p>
+            <br />
+            <p class="recursion__description">
+              <span>Результат виконання:</span> factorial(5) = 120
+            </p>
+            <br />
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

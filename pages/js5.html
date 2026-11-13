@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVA SCRIPT</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Types of functions</h1>
+          <nav class="header__nav2 flex space-center gap">
+            <a class="header__link" href="#built-in-functions"
+              >Built-in Functions</a
+            >
+            <a class="header__link" href="#arrow-functions">Arrow Functions</a>
+            <a class="header__link" href="#anonymous-functions"
+              >Anonymous Functions</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section id="built-in-functions" class="built-in">
+        <div class="built-in__container container">
+          <div class="built-in__div p15">
+            <h2 class="built-in__title m-b15">
+              1. Вбудовані функції (Built-in Functions)
+            </h2>
+            <p class="built-in__description">
+              У JavaScript є три вбудовані функції, які дозволяють взаємодіяти з
+              користувачем через прості браузерні вікна:
+            </p>
+            <br />
+            <ul class="built-in__list m-list">
+              <li class="built-in__item">
+                <span>alert()</span> — показує повідомлення.
+              </li>
+              <li class="built-in__item">
+                <span>prompt()</span> — запитує інформацію в користувача.
+              </li>
+              <li class="built-in__item">
+                <span>confirm()</span> — запитує підтвердження дії.
+              </li>
+            </ul>
+            <br />
+            <p class="built-in__description">
+              Вони належать до об'єкта window, тому можна писати як
+              <span>window.alert()</span>, так і просто <span>alert().</span>
+            </p>
+          </div>
+
+          <div class="built-in__div p15">
+            <h2 class="built-in__title m-b15">alert(message)</h2>
+            <p class="built-in__description">
+              Функція <span>alert()</span> виводить невелике модальне вікно з
+              повідомленням і кнопкою OK.
+            </p>
+            <br />
+            <div class="built-in__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>alert(message);</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="built-in__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>alert("Привіт! Ласкаво просимо на сайт!");
+
+//Коли браузер виконає цей код,
+користувач побачить повідомлення
+та зможе натиснути OK.
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="built-in__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let userName = "Олена";
+
+alert("Привіт, " + userName + "!");
+//Результат:
+браузер покаже повідомлення
+Привіт, Олена!.
+
+<b>АБО</b>
+
+let age = 25;
+
+alert(`Тобі ${age} років!`);
+//Результат:
+браузер покаже повідомлення
+Тобі 25 років!
+</code></pre>
+            </div>
+          </div>
+
+          <div class="built-in__div p15">
+            <h2 class="built-in__title m-b15">prompt(message, default)</h2>
+            <p class="built-in__description">
+              Функція <span>prompt()</span> відкриває вікно з текстом, полем для
+              введення інформації та кнопками OK і Cancel.
+            </p>
+            <br />
+            <div class="built-in__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>prompt(message, default);</b>      
+де default — значення, яке буде попередньо записане в поле введення (необов'язковий параметр).           
+            </code></pre>
+            </div>
+            <br />
+            <div
+              class="built-in__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let userName = prompt("Як тебе звати?");
+
+alert(`Привіт, ${userName}!`);
+
+// Це працює таким чином,
+що спочатку браузер запитує ім'я,
+користувач вводить, наприклад, Олена,
+значення зберігається в змінній userName,
+а alert() показує привітання.
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="built-in__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let city = prompt("У якому місті ти живеш?",
+"Київ");
+
+alert(`Ти живеш у місті ${city}`);
+
+//Тут у полі введення вже буде написано «Київ»,
+але користувач зможе змінити це значення.
+</code></pre>
+            </div>
+            <br />
+            <h3 class="built-in__subtitle velvet-dusk">
+              Що повертає prompt()?
+            </h3>
+            <br />
+            <ul class="built-in__list m-list">
+              <li class="built-in__item">
+                <span>Натиснув OK</span> — введений текст (тип String).
+              </li>
+              <li class="built-in__item">
+                <span>Натиснув OK, нічого не ввів</span> — Порожній рядок "".
+              </li>
+              <li class="built-in__item">
+                <span>Натиснув Cancel</span> — null.
+              </li>
+            </ul>
+          </div>
+
+          <div class="built-in__div border-bottom p15">
+            <h2 class="built-in__title m-b15">confirm(question)</h2>
+            <p class="built-in__description">
+              Функція <span>confirm()</span> показує вікно з повідомленням і
+              двома кнопками: OK та Cancel.
+            </p>
+            <br />
+            <div class="built-in__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>confirm(question);</b>      
+question — запитання, на яке користувач має відповісти,
+а повертає булеве значення: true або false.      
+            </code></pre>
+            </div>
+            <br />
+            <div
+              class="built-in__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let answer = confirm("Хочеш видалити цей файл?");
+
+console.log(answer);
+//Результат:
+  Натиснув OK → true.
+  Натиснув Cancel → false.
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="built-in__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let answer = confirm("Ти хочеш продовжити?");
+
+if (answer === true) {
+    alert("Продовжуємо!");
+} else {
+    alert("Дію скасовано.");
+}
+//Тут:
+  Якщо користувач натисне OK — 
+  побачить «Продовжуємо!».
+  Якщо натисне Cancel — 
+  побачить «Дію скасовано».
+</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="arrow-functions" class="arrow">
+        <div class="arrow__container container">
+          <div class="arrow__div p15">
+            <h2 class="arrow__title m-b15">
+              2. Стрілкові функції (Arrow Functions)
+            </h2>
+            <p class="arrow__description">
+              <span>Стрілкова функція (Arrow Function)</span> — це коротший
+              спосіб записати функцію в JavaScript.
+            </p>
+            <br />
+            <div
+              class="arrow__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>Звичайна функція:</b>
+function sayHello() {
+  console.log("Hello!");
+}
+
+sayHello();
+
+<b>Стрілкова функція:</b>
+const sayHello = () => {
+  console.log("Hello!");
+};
+
+sayHello();
+
+<b>Результат в обох випадках:</b>
+//Hello!
+</code></pre>
+            </div>
+            <br />
+            <p class="arrow__description">Розбираємо синтаксис:</p>
+            <br />
+            <ul class="arrow__list m-list">
+              <li class="arrow__item">
+                <span>const</span> — створюємо змінну.
+              </li>
+              <li class="arrow__item">
+                <span>sayHello</span> — назва функції.
+              </li>
+              <li class="arrow__item">
+                <span>=</span> — присвоюємо функцію змінній.
+              </li>
+              <li class="arrow__item">
+                <span>()</span> — місце для параметрів.
+              </li>
+              <li class="arrow__item">
+                <span>=></span> — стрілка, яка позначає стрілкову функцію.
+              </li>
+              <li class="arrow__item"><span>{}</span> — тіло функції.</li>
+              <li class="arrow__item">
+                <span>console.log()</span> — команда, яка виконується.
+              </li>
+            </ul>
+            <br />
+            <p class="arrow__description">
+              <span>Важливо:</span> стрілкова функція — це функція, яку ми
+              присвоюємо змінній.
+            </p>
+          </div>
+
+          <div class="arrow__div p15">
+            <h3 class="arrow__subtitle velvet-dusk">
+              Стрілкові функції з параметрами
+            </h3>
+            <br />
+            <div
+              class="arrow__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>Звичайна функція:</b>
+function greet(name) {
+  console.log(`Привіт, ${name}!`);
+}
+
+greet("Оля");
+
+<b>Стрілкова функція:</b>
+const greet = (name) => {
+  console.log(`Привіт, ${name}!`);
+};
+
+greet("Оля");
+
+<b>Результат в обох випадках:</b>
+//Привіт, Оля!
+</code></pre>
+            </div>
+            <br />
+            <p class="arrow__description">
+              <span>Важливо:</span> якщо параметр один — дужки можна прибрати,
+              але якщо параметрів два або більше, дужки обов'язкові. Якщо ж
+              параметрів немає, круглі дужки також обов'язкові.
+            </p>
+          </div>
+
+          <div class="arrow__div p15">
+            <h3 class="arrow__subtitle velvet-dusk">
+              Скорочений запис: implicit return
+            </h3>
+            <br />
+            <p class="arrow__description">
+              Це одна з найважливіших особливостей стрілкових функцій.
+              <span
+                >Якщо функція виконує лише одну дію та повертає результат, можна
+                прибрати фігурні дужки {} і слово return.</span
+              >
+            </p>
+            <br />
+            <div
+              class="arrow__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>Звичайний запис:</b>
+const sum = (a, b) => {
+  return a + b;
+};
+
+console.log(sum(5, 3));
+
+<b>Скорочений запис:</b>
+const sum = (a, b) => a + b;
+
+console.log(sum(5, 3));
+
+<b>Результат однаковий:</b>
+//8
+</code></pre>
+            </div>
+            <br />
+            <p class="arrow__description">
+              <span>Важливо:</span> коли всередині функції декілька команд - не
+              можна використовувати скорочений запис. Фігурні дужки потрібні,
+              тому що ми виконуємо декілька дій.
+            </p>
+            <br />
+            <div
+              class="arrow__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const calculate = (a, b) => {
+  const result = a + b;
+  console.log("Результат:");
+
+  return result;
+};</code></pre>
+            </div>
+            <br />
+            <p class="arrow__description">
+              <span>Є ще один нюанс:</span> якщо хочемо повернути об'єкт, його
+              потрібно взяти в круглі дужки. Інакше JavaScript може сприйняти {}
+              як тіло функції, а не як об'єкт.
+            </p>
+            <br />
+            <div
+              class="arrow__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const createUser = () => 
+({ name: "Anna", age: 25 });</code></pre>
+            </div>
+            <br />
+          </div>
+
+          <div class="arrow__div border-bottom p15">
+            <h3 class="arrow__subtitle velvet-dusk">
+              Чим Arrow Function відрізняється від звичайної функції?
+            </h3>
+            <br />
+            <table class="arrow__table">
+              <thead>
+                <tr>
+                  <th>Звичайна функція</th>
+                  <th>Стрілкова функція</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Має власний <code>this</code>.</td>
+                  <td>
+                    Не має власного <code>this</code>, а використовує його із
+                    зовнішньої області видимості.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Можна використовувати оператор <code>new</code> для
+                    створення об'єктів.
+                  </td>
+                  <td>Не можна використовувати оператор <code>new</code>.</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Function Declaration можна викликати до місця її оголошення
+                    завдяки hoisting.
+                  </td>
+                  <td>
+                    Стрілкову функцію, записану через <code>const</code> або
+                    <code>let</code>, не можна викликати до її ініціалізації.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>Має власний об'єкт <code>arguments</code>.</td>
+                  <td>Не має власного <code>arguments</code>.</td>
+                </tr>
+
+                <tr>
+                  <td>Може бути звичайною функцією-конструктором.</td>
+                  <td>Не може бути функцією-конструктором.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="anonymous-functions" class="anonymous">
+        <div class="anonymous__container container">
+          <div class="anonymous__div p15">
+            <h2 class="anonymous__title m-b15">
+              3. Анонімні функції (Anonymous Functions)
+            </h2>
+            <p class="anonymous__description">
+              <span>Анонімна функція (Anonymous Function)</span> — це функція,
+              яка не має власного імені.
+            </p>
+            <br />
+            <div
+              class="anonymous__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function() {
+  console.log("Привіт!");
+}</code></pre>
+            </div>
+            <br />
+            <p class="anonymous__description">
+              <span>Важливо:</span> у такому вигляді ми не можемо просто
+              оголосити її окремою інструкцією, як звичайну Function
+              Declaration. Анонімні функції зазвичай використовуються як частина
+              іншого виразу: наприклад, присвоюються змінній або передаються в
+              іншу функцію.
+            </p>
+            <br />
+            <p class="anonymous__description">
+              <span>Найпоширеніший спосіб використання анонімної функції</span>
+              — через Function Expression (функціональний вираз).
+            </p>
+            <br />
+            <div
+              class="anonymous__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const sayHello = function() {
+  console.log("Привіт!");
+};
+
+sayHello();
+</code></pre>
+            </div>
+            <br />
+            <p class="anonymous__description">
+              <span>Зверни увагу:</span> хоча функція не має власного імені, ми
+              все одно можемо її викликати через змінну, якій її присвоїли.
+            </p>
+          </div>
+
+          <div class="anonymous__div p15">
+            <h3 class="anonymous__subtitle velvet-dusk">
+              Передавання анонімної функції як аргументу
+            </h3>
+            <br />
+            <p class="anonymous__description">
+              Анонімні функції також можна передавати безпосередньо в інші
+              функції як аргументи.
+            </p>
+            <br />
+            <div
+              class="anonymous__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>setTimeout(function() {
+  console.log("Привіт через 2 секунди!");
+}, 2000);
+</code></pre>
+            </div>
+            <br />
+            <p class="anonymous__description">Що тут відбувається?</p>
+            <br />
+            <ul class="anonymous__list m-list">
+              <li class="anonymous__item">
+                <span>setTimeout()</span> — вбудована функція JavaScript, яка
+                виконує передану функцію після певної затримки.
+              </li>
+              <li class="anonymous__item">
+                <span>function() { ... }</span> — анонімна функція, яку ми
+                передаємо як аргумент.
+              </li>
+              <li class="anonymous__item">
+                <span>2000</span> — час затримки в мілісекундах (2 секунди).
+              </li>
+            </ul>
+            <br />
+            <p class="anonymous__description">
+              Тобто ми не створюємо окрему змінну для функції, а одразу
+              передаємо її туди, де вона потрібна.
+            </p>
+          </div>
+
+          <div class="anonymous__div p15">
+            <h3 class="anonymous__subtitle velvet-dusk">
+              Для чого використовують анонімні функції?
+            </h3>
+            <br />
+            <ul class="anonymous__list m-list">
+              <li class="anonymous__item">
+                функцію не потрібно використовувати багато разів у різних місцях
+                програми;
+              </li>
+              <li class="anonymous__item">
+                потрібно передати функцію як аргумент іншій функції;
+              </li>
+              <li class="anonymous__item">
+                потрібно передати функцію як аргумент іншій функції;
+              </li>
+              <li class="anonymous__item">
+                потрібно виконати невелику дію без створення окремої іменованої
+                функції.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVA SCRIPT</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Nested Functions & Scope</h1>
+        </div>
+      </div>
+    </header>
+
+    <main class="main background basic-padding">
+      <section class="nested-func">
+        <div class="nested-func__container container">
+          <div class="nested-func__div p15">
+            <h2 class="nested-func__title m-b15">
+              1. Вкладені функції (Nested Functions)
+            </h2>
+            <p class="nested-func__description">
+              <span>Вкладена функція (Nested Function)</span> — це функція, яка
+              створюється всередині іншої функції. Тобто одна функція може
+              містити в собі іншу функцію.
+            </p>
+            <br />
+            <h3 class="nested-func__subtitle velvet-dusk">
+              Вкладені функції використовують, коли потрібно:
+            </h3>
+            <br />
+            <ul class="nested-func__list m-list">
+              <li class="nested-func__item">
+                розділити велику функцію на менші частини;
+              </li>
+              <li class="nested-func__item">
+                винести окремі дії в допоміжні функції;
+              </li>
+              <li class="nested-func__item">
+                обмежити доступ до певних функцій, щоб вони були доступні лише
+                всередині зовнішньої функції.
+              </li>
+            </ul>
+            <br />
+            <div
+              class="nested-func__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function outerFunction() {
+  function innerFunction() {
+    console.log("Це вкладена функція");
+  }
+
+  innerFunction();
+}
+
+outerFunction();
+//Це вкладена функція
+</code></pre>
+            </div>
+            <br />
+            <p class="nested-func__description">Розберімо код:</p>
+            <br />
+            <ul class="nested-func__list m-list">
+              <li class="nested-func__item">
+                <span>outerFunction()</span> — зовнішня функція.
+              </li>
+              <li class="nested-func__item">
+                <span>innerFunction()</span> — вкладена функція, яка знаходиться
+                всередині зовнішньої.
+              </li>
+              <li class="nested-func__item">
+                <span>innerFunction()</span> — виклик вкладеної функції.
+              </li>
+              <li class="nested-func__item">
+                <span>outerFunction()</span> — виклик зовнішньої функції, під
+                час виконання якої викликається і вкладена функція.
+              </li>
+            </ul>
+            <br />
+            <div
+              class="nested-func__subdiv card-border border-radius p15 center-txt"
+            >
+              <span>Важливо запам'ятати!</span>
+              <br />
+              <br />
+              <p class="functions__description">
+                Вкладена функція може бути викликана всередині зовнішньої
+                функції. Але безпосередньо ззовні звернутися до неї не можна,
+                якщо вона оголошена локально всередині зовнішньої функції.
+              </p>
+            </div>
+            <br />
+          </div>
+
+          <div class="nested-func__div border-bottom p15">
+            <h3 class="nested-func__subtitle velvet-dusk">
+              Доступ вкладених функцій до зовнішніх змінних
+            </h3>
+            <br />
+            <p class="nested-func__description">
+              Одна з важливих особливостей вкладених функцій полягає в тому, що
+              <span
+                >вкладена функція має доступ до змінних, оголошених у зовнішній
+                функції.</span
+              >
+            </p>
+            <br />
+            <div
+              class="nested-func__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function outerFunction() {
+  let message = "Привіт, JavaScript!";
+
+  function innerFunction() {
+    console.log(message);
+  }
+
+  innerFunction();
+}
+
+outerFunction();
+//Привіт, JavaScript!
+</code></pre>
+            </div>
+            <br />
+            <p class="nested-func__description">
+              Вкладена функція може не лише отримувати значення зовнішніх
+              змінних, а й змінювати їх.
+            </p>
+            <br />
+            <div
+              class="nested-func__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function counter() {
+  let count = 0;
+
+  function increase() {
+    count++;
+    console.log(count);
+  }
+
+  increase();
+  increase();
+  increase();
+}
+
+counter();
+//1
+  2
+  3
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="nested-func__subdiv card-border border-radius p15 center-txt"
+            >
+              <span>Важливо запам'ятати!</span>
+              <br />
+              <br />
+              <p class="functions__description">
+                Вкладена функція має доступ до змінних зовнішньої функції,
+                навіть якщо вони оголошені через let або const. Водночас
+                зовнішня функція не має автоматичного доступу до локальних
+                змінних вкладеної функції.
+              </p>
+            </div>
+            <br />
+          </div>
+        </div>
+      </section>
+
+      <section class="scope">
+        <div class="scope__container container">
+          <div class="scope__div p15">
+            <h2 class="scope__title m-b15">2. Область видимості (Scope)</h2>
+            <p class="scope__description">
+              <span>Область видимості (Scope)</span> — це частина програми, у
+              якій змінна або функція доступна для використання. Простіше
+              кажучи, область видимості визначає, звідки саме ми можемо
+              звертатися до змінної або функції. Наприклад, одну змінну можна
+              використовувати в усьому коді, а іншу — лише всередині певної
+              функції.
+            </p>
+            <br />
+            <p class="scope__description">
+              Простіше кажучи, область видимості визначає, звідки саме ми можемо
+              звертатися до змінної або функції. Наприклад, одну змінну можна
+              використовувати в усьому коді, а іншу — лише всередині певної
+              функції.
+            </p>
+            <br />
+            <p class="scope__description">
+              У JavaScript є <span>три основні типи областей видимості:</span>
+            </p>
+            <br />
+            <ol class="scope__list m-list">
+              <li class="scope__item">
+                Глобальна область видимості (Global Scope).
+              </li>
+              <li class="scope__item">
+                Функціональна область видимості (Function Scope).
+              </li>
+              <li class="scope__item">
+                Блокова область видимості (Block Scope).
+              </li>
+            </ol>
+          </div>
+
+          <div class="scope__div p15">
+            <h2 class="scope__title m-b15">
+              Глобальна область видимості (Global Scope)
+            </h2>
+            <br />
+            <p class="scope__description">
+              <span>Глобальна область видимості (Global Scope)</span> — це
+              область, у якій змінні та функції доступні практично з будь-якої
+              частини програми.
+            </p>
+            <br />
+            <p class="scope__description">
+              Якщо змінну оголосити поза всіма функціями та блоками, вона буде
+              доступна в різних частинах коду.
+            </p>
+            <br />
+            <div
+              class="scope__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let userName = "Олена";
+
+function showUser() {
+  console.log(userName);
+}
+
+showUser();
+
+console.log(userName);
+//Олена
+  Олена
+</code></pre>
+            </div>
+            <br />
+            <div class="scope__subdiv card-border border-radius p15 center-txt">
+              <span>Важливо запам'ятати!</span>
+              <br />
+              <br />
+              <p class="scope__description">
+                Глобальні змінні доступні з різних частин програми. Однак не
+                варто створювати надто багато глобальних змінних, оскільки це
+                може ускладнити роботу з кодом і призвести до конфліктів між
+                змінними.
+              </p>
+            </div>
+          </div>
+
+          <div class="scope__div p15">
+            <h2 class="scope__title m-b15">
+              Функціональна область видимості (Function Scope)
+            </h2>
+            <br />
+            <p class="scope__description">
+              <span>Функціональна область видимості (Function Scope)</span> — це
+              область, у якій змінні, оголошені всередині функції через let,
+              const або var, доступні лише в межах цієї функції.
+            </p>
+            <br />
+            <p class="scope__description">
+              Простіше кажучи, якщо ми створили змінну всередині функції, то за
+              межами цієї функції звернутися до неї не зможемо.
+            </p>
+            <br />
+            <div
+              class="scope__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function showMessage() {
+  let message = "Привіт!";
+
+  console.log(message);
+}
+
+showMessage();
+
+console.log(message);
+//Під час виклику showMessage()
+у консолі з'явиться:
+Привіт!
+
+//Але наступний console.log(message)
+спричинить помилку:
+ReferenceError: message is not defined
+</code></pre>
+            </div>
+          </div>
+
+          <div class="scope__div border-bottom p15">
+            <h2 class="scope__title m-b15">
+              Блокова область видимості (Block Scope)
+            </h2>
+            <br />
+            <p class="scope__description">
+              <span>Блокова область видимості (Block Scope)</span> — це область,
+              обмежена фігурними дужками { }, усередині якої доступні змінні,
+              оголошені через let або const.
+            </p>
+            <br />
+            <p class="scope__description">Блоками можуть бути:</p>
+            <br />
+            <ul class="scope__list m-list">
+              <li class="scope__item">умовні конструкції if, else;</li>
+              <li class="scope__item">цикли for, while;</li>
+              <li class="scope__item">окремі блоки коду { }.</li>
+            </ul>
+            <br />
+            <div
+              class="scope__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>if (true) {
+  let message = "Привіт!";
+  const number = 10;
+
+  console.log(message);
+  console.log(number);
+}
+
+console.log(message);
+console.log(number);
+//Привіт!
+  10
+</code></pre>
+            </div>
+            <br />
+            <p class="scope__description">
+              Після виходу за межі блоку виникнуть помилки ReferenceError,
+              оскільки змінні message та number оголошені всередині блоку через
+              let і const.
+            </p>
+            <br />
+            <div class="scope__subdiv card-border border-radius p15 center-txt">
+              <span>Важлива особливість:</span>
+              <br />
+              <br />
+              <p class="scope__description">
+                <span>let та const</span> — мають блочну область видимості
+              </p>
+              <p class="scope__description">
+                <span>var</span> — має функціональну область видимості, а не
+                блочну.
+              </p>
+            </div>
+            <br />
+            <div
+              class="scope__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>if (true) {
+  var first = 10;
+  let second = 20;
+  const third = 30;
+}
+
+console.log(first);
+// 10
+console.log(second);
+// ReferenceError
+console.log(third);
+// ReferenceError
+</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lexical">
+        <div class="lexical__container container">
+          <div class="lexical__div p15">
+            <h2 class="lexical__title m-b15">
+              3. Лексична область видимості (Lexical Scope)
+            </h2>
+            <p class="lexical__description">
+              <span>Лексична область видимості (Lexical Scope)</span> — це
+              правило JavaScript, за яким доступ до змінних визначається місцем,
+              де функція була оголошена в коді, а не місцем, звідки її
+              викликали.
+            </p>
+            <br />
+            <p class="lexical__description">
+              Простіше кажучи, JavaScript визначає доступність змінних за
+              структурою коду.
+            </p>
+            <br />
+            <div
+              class="lexical__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let userName = "Олена";
+
+function showUser() {
+  console.log(userName);
+}
+
+showUser();
+//Олена
+</code></pre>
+            </div>
+            <br />
+            <h3 class="lexical__subtitle velvet-dusk">
+              Чому функція showUser() бачить змінну userName?
+            </h3>
+            <br />
+            <ul class="lexical__list m-list">
+              <li class="lexical__item">
+                Змінна <span>userName</span> оголошена в глобальній області
+                видимості.
+              </li>
+              <li class="lexical__item">
+                Функція <span>showUser()</span> оголошена в цій самій області.
+              </li>
+              <li class="lexical__item">
+                Усередині функції можна звертатися до змінних зовнішньої області
+                видимості.
+              </li>
+            </ul>
+            <br />
+            <div
+              class="lexical__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let message = "Глобальне повідомлення";
+
+function outerFunction() {
+  let message = "Повідомлення зовнішньої функції";
+
+  function innerFunction() {
+    console.log(message);
+  }
+
+  innerFunction();
+}
+
+outerFunction();
+//Повідомлення зовнішньої функції
+</code></pre>
+            </div>
+            <br />
+            <h3 class="lexical__subtitle velvet-dusk">
+              Чому виводиться саме це повідомлення, а не глобальне?
+            </h3>
+            <br />
+            <p class="lexical__description">
+              Тому що вкладена функція спочатку шукає змінну у власній області
+              видимості. Якщо не знаходить, переходить до зовнішньої. У нашому
+              прикладі:
+            </p>
+            <br />
+            <ul class="lexical__list m-list">
+              <li class="lexical__item">
+                Усередині <span>innerFunction()</span> змінної message немає.
+              </li>
+              <li class="lexical__item">
+                У <span>outerFunction()</span> така змінна є.
+              </li>
+              <li class="lexical__item">
+                Тому JavaScript використовує її значення.
+              </li>
+            </ul>
+            <br />
+            <div class="scope__subdiv card-border border-radius p15 center-txt">
+              <span>Важлива особливість:</span>
+              <br />
+              <br />
+              <p class="scope__description">
+                Лексична область видимості означає, що вкладена функція має
+                доступ до змінних тих областей, усередині яких вона була
+                оголошена.
+              </p>
+            </div>
+            <br />
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAVA SCRIPT</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Higher-Order Functions</h1>
+          <p class="header__description peach-veil fs15">
+            functions that take other functions as arguments or return functions
+            as their results.
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="higher-order">
+        <div class="higher-order__container container">
+          <p class="higher-order__description">
+            <span>Функції вищого порядку (Higher-Order Functions)</span> — це
+            функції, які можуть виконувати одну з двох дій:
+          </p>
+          <ol class="higher-order__list m-list">
+            <li class="higher-order__item">
+              Приймати іншу функцію як аргумент.
+            </li>
+            <li class="higher-order__item">
+              Повертати іншу функцію як результат своєї роботи.
+            </li>
+          </ol>
+          <br />
+          <p class="higher-order__description">
+            Тобто функція вищого порядку — це функція, яка працює з іншими
+            функціями.
+          </p>
+
+          <div class="higher-order__div p15">
+            <h2 class="higher-order__title">
+              Функція, яка приймає іншу функцію як аргумент
+            </h2>
+            <br />
+            <p class="higher-order__description">
+              JavaScript дозволяє передавати одну функцію в іншу так само, як ми
+              передаємо числа, рядки або інші значення.
+            </p>
+            <br />
+            <div
+              class="higher-order__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function sayHello() {
+  console.log("Привіт!");
+}
+
+function executeFunction(callback) {
+  callback();
+}
+
+executeFunction(sayHello);
+//Привіт!
+</code></pre>
+            </div>
+            <br />
+            <p class="higher-order__description">
+              Розберімо цей приклад поетапно.
+            </p>
+            <br />
+            <ol class="higher-order__list m-list">
+              <li class="higher-order__item">Створюємо звичайну функцію:</li>
+              <br />
+              <div
+                class="higher-order__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>function sayHello() {
+  console.log("Привіт!");
+}
+</code></pre>
+              </div>
+              <br />
+              <p class="higher-order__description">
+                Функція sayHello() просто виводить повідомлення в консоль.
+              </p>
+              <br />
+              <li class="higher-order__item">
+                Створюємо функцію, яка приймає іншу функцію:
+              </li>
+              <br />
+              <div
+                class="higher-order__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>function executeFunction(callback) {
+  callback();
+}
+</code></pre>
+              </div>
+              <br />
+              <p class="higher-order__description">
+                Тут, <span>executeFunction</span> — функція, яка приймає іншу
+                функцію, <span>callback</span> — параметр, у який передається
+                функція, <span>callback()</span> — виклик функції, яку ми
+                отримали через параметр.
+              </p>
+              <br />
+              <li class="higher-order__item">Передаємо функцію як аргумент:</li>
+              <br />
+              <div
+                class="higher-order__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>executeFunction(sayHello);
+</code></pre>
+              </div>
+              <br />
+              <p class="higher-order__description">
+                Ми передаємо sayHello без круглих дужок, тому що нам потрібно
+                передати саму функцію, а не викликати її одразу.
+              </p>
+              <br />
+              <p class="higher-order__description">
+                Коли виконується <span>executeFunction(sayHello)</span>,
+                відбувається таке:
+              </p>
+              <br />
+              <ol class="higher-order__list m-list">
+                <li class="higher-order__item">
+                  Функція sayHello передається в executeFunction.
+                </li>
+                <li class="higher-order__item">
+                  Параметр callback отримує цю функцію.
+                </li>
+                <li class="higher-order__item">
+                  Усередині executeFunction виконується callback().
+                </li>
+                <li class="higher-order__item">
+                  Викликається функція sayHello, яка виводить повідомлення.
+                </li>
+              </ol>
+            </ol>
+            <br />
+            <div
+              class="higher-order__subdiv card-border border-radius p15 center-txt"
+            >
+              <span>Запам'ятай різницю</span>
+              <br />
+              <br />
+              <p class="higher-order__description">
+                Без дужок — передаємо функцію.
+              </p>
+
+              <p class="higher-order__description">
+                З дужками — викликаємо функцію.
+              </p>
+            </div>
+          </div>
+
+          <div class="higher-order__div p15">
+            <h3 class="higher-order____subtitle velvet-dusk">
+              Функції зворотного виклику (Callback higher-order)
+            </h3>
+            <br />
+            <p class="higher-order__description">
+              <span>Callback Function (функція зворотного виклику)</span> — це
+              функція, яку передають як аргумент іншій функції, щоб вона могла
+              бути викликана всередині неї.
+            </p>
+            <br />
+            <div
+              class="higher-order__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function greet() {
+  console.log("Доброго дня!");
+}
+
+function processUser(callback) {
+  callback();
+}
+
+processUser(greet);
+</code></pre>
+            </div>
+            <br />
+            <p class="higher-order__description">У цьому прикладі:</p>
+            <br />
+            <ul class="higher-order__list m-list">
+              <li class="higher-order__item">
+                <span>processUser()</span> — функція вищого порядку
+                (Higher-Order Function).
+              </li>
+              <li class="higher-order__item">
+                <span>greet()</span> — функція зворотного виклику (Callback
+                Function).
+              </li>
+              <li class="higher-order__item">
+                <span>callback</span> — параметр, через який передається
+                функція.
+              </li>
+            </ul>
+            <br />
+            <p class="higher-order__description">
+              Тобто одна функція може бути функцією вищого порядку, а інша —
+              функцією зворотного виклику.
+            </p>
+          </div>
+
+          <div class="higher-order__div p15">
+            <h2 class="higher-order__title">
+              Функція, яка повертає іншу функцію
+            </h2>
+            <br />
+            <p class="higher-order__description">
+              Другий варіант функції вищого порядку — це функція, яка не приймає
+              іншу функцію, а створює та повертає її
+            </p>
+            <br />
+            <div
+              class="higher-order__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function createGreeting() {
+  return function () {
+    console.log("Привіт!");
+  };
+}
+
+const greeting = createGreeting();
+
+greeting();
+//Привіт!
+</code></pre>
+            </div>
+            <br />
+            <p class="higher-order__description">Що тут відбувається?</p>
+            <br />
+            <ol class="higher-order__list m-list">
+              <li class="higher-order__item">
+                Створюється функція createGreeting().
+              </li>
+              <li class="higher-order__item">
+                Усередині неї за допомогою return повертається інша функція.
+              </li>
+              <li class="higher-order__item">
+                Виклик createGreeting() повертає функцію, яка записується в
+                змінну greeting.
+              </li>
+              <li class="higher-order__item">
+                За допомогою greeting() ми викликаємо отриману функцію.
+              </li>
+            </ol>
+            <br />
+            <p class="higher-order__description">
+              Отже, <span>createGreeting()</span> — функція вищого порядку,
+              оскільки вона повертає іншу функцію.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
