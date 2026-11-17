@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Objects</h1>
+          <p class="header__description peach-veil fs15">
+            collections of key-value pairs used to store related data
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="objects">
+        <div class="objects__container container">
+          <div class="objects__div border-bottom p15">
+            <h2 class="objects__title m-b15">1. Основи об'єктів</h2>
+            <p class="objects__description">
+              <span>об'єкт</span> — це тип даних, який дозволяє зберігати
+              декілька пов'язаних між собою значень у вигляді пар
+              <span>ключ — значення (key — value).</span>
+            </p>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+  email: "anna@gmail.com",
+};
+</code></pre>
+            </div>
+            <br />
+            <p class="objects__description">У цьому прикладі:</p>
+            <br />
+            <ul class="objects__list m-list">
+              <li class="objects__item">
+                user — назва змінної, у якій зберігається об'єкт.
+              </li>
+              <li class="objects__item">
+                name, age, city, email — ключі (keys).
+              </li>
+              <li class="objects__item">
+                "Anna", 25, "Kyiv", "anna@gmail.com" — значення (values).
+              </li>
+              <li class="objects__item">
+                Кожна пара ключ — значення називається властивістю об'єкта
+                (property).
+              </li>
+            </ul>
+            <br />
+            <p class="objects__description">
+              <span>Важливо:</span> значення властивостей можуть мати різні типи
+              даних: рядки, числа, логічні значення, масиви, інші об'єкти та
+              навіть функції. А ключі об'єктів у JavaScript можуть бути рядками
+              або символами (Symbol). Якщо ми записуємо ключ без лапок,
+              JavaScript сприймає його як назву властивості та автоматично
+              перетворює на рядок (якщо це звичайний ідентифікатор).
+            </p>
+            <br />
+            <p class="objects__description">
+              <span>Літерал об'єкта</span> — це спосіб створення об'єкта за
+              допомогою фігурних дужок {}.
+            </p>
+            <br />
+            <div class="objects__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>const objectName = {
+  key1: value1,
+  key2: value2,
+  key3: value3,
+};</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  isStudent: true,
+};
+</code></pre>
+            </div>
+            <br />
+            <h3 class="objects__subtitle velvet-dusk">
+              Є декілька важливих правил, які потрібно запам'ятати:
+            </h3>
+            <br />
+            <ol class="objects__list m-list">
+              <li class="objects__item">
+                Кожна властивість складається з ключа та значення.
+              </li>
+              <li class="objects__item">
+                Між ключем і значенням ставимо двокрапку <span>:</span>.
+              </li>
+              <li class="objects__item">
+                Різні властивості відокремлюємо комами <span>,</span>.
+              </li>
+              <li class="objects__item">
+                Назви ключів зазвичай записуємо без лапок, якщо це коректні
+                ідентифікатори.
+              </li>
+              <li class="objects__item">
+                Якщо назва ключа містить пробіли або спеціальні символи,
+                використовуємо лапки.
+              </li>
+            </ol>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  "home city": "Kyiv",
+  "favorite-color": "blue",
+};
+</code></pre>
+            </div>
+            <br />
+            <p class="objects__description">
+              Найчастіше об'єкти оголошують через <span>const</span>. Але тут є
+              важливий нюанс - const забороняє повторно присвоювати змінній інше
+              значення, але не забороняє змінювати властивості самого об'єкта.
+            </p>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+};
+
+user.age = 26; // Можна змінити
+
+console.log(user.age); // 26
+
+<b class="uppercase">А ось так робити не можна:</b>
+
+const user = {
+  name: "Anna",
+};
+
+user = {
+  name: "Maria",
+}; // Помилка!
+</code></pre>
+            </div>
+            <br />
+            <h3 class="objects__subtitle velvet-dusk">
+              У JavaScript існує два основні способи доступу до властивостей
+              об'єкта:
+            </h3>
+            <br />
+            <ol class="objects__list m-list">
+              <li class="objects__item">Через крапку (Dot Notation).</li>
+              <li class="objects__item">
+                Через квадратні дужки (Bracket Notation).
+              </li>
+            </ol>
+            <br />
+            <br />
+            <p class="objects__description">
+              <span>Доступ через крапку (Dot Notation)</span> - це найпростіший
+              і найпоширеніший спосіб отримання значення властивості.
+            </p>
+            <br />
+            <div class="objects__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>objectName.propertyName;</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+};
+
+console.log(user.name); // Anna
+console.log(user.age); // 25
+console.log(user.city); // Kyiv
+</code></pre>
+            </div>
+            <br />
+            <p class="objects__description">
+              <span>Доступ через квадратні дужки (Bracket Notation)</span> - це
+              другий спосіб отримання значення властивості.
+            </p>
+            <br />
+            <div class="objects__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>objectName["propertyName"];</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+};
+
+console.log(user["name"]); // Anna
+console.log(user["age"]); // 25
+console.log(user["city"]); // Kyiv
+</code></pre>
+            </div>
+            <br />
+            <h3 class="objects__subtitle velvet-dusk">
+              Коли використовувати крапку, а коли квадратні дужки?
+            </h3>
+            <br />
+            <table class="objects__table">
+              <thead>
+                <tr>
+                  <th>Dot Notation (.)</th>
+                  <th>Bracket Notation ([])</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ключ записуємо без лапок</td>
+                  <td>Ключ записуємо в лапках або використовуємо змінну</td>
+                </tr>
+                <tr>
+                  <td>Підходить для звичайних назв властивостей</td>
+                  <td>Підходить для будь-яких рядкових ключів</td>
+                </tr>
+                <tr>
+                  <td>Не підтримує динамічні ключі</td>
+                  <td>Підтримує динамічні ключі</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <br />
+            <p class="objects__description">
+              Якщо ми спробуємо отримати властивість, якої немає в об'єкті,
+              JavaScript не видасть помилку. Він поверне
+              <span>undefined</span> (означає, що значення не було визначене.).
+            </p>
+            <br />
+            <p class="objects__description">
+              Якщо всередині об'єкта є інший об'єкт, ми можемо отримувати доступ
+              до його властивостей через декілька крапок.
+            </p>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  address: {
+    city: "Kyiv",
+    street: "Shevchenka",
+  },
+};
+
+console.log(user.address.city);
+// Kyiv
+console.log(user.address.street);
+// Shevchenka
+</code></pre>
+            </div>
+          </div>
+
+          <div class="objects__div border-bottom p15">
+            <h2 class="objects__title m-b15">
+              2. Додавання, зміна та видалення властивостей об'єкта (Adding,
+              Updating and Deleting Properties)
+            </h2>
+            <p class="objects__description">
+              Щоб додати нову властивість до об'єкта, достатньо звернутися до
+              неї через крапку або квадратні дужки та присвоїти значення за
+              допомогою =.
+            </p>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+};
+
+// Додаємо нову властивість
+user.city = "Kyiv";
+
+console.log(user);
+
+<b class="uppercase">Результат:</b>
+{
+  name: "Anna",
+  age: 25,
+  city: "Kyiv"
+}
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+};
+
+user["email"] = "anna@gmail.com";
+
+console.log(user.email);
+// anna@gmail.com
+
+<b class="uppercase">
+Важливо:
+якщо властивості з таким ключем ще немає,
+JavaScript створить її автоматично.</b>
+</code></pre>
+            </div>
+            <br />
+            <br />
+            <p class="objects__description">
+              Якщо властивість уже існує, ми можемо змінити її значення за
+              допомогою оператора присвоєння =.
+            </p>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+};
+
+user.age = 26;
+
+console.log(user.age); // 26
+</code></pre>
+            </div>
+            <br />
+            <br />
+            <p class="objects__description">
+              Для видалення властивості з об'єкта використовують оператор
+              <span>delete</span>.
+            </p>
+            <br />
+            <div class="objects__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>delete objectName.propertyName;</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+};
+
+// Видаляємо властивість city
+delete user.city;
+
+console.log(user);
+
+<b class="uppercase">Результат:</b>
+{
+  name: "Anna",
+  age: 25
+}
+</code></pre>
+            </div>
+            <br />
+            <p class="objects__description">
+              <span>Важливо:</span> оператор delete видаляє саме властивість
+              об'єкта, а не змінну, у якій зберігається об'єкт.
+            </p>
+          </div>
+
+          <div class="objects__div p15">
+            <h2 class="objects__title m-b15">
+              3. Копіювання об'єктів (Copying Objects)
+            </h2>
+            <p class="objects__description">
+              У JavaScript примітивні типи даних (string, number, boolean тощо)
+              копіюються за значенням. А от об'єкти, масиви та функції під час
+              присвоєння передаються за посиланням. Це означає, що коли ми
+              присвоюємо один об'єкт іншій змінній, JavaScript не створює новий
+              об'єкт. Обидві змінні посилаються на один і той самий об'єкт.
+            </p>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+};
+
+const anotherUser = user;
+
+anotherUser.age = 26;
+
+console.log(user.age); // 26
+console.log(anotherUser.age); // 26
+</code></pre>
+            </div>
+            <br />
+            <p class="objects__description">
+              Тобто <span>user</span> та <span>anotherUser</span> — це дві
+              змінні, але об'єкт у них спільний.
+            </p>
+            <br />
+            <p class="objects__description">
+              Порівняймо з примітивними типами:
+            </p>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let firstNumber = 10;
+
+let secondNumber = firstNumber;
+
+secondNumber = 20;
+
+console.log(firstNumber);  // 10
+console.log(secondNumber); // 20
+</code></pre>
+            </div>
+            <br />
+            <p class="objects__description">
+              Тут усе інакше: <span>secondNumber</span> отримала копію значення
+              10. Тому зміна secondNumber ніяк не вплинула на
+              <span>firstNumber</span>.
+            </p>
+            <br />
+            <p class="objects__description">
+              Якщо нам потрібен новий незалежний об'єкт, який можна змінювати,
+              не зачіпаючи оригінал - використовуємо поверхневе копіювання —
+              Shallow Copy.
+            </p>
+            <br />
+            <p class="objects__description">
+              <span>Shallow Copy</span> — це створення нового об'єкта, у який
+              копіюються всі властивості початкового об'єкта.
+            </p>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+};
+
+const anotherUser = { ...user };
+
+anotherUser.name = "Maria";
+
+console.log(user.name);
+// Anna
+console.log(anotherUser.name);
+// Maria
+</code></pre>
+            </div>
+            <br />
+            <p class="objects__description">
+              <span>Важливий нюанс:</span> поверхневе копіювання має одну
+              особливість - якщо об'єкт містить інші об'єкти або масиви, вони не
+              копіюються окремо.
+            </p>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  address: {
+    city: "Kyiv",
+  },
+};
+
+const anotherUser = { ...user };
+
+anotherUser.name = "Maria";
+anotherUser.address.city = "Lviv";
+
+console.log(user.name); 
+// Anna
+console.log(user.address.city);
+// Lviv
+</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

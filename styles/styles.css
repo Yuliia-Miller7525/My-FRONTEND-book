@@ -254,7 +254,8 @@ span {
 .syntax__table,
 .functions__table,
 .arrow__table,
-.recursion__table {
+.recursion__table,
+.objects__table {
   width: 100%;
   max-width: 700px;
   border-collapse: collapse;
@@ -263,7 +264,8 @@ span {
 .js-section__table,
 .syntax__table,
 .functions__table,
-.arrow__table {
+.arrow__table,
+.objects__table {
   text-align: left;
 }
 .operators__table th,
@@ -277,7 +279,9 @@ span {
 .arrow__table th,
 .arrow__table td,
 .recursion__table th,
-.recursion__table td {
+.recursion__table td,
+.objects__table th,
+.objects__table td {
   padding: 5px;
   border: 1px solid #8c3c4a;
 }
@@ -286,7 +290,8 @@ span {
 .syntax__table th,
 .functions__table th,
 .arrow__table th,
-.recursion__table th {
+.recursion__table th,
+.objects__table th {
   background-color: #8c3c4a;
   color: #fffde5;
   font-weight: 700;
@@ -304,7 +309,8 @@ span {
 .operators__box,
 .console__div,
 .js-section__div,
-.functions-common__div {
+.functions-common__div,
+.obj_arr_common__div {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
@@ -317,4 +323,13 @@ span {
   width: 100%;
   max-width: 650px;
   margin: 0 auto;
+}
+.arrays__img {
+  width: 800px;
+  display: block;
+  margin: 0 auto;
+}
+.arr-methods__subdiv {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }

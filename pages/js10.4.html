@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Methods</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Array Methods</h1>
+          <p class="header__description peach-veil fs15">
+            built-in functions used to work with and manipulate arr-methods
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="arr-methods">
+        <div class="arr-methods__container container">
+          <div class="arr-methods__div border-bottom p15">
+            <p class="arr-methods__description">
+              <span>Методи масивів (Array Methods)</span> — це вбудовані функції
+              JavaScript, які дозволяють працювати з масивами: додавати,
+              видаляти, знаходити, змінювати та обробляти їхні елементи.
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["apple", "banana"];
+
+fruits.push("orange");
+
+console.log(fruits);
+// ["apple", "banana", "orange"]
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              <span>Важливо:</span> методи масивів викликаються через крапку
+              після назви масиву.
+            </p>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">
+              Два важливі типи методів
+            </h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>Mutating methods</span> — змінюють початковий масив.
+            </p>
+            <p class="arr-methods__description">
+              <span>Non-mutating methods</span> — не змінюють початковий масив,
+              а повертають новий масив або інше значення. <br />
+            </p>
+          </div>
+
+          <div class="arr-methods__div border-bottom p15">
+            <h2 class="arr-methods__title m-b15">
+              1. Методи додавання та видалення елементів масиву
+            </h2>
+            <br />
+            <div class="arr-methods__subdiv grid">
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  push()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  додає один або декілька елементів у кінець масиву
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>array.push(element1, element2, ...);
+</code></pre>
+                </div>
+                <br />
+                <span>Приклад:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const fruits = ["apple", "banana"];
+
+fruits.push("orange");
+
+console.log(fruits);
+// ["apple", "banana", "orange"]
+</code></pre>
+                </div>
+              </div>
+
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  pop()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  видаляє останній елемент масиву
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>array.pop();
+</code></pre>
+                </div>
+                <br />
+                <span>Приклад:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const fruits = ["apple", "banana", "orange"];
+
+fruits.pop();
+
+console.log(fruits);
+// ["apple", "banana"]
+</code></pre>
+                </div>
+              </div>
+
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  unshift()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  додає один або декілька елементів на початок масиву
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>array.unshift(element1, element2, ...);
+</code></pre>
+                </div>
+                <br />
+                <span>Приклад:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const fruits = ["banana", "orange"];
+
+fruits.unshift("apple");
+
+console.log(fruits);
+// ["apple", "banana", "orange"]
+</code></pre>
+                </div>
+              </div>
+
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  shift()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  видаляє перший елемент масиву
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>array.shift();
+</code></pre>
+                </div>
+                <br />
+                <span>Приклад:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const fruits = ["apple", "banana", "orange"];
+
+fruits.shift();
+
+console.log(fruits);
+// ["banana", "orange"]
+</code></pre>
+                </div>
+              </div>
+
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  splice()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  дозволяє додавати, видаляти та замінювати елементи масиву за
+                  їхніми індексами.
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>array.splice(start, deleteCount, item1, item2, ...);
+</code></pre>
+                </div>
+                <br />
+                <ul class="arr-methods__list list m-list-small">
+                  <li>start - індекс, з якого починається зміна масиву</li>
+                  <li>
+                    deleteCount - кількість елементів, які потрібно видалити
+                  </li>
+                  <li>item1, item2... - елементи, які потрібно додати</li>
+                </ul>
+                <br />
+                <span>Приклад видалення:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const fruits = ["apple", "banana", "orange", "kiwi"];
+
+fruits.splice(1, 2);
+
+console.log(fruits);
+// ["apple", "kiwi"]
+</code></pre>
+                </div>
+                <br />
+                <span>Приклад додавання:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const fruits = ["apple", "orange"];
+
+fruits.splice(1, 0, "banana");
+
+console.log(fruits);
+// ["apple", "banana", "orange"]
+</code></pre>
+                </div>
+                <br />
+                <span>Приклад заміни:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const fruits = ["apple", "banana", "orange"];
+
+fruits.splice(1, 1, "kiwi");
+
+console.log(fruits);
+// ["apple", "kiwi", "orange"]
+</code></pre>
+                </div>
+              </div>
+
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  slice()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  повертає новий масив, який містить вибрані елементи
+                  початкового масиву
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>array.slice(start, end);
+</code></pre>
+                </div>
+                <br />
+                <ul class="arr-methods__list list m-list-small">
+                  <li>start - індекс, з якого починається вибірка</li>
+                  <li>
+                    end - індекс, до якого виконується вибірка (не включно)
+                  </li>
+                </ul>
+                <br />
+                <span>Приклад:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const fruits = ["apple", "banana", "orange", "kiwi"];
+
+const result = fruits.slice(1, 3);
+
+console.log(result);
+// ["banana", "orange"]
+
+console.log(fruits);
+// ["apple", "banana", "orange", "kiwi"]
+</code></pre>
+                </div>
+                <br />
+                <p class="arr-methods__description">
+                  Якщо не передавати параметри, slice() поверне копію всього
+                  масиву.
+                </p>
+              </div>
+
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  concat()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  об'єднує два або більше масивів або додає окремі значення та
+                  повертає новий масив
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>array.concat(value1, value2, ...);
+</code></pre>
+                </div>
+                <br />
+                <span>Приклад:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const fruits = ["apple", "banana"];
+const vegetables = ["carrot", "potato"];
+
+const result = fruits.concat(vegetables);
+
+console.log(result);
+// ["apple", "banana", "carrot", "potato"]
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="arr-methods__div border-bottom p15">
+            <h2 class="arr-methods__title m-b15">
+              2. Методи пошуку елементів масиву
+            </h2>
+            <br />
+            <div class="arr-methods__subdiv grid">
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  indexOf()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  повертає індекс першого елемента масиву, який відповідає
+                  заданому значенню
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>array.indexOf(searchElement, fromIndex);
+</code></pre>
+                </div>
+                <br />
+                <ul class="arr-methods__list list m-list-small">
+                  <li>searchElement - елемент, який потрібно знайти</li>
+                  <li>
+                    fromIndex - індекс, з якого починається пошук
+                    (необов'язковий)
+                  </li>
+                </ul>
+                <br />
+                <span>Приклад:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const fruits = ["apple", "banana", "orange", "kiwi"];
+
+const result = fruits.indexOf("orange");
+
+console.log(result);
+// 2
+</code></pre>
+                </div>
+                <br />
+                <span>Якщо елемент не знайдений:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const fruits = ["apple", "banana", "orange"];
+
+const result = fruits.indexOf("kiwi");
+
+console.log(result);
+// -1
+</code></pre>
+                </div>
+              </div>
+
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  lastIndexOf()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  повертає індекс останнього елемента масиву, який відповідає
+                  заданому значенню
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>array.lastIndexOf(searchElement, fromIndex);
+</code></pre>
+                </div>
+                <br />
+                <span>Приклад:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const numbers = [10, 20, 30, 20, 40];
+
+const result = numbers.lastIndexOf(20);
+
+console.log(result);
+// 3
+</code></pre>
+                </div>
+              </div>
+
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  includes()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  перевіряє, чи містить масив певний елемент
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>array.includes(searchElement, fromIndex);
+</code></pre>
+                </div>
+                <br />
+                <span>Приклад:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const fruits = ["apple", "banana", "orange"];
+
+console.log(fruits.includes("banana"));
+// true
+
+console.log(fruits.includes("kiwi"));
+// false
+</code></pre>
+                </div>
+                <br />
+                <span>Перевірка з певного індексу:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const numbers = [10, 20, 30, 40];
+
+console.log(numbers.includes(20, 2));
+// false
+</code></pre>
+                </div>
+              </div>
+
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  find()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  шукає перший елемент масиву, який відповідає заданій умові, та
+                  повертає цей елемент
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>array.find(function(element, index, array) {
+  return condition;
+});
+</code></pre>
+                </div>
+                <br />
+                <span>Приклад:</span>
+                <p class="arr-methods__description">
+                  Шукаємо перше число, яке більше за 10:
+                </p>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const numbers = [5, 8, 12, 15, 20];
+
+const result = numbers.find(function(number) {
+  return number > 10;
+});
+
+console.log(result);
+// 12
+</code></pre>
+                </div>
+                <br />
+                <span>Якщо елемент не знайдений:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const numbers = [2, 4, 6, 8];
+
+const result = numbers.find(function(number) {
+  return number > 10;
+});
+
+console.log(result);
+// undefined
+</code></pre>
+                </div>
+              </div>
+
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  findIndex()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  шукає перший елемент масиву, який відповідає заданій умові, та
+                  повертає його індекс
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>array.findIndex(function(element, index, array) {
+  return condition;
+});
+</code></pre>
+                </div>
+                <br />
+                <span>Приклад:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const numbers = [5, 8, 12, 15, 20];
+
+const result = numbers.findIndex(function(number) {
+  return number > 10;
+});
+
+console.log(result);
+// 2
+</code></pre>
+                </div>
+                <br />
+                <span>Якщо елемент не знайдений:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const numbers = [2, 4, 6, 8];
+
+const result = numbers.findIndex(function(number) {
+  return number > 10;
+});
+
+console.log(result);
+// -1
+</code></pre>
+                </div>
+              </div>
+
+              <div class="arr-methods__box card-border border-radius p15">
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  findLast()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  повертає останній елемент, який відповідає заданій умові
+                </p>
+                <br />
+                <span>Приклад:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const numbers = [5, 12, 8, 15, 20];
+
+const result = numbers.findLast(function(number) {
+  return number > 10;
+});
+
+console.log(result);
+// 20
+</code></pre>
+                </div>
+                <br />
+                <br />
+                <h3 class="arr-methods__subtitle velvet-dusk center-txt">
+                  findLastIndex()
+                </h3>
+                <br />
+                <p class="arr-methods__description">
+                  повертає індекс останнього елемента, який відповідає заданій
+                  умові
+                </p>
+                <br />
+                <span>Приклад:</span>
+                <div class="arr-methods__code-box fig-nectar">
+                  <pre><code>const numbers = [5, 12, 8, 15, 20];
+
+const result = numbers.findLastIndex(function(number) {
+  return number > 10;
+});
+
+console.log(result);
+// 4
+</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="arr-methods__div border-bottom p15">
+            <h2 class="arr-methods__title m-b15">3. Методи перебору масивів</h2>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">
+              3.1 Метод forEach()
+            </h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>forEach()</span> — перебирає всі елементи масиву та виконує
+              задану функцію для кожного з них.
+            </p>
+            <br />
+            <div class="arr-methods__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>array.forEach(function(element, index, array) {
+  // дія з кожним елементом
+});</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["apple", "banana", "orange"];
+
+fruits.forEach(function(fruit) {
+  console.log(fruit);
+});
+// apple
+// banana
+// orange
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              Якщо потрібно отримати не тільки елемент, а й його індекс, можна
+              використати другий параметр:
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["apple", "banana", "orange"];
+
+fruits.forEach(function(fruit, index) {
+  console.log(`${index}: ${fruit}`);
+});
+// 0: apple
+// 1: banana
+// 2: orange
+</code></pre>
+            </div>
+            <br />
+            <p>
+              <span>Важлива особливість</span> - метод forEach() не повертає
+              новий. масив.
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3];
+
+const result = numbers.forEach(function(number) {
+  return number * 2;
+});
+
+console.log(result);
+// undefined
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">3.2 Метод map()</h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>map()</span> — перебирає всі елементи масиву, виконує задану
+              функцію для кожного елемента та повертає новий масив із
+              результатами її виконання.
+            </p>
+            <br />
+            <div class="arr-methods__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>array.map(function(element, index, array) {
+  return newValue;
+});</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3, 4];
+
+const result = numbers.map(function(number) {
+  return number * 2;
+});
+
+console.log(result);
+// [2, 4, 6, 8]
+
+console.log(numbers);
+// [1, 2, 3, 4]
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const names = ["anna", "alex", "maria"];
+
+const result = names.map(function(name) {
+  return name.toUpperCase();
+});
+
+console.log(result);
+// ["ANNA", "ALEX", "MARIA"]
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const users = [
+  { name: "Anna", age: 20 },
+  { name: "Alex", age: 25 },
+  { name: "Maria", age: 30 }
+];
+
+const names = users.map(function(user) {
+  return user.name;
+});
+
+console.log(names);
+// ["Anna", "Alex", "Maria"]
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">
+              3.3 Метод filter()
+            </h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>filter()</span> — перебирає елементи масиву та повертає
+              новий масив, який містить лише ті елементи, що відповідають
+              заданій умові.
+            </p>
+            <br />
+            <div class="arr-methods__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>array.filter(function(element, index, array) {
+  return condition;
+});</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <span class="peach-veil">Знайдемо всі числа, більші за 10:</span>
+              <pre><code>const numbers = [5, 8, 12, 15, 20];
+
+const result = numbers.filter(function(number) {
+  return number > 10;
+});
+
+console.log(result);
+// [12, 15, 20]
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <span class="peach-veil"
+                >Знайдемо користувачів, яким більше ніж 25 років:</span
+              >
+              <pre><code>const users = [
+  { name: "Anna", age: 20 },
+  { name: "Alex", age: 25 },
+  { name: "Maria", age: 30 },
+  { name: "John", age: 35 }
+];
+
+const result = users.filter(function(user) {
+  return user.age > 25;
+});
+
+console.log(result);
+//[
+  { name: "Maria", age: 30 },
+  { name: "John", age: 35 }
+  ]
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <span class="peach-veil"
+                >Якщо жоден елемент не відповідає умові:</span
+              >
+              <pre><code>const numbers = [1, 2, 3, 4];
+
+const result = numbers.filter(function(number) {
+  return number > 10;
+});
+
+console.log(result);
+// []
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">
+              Важлива особливість:
+            </h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>У map():</span> return визначає, яке значення потрапить до
+              нового масиву.
+            </p>
+            <p class="arr-methods__description">
+              <span>У filter():</span> return визначає, чи потрапить елемент до
+              нового масиву.
+            </p>
+            <p class="arr-methods__description">
+              <span>У forEach():</span> return не створює результат для самого
+              методу.
+            </p>
+          </div>
+
+          <div class="arr-methods__div border-bottom p15">
+            <h2 class="arr-methods__title m-b15">
+              4. Перетворення та обробка масивів
+            </h2>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">
+              4.1 Метод reduce()
+            </h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>reduce()</span> — перебирає елементи масиву та послідовно
+              об'єднує їхні значення в один результат.
+            </p>
+            <br />
+            <p class="arr-methods__description uppercase">
+              <b>Його можна використовувати для:</b>
+            </p>
+            <br />
+            <ol class="arr-methods__list m-list-small">
+              <li>Обчислення суми чисел.</li>
+              <li>Обчислення середнього значення.</li>
+              <li>Підрахунку кількості елементів.</li>
+              <li>Об'єднання даних.</li>
+              <li>Створення об'єктів або інших структур даних.</li>
+            </ol>
+            <br />
+            <p class="arr-methods__description uppercase">
+              <b>Основні особливості:</b>
+            </p>
+            <br />
+            <ol class="arr-methods__list m-list-small">
+              <li>Не змінює початковий масив сам по собі.</li>
+              <li>Повертає одне підсумкове значення.</li>
+              <li>Приймає callback-функцію.</li>
+              <li>Може приймати початкове значення акумулятора.</li>
+            </ol>
+            <br />
+            <div class="arr-methods__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>array.reduce(function(accumulator, currentValue, index, array) {
+  return newValue;
+}, initialValue);</b></code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description uppercase">
+              <b>Розберемо параметри:</b>
+            </p>
+            <br />
+            <ol class="arr-methods__list m-list">
+              <li>
+                <span>accumulator</span> - зберігає результат попередньої
+                ітерації
+              </li>
+              <li><span>currentValue</span> - поточний елемент масиву</li>
+              <li><span>index</span> - індекс поточного елемента</li>
+              <li><span>array</span> - початковий масив</li>
+              <li>
+                <span>initialValue</span> - початкове значення акумулятора, з
+                якого починається робота reduce()
+              </li>
+            </ol>
+            <br />
+            <p class="arr-methods__description">
+              Головне, що потрібно зрозуміти: reduce() бере попередній
+              результат, додає до нього наступний елемент і зберігає новий
+              результат в акумуляторі.
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3, 4];
+
+const result = numbers.reduce
+(function(accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0);
+
+console.log(result);
+// 10
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              <span>Важливо:</span> початкове значення не є обов'язковим
+              параметром, але його використання зазвичай рекомендоване, оскільки
+              робить поведінку методу більш передбачуваною.
+            </p>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">
+              4.2 Метод reduceRight()
+            </h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>reduceRight()</span> — працює так само, як reduce(), але
+              перебирає елементи масиву справа наліво.
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3, 4];
+
+const result = numbers.reduceRight
+(function(accumulator, currentValue) {
+  return accumulator - currentValue;
+});
+
+console.log(result);
+// -2
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">4.3 Метод flat()</h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>flat()</span> — створює новий масив, у якому вкладені масиви
+              розгортаються на один або декілька рівнів. Простіше кажучи, він
+              дозволяє об'єднати вкладені масиви в один звичайний масив.
+            </p>
+            <br />
+            <div class="arr-methods__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>array.flat(depth);</b>
+Де:
+- depth — кількість рівнів вкладеності, які потрібно розгорнути.
+- За замовчуванням depth дорівнює 1.</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, [3, 4], 5];
+
+const result = numbers.flat();
+
+console.log(result);
+// [1, 2, 3, 4, 5]
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, [3, 4, [5, 6]]];
+
+const result = numbers.flat(2);
+
+console.log(result);
+// [1, 2, 3, 4, 5, 6]
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, [2, [3, [4, [5]]]]];
+
+const result = numbers.flat(Infinity);
+
+console.log(result);
+// [1, 2, 3, 4, 5]
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              <span>Infinity</span> означає, що потрібно розгорнути всі рівні
+              вкладеності незалежно від їхньої кількості.
+            </p>
+            <br />
+            <p class="arr-methods__description uppercase">
+              <b>Важливі особливості:</b>
+            </p>
+            <br />
+            <ol class="arr-methods__list m-list">
+              <li>flat() повертає новий масив і не змінює початковий.</li>
+              <li>За замовчуванням розгортає лише один рівень вкладеності.</li>
+              <li>Можна вказати потрібну глибину за допомогою depth.</li>
+              <li>
+                Також метод видаляє порожні елементи масиву на рівнях, які
+                розгортає.
+              </li>
+            </ol>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">
+              4.4 Метод flatMap()
+            </h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>flatMap()</span> — поєднує можливості двох методів: map() та
+              flat():
+            </p>
+            <br />
+            <ol class="arr-methods__list m-list">
+              <li>
+                Перебирає кожен елемент масиву та виконує над ним певну операцію
+                (як map()).
+              </li>
+              <li>
+                Об'єднує отримані вкладені масиви в один масив (як flat()).
+              </li>
+            </ol>
+            <br />
+            <p class="arr-methods__description">
+              Простіше кажучи, flatMap() дозволяє одночасно перетворити елементи
+              масиву та розгорнути результат на один рівень вкладеності.
+            </p>
+            <br />
+            <div class="arr-methods__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>array.flatMap(function (element) {
+  // код перетворення
+  return result;
+});</b>
+Де:
+- element — поточний елемент масиву.
+- return — значення або масив,
+який потрібно повернути після обробки елемента.</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3];
+
+const result = numbers.flatMap(function (number) {
+  return [number, number * 2];
+});
+
+console.log(result);
+// [1, 2, 2, 4, 3, 6]
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const users = ["Anna", "Alex"];
+
+const result = users.flatMap(function (user) {
+  return [user, user.length];
+});
+
+console.log(result);
+// ["Anna", 4, "Alex", 4]
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              Метод flatMap() також можна використовувати для відбору елементів.
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3, 4, 5, 6];
+
+const result = numbers.flatMap(function (number) {
+  if (number % 2 === 0) {
+    return [number];
+  }
+
+  return [];
+});
+
+console.log(result);
+// [2, 4, 6]
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">Як це працює?</p>
+            <br />
+            <ul class="arr-methods__list m-list">
+              <li>Якщо число парне, повертаємо масив із цим числом.</li>
+              <li>Якщо число непарне, повертаємо порожній масив.</li>
+              <li>flatMap() об'єднує результати в один масив.</li>
+            </ul>
+            <br />
+            <p class="arr-methods__description uppercase">
+              <b>Важливі особливості:</b>
+            </p>
+            <br />
+            <ol class="arr-methods__list m-list">
+              <li>flatMap() не змінює початковий масив.</li>
+              <li>Повертає новий масив.</li>
+              <li>Розгортає результат лише на один рівень вкладеності.</li>
+              <li>Не приймає аргумент depth, на відміну від flat().</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

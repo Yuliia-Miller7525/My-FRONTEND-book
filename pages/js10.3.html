@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Arrays</h1>
+          <p class="header__description peach-veil fs15">
+            a special object used to store multiple values in a single variable
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="arrays">
+        <div class="arrays__container container">
+          <div class="arrays__div border-bottom p15">
+            <h2 class="arrays__title m-b15">1. Основи масивів</h2>
+            <p class="arrays__description">
+              <span>Масив (array)</span> — це спеціальна структура даних, яка
+              дозволяє зберігати декілька значень в одній змінній.
+            </p>
+            <br />
+            <img
+              class="arrays__img"
+              src="../images/arrays_pic.jpg"
+              alt="schema"
+            />
+            <br />
+            <p class="arrays__description">
+              Наприклад, якщо нам потрібно зберегти імена трьох користувачів, ми
+              можемо створити три окремі змінні. Але якщо користувачів багато,
+              створювати окрему змінну для кожного буде незручно. Замість цього
+              можна використати масив:
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const users = ["Anna", "John", "Maria"];
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arrays__subtitle velvet-dusk">
+              Основні особливості масивів:
+            </h3>
+            <br />
+            <ul class="arrays__list list m-list">
+              <li class="arrays__item">
+                Масив може зберігати декілька значень.
+              </li>
+              <li class="arrays__item">
+                Кожен елемент масиву має свій індекс.
+              </li>
+              <li class="arrays__item">Індексація починається з 0.</li>
+              <li class="arrays__item">
+                Масив може містити значення різних типів даних.
+              </li>
+              <li class="arrays__item">
+                Масиви дозволяють додавати, видаляти та змінювати елементи.
+              </li>
+            </ul>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const data = ["Hello", 25, true, null];
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              <span>Важливо:</span> у JavaScript масиви є особливим типом
+              об'єктів.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const users = ["Anna", "John", "Maria"];
+
+console.log(typeof users); // "object"
+</code></pre>
+            </div>
+            <br />
+            <br />
+            <p class="arrays__description">
+              <span>Array Literal (Літерал масиву)</span> - це найпростіший і
+              найпоширеніший спосіб створення масиву за допомогою квадратних
+              дужок [].
+            </p>
+            <br />
+            <div class="arrays__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>const arrayName = [element1, element2, element3];</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+
+console.log(fruits);
+//["Apple", "Banana", "Orange"]
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Масив також можна створити порожнім, без елементів:
+              <span>const users = [];</span>. Пізніше до нього можна буде
+              додавати нові елементи.
+            </p>
+            <br />
+            <br />
+            <p class="arrays__description">
+              <span>Array Constructor(Конструктор масиву)</span> - це спосіб
+              створення масиву за допомогою вбудованого конструктора Array().
+              Для цього використовують ключове слово <span>new</span>.
+            </p>
+            <br />
+            <div class="arrays__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>const arrayName = new Array();</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = new Array("Apple", "Banana", "Orange");
+
+console.log(fruits);
+//["Apple", "Banana", "Orange"]
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Цей спосіб також дозволяє створити порожній масив:
+              <span>const users = new Array();</span>.
+            </p>
+            <br />
+            <p class="arrays__description">
+              <span>Важлива особливість конструктора:</span> якщо передати
+              конструктору одне числове значення, JavaScript сприйме його як
+              довжину масиву, а не як його елемент.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = new Array(5);
+
+console.log(numbers.length);
+// 5
+console.log(numbers);
+// [empty × 5]
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arrays__subtitle velvet-dusk">
+              Як перевірити, що масив є масивом?
+            </h3>
+            <br />
+            <p class="arrays__description">
+              Оператор <span>typeof</span> дозволяє визначити тип значення -
+              якщо використати його для масиву, він поверне "object".
+            </p>
+            <br />
+            <p class="arrays__description">
+              Для точної перевірки, чи є значення масивом, у JavaScript існує
+              спеціальний метод <span>Array.isArray()</span>. Метод повертає
+              <span>true</span> — якщо значення є масивом, <span>false</span> —
+              якщо значення не є масивом.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+const user = {
+  name: "Anna",
+};
+
+console.log(Array.isArray(fruits));
+// true
+console.log(Array.isArray(user));
+// false
+console.log(Array.isArray("Hello"));
+// false
+</code></pre>
+            </div>
+          </div>
+
+          <div class="arrays__div border-bottom p15">
+            <h2 class="arrays__title m-b15">
+              2. Array Indexes (Індекси масиву)
+            </h2>
+            <p class="arrays__description">
+              Кожен елемент масиву має свій порядковий номер, який називається
+              <span>індексом (Index)</span>. Індекс потрібен для того, щоб
+              звертатися до конкретного елемента масиву.
+            </p>
+            <br />
+            <p class="arrays__description">
+              <span>Головне правило:</span> у JavaScript індексація масивів
+              починається з 0, а не з 1.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange", "Mango"];
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arrays__subtitle velvet-dusk">Зверни увагу:</h3>
+            <br />
+            <ul class="arrays__list list m-list">
+              <li class="arrays__item">Перший елемент — індекс 0.</li>
+              <li class="arrays__item">Другий елемент — індекс 1.</li>
+              <li class="arrays__item">Третій елемент — індекс 2.</li>
+              <li class="arrays__item">Четвертий елемент — індекс 3.</li>
+            </ul>
+            <br />
+            <p class="arrays__description">
+              Індекс останнього елемента завжди на одиницю менший за довжину
+              масиву.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange", "Mango"];
+
+console.log(fruits.length); // 4
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Щоб отримати індекс останнього елемента, можна використовувати
+              формулу: <span>array.length - 1</span>
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange", "Mango"];
+
+const lastIndex = fruits.length - 1;
+
+console.log(lastIndex); // 3
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Якщо звернутися до індексу, якого немає в масиві, JavaScript
+              поверне <span>undefined</span>. Також якщо звернутися до індексу
+              -1, результатом буде undefined.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+
+console.log(fruits[5]); // undefined
+console.log(fruits[-1]); // undefined
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              <span>Array Constructor(Конструктор масиву)</span> - це спосіб
+              створення масиву за допомогою вбудованого конструктора Array().
+              Для цього використовують ключове слово <span>new</span>.
+            </p>
+            <br />
+            <div class="arrays__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>const arrayName = new Array();</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = new Array("Apple", "Banana", "Orange");
+
+console.log(fruits);
+//["Apple", "Banana", "Orange"]
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Цей спосіб також дозволяє створити порожній масив:
+              <span>const users = new Array();</span>.
+            </p>
+            <br />
+            <p class="arrays__description">
+              <span>Важлива особливість конструктора:</span> якщо передати
+              конструктору одне числове значення, JavaScript сприйме його як
+              довжину масиву, а не як його елемент.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = new Array(5);
+
+console.log(numbers.length);
+// 5
+console.log(numbers);
+// [empty × 5]
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Щоб отримати конкретний елемент масиву, потрібно звернутися до
+              нього за допомогою його індексу. Для цього використовуються
+              квадратні дужки <span>[]</span>.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+
+console.log(fruits[0]);
+// Apple
+console.log(fruits[1]);
+// Banana
+console.log(fruits[2]);
+// Orange
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Отримане значення можна зберегти в окрему змінну.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+
+const firstFruit = fruits[0];
+const secondFruit = fruits[1];
+
+console.log(firstFruit);
+// Apple
+console.log(secondFruit);
+// Banana
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Іноді потрібно отримати останній елемент масиву, але ми не знаємо,
+              скільки елементів у ньому буде. Для цього можна використати
+              властивість length.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+
+console.log(fruits[fruits.length - 1]);
+// Orange
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Також у JavaScript є метод <span>at()</span>, який дозволяє
+              отримувати елементи за індексом. Його особливість полягає в тому,
+              що він дозволяє використовувати від'ємні індекси. Наприклад, -1
+              означає останній елемент, -2 — передостанній.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+
+console.log(fruits.at(0)); 
+// Apple
+console.log(fruits.at(-1));
+// Orange
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Якщо масив містить інші масиви, для отримання вкладеного елемента
+              можна використовувати декілька індексів. Такий масив називається
+              <span>багатовимірним (Multidimensional Array)</span>.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+console.log(numbers[0][1]);
+// 2
+console.log(numbers[1][2]);
+// 6
+</code></pre>
+            </div>
+          </div>
+
+          <div class="arrays__div border-bottom p15">
+            <h2 class="arrays__title m-b15">
+              3. Modifying Array Elements (Зміна елементів масиву)
+            </h2>
+            <p class="arrays__description">
+              У JavaScript ми можемо не лише отримувати елементи масиву, а й
+              змінювати їхні значення. Для цього потрібно звернутися до
+              потрібного елемента за його індексом і присвоїти йому нове
+              значення.
+            </p>
+            <br />
+            <div class="arrays__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>arrayName[index] = newValue;</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+
+fruits[1] = "Mango";
+
+console.log(fruits);
+// ["Apple", "Mango", "Orange"]
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Якщо присвоїти значення індексу, якого ще немає в масиві,
+              JavaScript створить новий елемент за цим індексом.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+
+fruits[3] = "Mango";
+
+console.log(fruits);
+// ["Apple", "Banana", "Orange", "Mango"]
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Але є одна важлива особливість. Якщо звернутися до індексу, який
+              значно перевищує довжину масиву, між старими та новим елементами
+              з'являться порожні слоти.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [10, 20, 30];
+
+numbers[5] = 60;
+
+console.log(numbers);
+// [10, 20, 30, empty × 2, 60]
+
+console.log(numbers.length);
+// 6
+</code></pre>
+            </div>
+          </div>
+
+          <div class="arrays__div p15">
+            <h2 class="arrays__title m-b15">
+              4. Array Length (Довжина масиву)
+            </h2>
+            <p class="arrays__description">
+              <span>Array Length</span> — це кількість позицій масиву, визначена
+              його останнім індексом плюс один.
+            </p>
+            <br />
+            <div class="arrays__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>arrayName.length;</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+
+console.log(fruits.length);
+// 3
+
+
+
+const numbers = [10, 20, 30, 40, 50];
+
+console.log(numbers.length);
+// 5
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              <span>Важливо:</span> length повертає кількість позицій масиву, а
+              не індекс останнього елемента.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+
+console.log(fruits.length);
+// 3
+console.log(fruits.length - 1);
+// 2
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Якщо масив порожній, його довжина дорівнює 0.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const users = [];
+
+console.log(users.length); // 0
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Особливість властивості length полягає в тому, що їй можна
+              присвоювати нове значення. Тобто ми можемо не лише отримувати
+              довжину масиву, а й змінювати її.
+            </p>
+            <br />
+            <p class="arrays__description">
+              Якщо присвоїти length менше значення, елементи в кінці масиву
+              будуть видалені.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange", "Mango"];
+
+fruits.length = 2;
+
+console.log(fruits);
+// ["Apple", "Banana"]
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              Якщо присвоїти length більше значення, масив збільшиться, але нові
+              елементи будуть порожніми слотами.
+            </p>
+            <br />
+            <div
+              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [10, 20, 30];
+
+numbers.length = 5;
+
+console.log(numbers);
+// [10, 20, 30, empty × 2]
+console.log(numbers.length);
+// 5
+</code></pre>
+            </div>
+            <br />
+            <p class="arrays__description">
+              <span>Зверни увагу:</span> JavaScript не заповнює нові позиції
+              значеннями undefined як звичайними елементами — це саме порожні
+              слоти (empty slots).
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

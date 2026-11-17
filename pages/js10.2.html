@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Methods</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Object Methods</h1>
+          <p class="header__description peach-veil fs15">
+            functions stored as object properties that define what an object can
+            do
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="obj-methods">
+        <div class="obj-methods__container container">
+          <div class="obj-methods__div border-bottom p15">
+            <p class="obj-methods__description">
+              <span>Object Methods</span> — це функції, які є властивостями
+              об'єкта та описують дії, які цей об'єкт може виконувати. Простіше
+              кажучи: вони виконують певні дії з інформацією про об'єкт або інші
+              дії.
+            </p>
+            <br />
+            <div
+              class="obj-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+
+  sayHello: function () {
+    console.log("Hello!");
+  },
+};
+</code></pre>
+            </div>
+            <br />
+            <p class="obj-methods__description">
+              Щоб викликати метод, використовуємо крапку та круглі дужки:
+              <span>user.sayHello();</span>.
+            </p>
+            <br />
+            <p class="obj-methods__description">
+              У JavaScript метод можна створити так само, як і звичайну
+              властивість об'єкта. Різниця полягає в тому, що значенням методу є
+              функція.
+            </p>
+            <br />
+            <div class="objects__code-box">
+              <span>Звичайний синтаксис:</span>
+              <pre><code><b>sayHello: function() {}</b></code></pre>
+              <br />
+              <span>Скорочений синтаксис:</span>
+              <pre><code><b>sayHello() {}</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="obj-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+
+  sayHello: function () {
+    console.log("Hello!");
+  },
+};
+
+<b class="uppercase">Або</b>
+
+const user = {
+  name: "Anna",
+
+  sayHello() {
+    console.log("Hello!");
+  },
+};
+</code></pre>
+            </div>
+            <br />
+            <p class="obj-methods__description">
+              Після створення методу ми можемо викликати його, щоб виконати код,
+              який знаходиться всередині функції. Для виклику методу
+              використовуємо назву об'єкта, крапку (.), назву методу та круглі
+              дужки (()).
+            </p>
+            <br />
+            <div class="objects__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>objectName.methodName();</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="obj-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+
+  sayHello() {
+    console.log("Hello!");
+  },
+};
+
+user.sayHello();
+//Hello!
+</code></pre>
+            </div>
+          </div>
+
+          <div class="obj-methods__div p15">
+            <h2 class="obj-methods__title m-b15">
+              Вбудовані статичні методи об'єкта Object (Built-in Static Object
+              Methods)
+            </h2>
+            <p class="obj-methods__description">
+              <span>Static Methods</span> — це методи, які викликаються
+              безпосередньо через назву об'єкта Object, а не через створений
+              користувацький об'єкт.
+            </p>
+            <br />
+            <div class="obj-methods__subdiv">
+              <h3 class="obj-methods__subtitle velvet-dusk">Object.keys()</h3>
+              <p class="obj-methods__description">
+                Метод Object.keys() повертає масив із назвами (ключами) власних
+                перелічуваних властивостей об'єкта.
+              </p>
+              <br />
+              <div class="objects__code-box">
+                <span>Синтаксис:</span>
+                <pre><code><b>Object.keys(object);</b></code></pre>
+              </div>
+              <br />
+              <div
+                class="obj-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+};
+
+const keys = Object.keys(user);
+
+console.log(keys);
+//["name", "age", "city"]
+</code></pre>
+              </div>
+            </div>
+            <br />
+            <div class="obj-methods__subdiv">
+              <h3 class="obj-methods__subtitle velvet-dusk">Object.values()</h3>
+              <p class="obj-methods__description">
+                Метод Object.values() повертає масив зі значеннями власних
+                перелічуваних властивостей об'єкта.
+              </p>
+              <br />
+              <div class="objects__code-box">
+                <span>Синтаксис:</span>
+                <pre><code><b>Object.values(object);</b></code></pre>
+              </div>
+              <br />
+              <div
+                class="obj-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+};
+
+const values = Object.values(user);
+
+console.log(values);
+//["Anna", 25, "Kyiv"]
+</code></pre>
+              </div>
+            </div>
+            <br />
+            <div class="obj-methods__subdiv">
+              <h3 class="obj-methods__subtitle velvet-dusk">
+                Object.entries()
+              </h3>
+              <p class="obj-methods__description">
+                Метод Object.entries() повертає масив пар [ключ, значення] для
+                кожної власної перелічуваної властивості об'єкта.
+              </p>
+              <br />
+              <div class="objects__code-box">
+                <span>Синтаксис:</span>
+                <pre><code><b>Object.entries(object);</b></code></pre>
+              </div>
+              <br />
+              <div
+                class="obj-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+};
+
+const entries = Object.entries(user);
+
+console.log(entries);
+//[
+  ["name", "Anna"],
+  ["age", 25],
+  ["city", "Kyiv"]
+  ]
+</code></pre>
+              </div>
+            </div>
+            <br />
+            <div class="obj-methods__subdiv">
+              <h3 class="obj-methods__subtitle velvet-dusk">Object.assign()</h3>
+              <p class="obj-methods__description">
+                Метод Object.assign() копіює власні перелічувані властивості з
+                одного або декількох об'єктів до цільового об'єкта.
+              </p>
+              <br />
+              <div class="objects__code-box">
+                <span>Синтаксис:</span>
+                <pre><code><b>Object.assign(target, source);</b></code></pre>
+              </div>
+              <br />
+              <p class="obj-methods__description">
+                <span>target</span> — цільовий об'єкт, у який копіюються
+                властивості.
+              </p>
+              <p class="obj-methods__description">
+                <span>source</span> — об'єкт, властивості якого потрібно
+                скопіювати.
+              </p>
+              <br />
+              <div
+                class="obj-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+};
+
+const additionalInfo = {
+  city: "Kyiv",
+};
+
+Object.assign(user, additionalInfo);
+
+console.log(user);
+//{
+  name: "Anna",
+  age: 25,
+  city: "Kyiv"
+  }
+</code></pre>
+              </div>
+            </div>
+            <br />
+            <div class="obj-methods__subdiv">
+              <h3 class="obj-methods__subtitle velvet-dusk">Object.hasOwn()</h3>
+              <p class="obj-methods__description">
+                Метод Object.hasOwn() перевіряє, чи має об'єкт власну
+                властивість із зазначеним ім'ям.
+              </p>
+              <br />
+              <p class="obj-methods__description">
+                <span>true</span> — якщо властивість існує безпосередньо в
+                об'єкті.
+              </p>
+              <p class="obj-methods__description">
+                <span>false</span> — якщо такої власної властивості немає.
+              </p>
+              <br />
+              <div class="objects__code-box">
+                <span>Синтаксис:</span>
+                <pre><code><b>Object.hasOwn(object, property);</b></code></pre>
+              </div>
+              <br />
+              <p class="obj-methods__description">
+                <span>object</span> — об'єкт, який перевіряємо.
+              </p>
+              <p class="obj-methods__description">
+                <span>property</span> — назва властивості.
+              </p>
+              <br />
+              <div
+                class="obj-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+};
+
+console.log
+(Object.hasOwn(user, "name"));
+console.log
+(Object.hasOwn(user, "email"));
+//true
+  false
+</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

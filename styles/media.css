@@ -7,15 +7,16 @@
   }
   .data-types__subdiv,
   .operators__box,
-  .console__div {
+  .console__div,
+  .functions-common__div,
+  .js-section__div {
     grid-template-columns: repeat(2, 1fr);
   }
   .conditions__subdiv {
     flex-direction: column;
   }
-  .functions-common__div,
-  .js-section__div {
-    grid-template-columns: repeat(2, 1fr);
+  .arr-methods__subdiv {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -44,6 +45,9 @@
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
   }
+  .obj_arr_common__div {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (max-width: 648px) {
   .vscode_section__name {
@@ -57,7 +61,8 @@
   }
   .data-types__subdiv,
   .operators__box,
-  .console__div {
+  .console__div,
+  .obj_arr_common__div {
     grid-template-columns: repeat(1, 1fr);
   }
   .operators__table th,
@@ -101,7 +106,8 @@
   .data-types__code-box,
   .operators__code-box,
   .syntax__code-box,
-  .console__code-box {
+  .console__code-box,
+  .arrays__code-box {
     font-size: 11px;
   }
   .operators__table code {
@@ -112,6 +118,29 @@
   .syntax__table,
   .arrow__table {
     font-size: 12px;
+  }
+  .conditions__title,
+  .loops__title,
+  .functions__title,
+  .built-in__title,
+  .arrow__title,
+  .anonymous__title,
+  .nested-func__title,
+  .scope__title,
+  .lexical__title,
+  .higher-order__title,
+  .recursion__title,
+  .objects__title,
+  .obj-methods__title,
+  .arrays__title,
+  .arr-methods__title {
+    font-size: 25px;
+  }
+  .arr-methods__subdiv {
+    font-size: 9px;
+  }
+  .arr-methods__code-box {
+    font-size: 9px;
   }
 }
 @media (max-width: 404px) {
@@ -137,7 +166,8 @@
   .scope__code-box,
   .lexical__code-box,
   .higher-order__code-box,
-  .recursion__code-box {
+  .recursion__code-box,
+  .objects__code-box {
     font-size: 10px;
   }
   .conditions__title,
@@ -150,7 +180,17 @@
   .scope__title,
   .lexical__title,
   .higher-order__title,
-  .recursion__title {
-    font-size: 25px;
+  .recursion__title,
+  .objects__title,
+  .obj-methods__title,
+  .arrays__title,
+  .arr-methods__title {
+    font-size: 20px;
+  }
+  .objects__table {
+    font-size: 12px;
+  }
+  .arrays__code-box {
+    font-size: 9px;
   }
 }
