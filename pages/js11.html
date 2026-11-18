@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This Keyword</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">This Keyword</h1>
+          <p class="header__description peach-veil fs15">
+            refers to the object that a function is called on
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="this_keyword">
+        <div class="this_keyword__container container">
+          <div class="this_keyword__div border-bottom p15">
+            <p class="this_keyword__description">
+              <span>this</span> — це ключове слово JavaScript, яке посилається
+              на об'єкт, що визначається способом виклику функції. Простіше
+              кажучи, this допомагає функції звертатися до властивостей та
+              методів певного об'єкта.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Alex",
+  age: 25,
+
+  showInfo: function () {
+    console.log(this.name);
+    console.log(this.age);
+  },
+};
+
+user.showInfo();
+//Alex
+//25
+</code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description uppercase">
+              Розберімо, що відбувається:
+            </p>
+            <br />
+            <ol class="this_keyword__list m-list">
+              <li>Ми створили об'єкт user.</li>
+              <li>Усередині об'єкта створили метод showInfo().</li>
+              <li>Усередині методу використали this.</li>
+              <li>
+                Оскільки функцію викликаємо через user.showInfo(), значення this
+                посилається на об'єкт user.
+              </li>
+              <li>this.name — це user.name.</li>
+              <li>this.age — це user.age.</li>
+            </ol>
+            <br />
+            <p class="this_keyword__description">
+              <span>Важливо запам'ятати:</span> this не визначається місцем, де
+              функцію написали. Його значення залежить від того, як функцію
+              викликали (для звичайних функцій).
+            </p>
+            <br />
+            <p class="this_keyword__description">
+              Найчастіше на початку вивчення JavaScript ми зустрічаємо this саме
+              всередині методів об'єктів.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const car = {
+  brand: "BMW",
+  model: "X5",
+  year: 2024,
+
+  getInfo: function () {
+    return `${this.brand} ${this.model}, ${this.year}`;
+  },
+};
+
+console.log(car.getInfo());
+//BMW X5, 2024
+</code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description">
+              Завдяки this ми можемо використовувати один і той самий метод для
+              різних об'єктів.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user1 = {
+  name: "Anna",
+
+  sayHello: function () {
+    console.log(`Hello, ${this.name}!`);
+  },
+};
+
+const user2 = {
+  name: "John",
+
+  sayHello: function () {
+    console.log(`Hello, ${this.name}!`);
+  },
+};
+
+user1.sayHello();
+user2.sayHello();
+//Hello, Anna!
+//Hello, John!
+</code></pre>
+            </div>
+          </div>
+
+          <div class="this_keyword__div border-bottom p15">
+            <h2 class="this_keyword__title m-b15">
+              1. this у методах об'єктів
+            </h2>
+            <br />
+            <p class="this_keyword__description">
+              Як ми вже з'ясували, якщо викликати метод через об'єкт, this
+              посилатиметься на цей об'єкт.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Alex",
+
+  sayHello: function () {
+    console.log(`Hello, ${this.name}!`);
+  },
+};
+
+user.sayHello();
+//Hello, Alex!
+</code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description">
+              Але що буде, якщо ми спробуємо викликати цю функцію окремо від
+              об'єкта?
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Alex",
+
+  sayHello: function () {
+    console.log(`Hello, ${this.name}!`);
+  },
+};
+
+const greeting = user.sayHello;
+
+greeting();
+</code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description">
+              У цьому випадку результат буде іншим. Річ у тому, що ми не
+              викликаємо метод через user.sayHello(). Ми присвоїли посилання на
+              функцію іншій змінній greeting, а потім викликали її окремо. Ми не
+              створюємо нову функцію і не копіюємо сам об'єкт. Ми лише
+              зберігаємо посилання на функцію. Тому this більше не посилається
+              на user.
+            </p>
+            <br />
+            <p class="this_keyword__description">
+              Якщо вже викликаємо функцію окремо, без user:
+            </p>
+            <br />
+            <ol class="this_keyword__list m-list">
+              <li>
+                Якщо строгий режим ("use strict") - this буде дорівнювати
+                undefined. Простіше кажучи, JavaScript не знає, до якого об'єкта
+                потрібно звертатися.
+              </li>
+              <li>
+                Якщо звичайний режим (без "use strict") - у браузері this буде
+                посилатися на глобальний об'єкт window. window — це глобальний
+                об'єкт браузера, який містить багато властивостей і методів,
+                доступних на рівні браузерного середовища.
+              </li>
+            </ol>
+            <br />
+            <p class="this_keyword__description">
+              <span>Головне, що потрібно запам'ятати:</span> якщо звичайну
+              функцію викликаємо через об'єкт, this посилається на цей об'єкт.
+              Якщо викликаємо її окремо, без об'єкта, this вже не посилається на
+              початковий об'єкт. Його значення залежить від режиму виконання. І
+              ще один важливий момент: якщо this дорівнює undefined, спроба
+              звернутися до this.name спричинить помилку. Це не означає, що
+              this.name просто поверне undefined.
+            </p>
+          </div>
+
+          <div class="this_keyword__div border-bottom p15">
+            <h2 class="this_keyword__title m-b15">
+              2. this у звичайних функціях (Global Context)
+            </h2>
+            <br />
+            <p class="this_keyword__description">
+              <span>Global Context</span> — це глобальний контекст виконання
+              JavaScript, тобто середовище, у якому виконується код поза
+              функціями та іншими окремими контекстами. Коли ми використовуємо
+              this безпосередньо в глобальному коді, його значення залежить від
+              середовища виконання.
+            </p>
+            <br />
+            <p class="this_keyword__description">
+              У звичайному JavaScript-файлі, підключеному до HTML, без строгого
+              режиму результатом буде глобальний об'єкт window. Тобто в
+              глобальному контексті браузера this посилається на window.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function showThis() {
+  console.log(this);
+}
+
+showThis();
+</code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description">
+              Тут функцію викликаємо самостійно, без об'єкта. Тому результат
+              залежить від режиму виконання: звичайний режим у браузері -
+              window, строгий режим ("use strict") - undefined.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Alex",
+
+  showName: function () {
+    console.log(this.name);
+  },
+};
+
+function showInfo() {
+  console.log(this);
+}
+
+user.showName();
+showInfo();
+//Alex
+//Window {...}
+</code></pre>
+            </div>
+          </div>
+
+          <div class="this_keyword__div border-bottom p15">
+            <h2 class="this_keyword__title m-b15">3. this в Arrow Functions</h2>
+            <br />
+            <p class="this_keyword__description">
+              На відміну від звичайних функцій, стрілкові функції не створюють
+              власного значення this. Замість цього вони використовують this із
+              зовнішнього контексту, тобто з того місця, де були створені. Це
+              називається <span>лексичним this (Lexical this)</span>.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Alex",
+
+  sayHello: () => {
+    console.log(`Hello, ${this.name}!`);
+  },
+};
+
+user.sayHello();
+//Hello, undefined!
+</code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description">
+              Стрілкова функція не отримує this від об'єкта user. Вона бере this
+              із зовнішнього контексту, у якому була створена. У цьому прикладі
+              зовнішній контекст — глобальний контекст браузера, де this
+              посилається на window. У window немає властивості name зі
+              значенням "Alex", тому результатом буде undefined (за умови, що
+              відповідну глобальну властивість не задано).
+            </p>
+            <br />
+            <p class="this_keyword__description">
+              <span>Висновок:</span> якщо нам потрібно звертатися до
+              властивостей самого об'єкта через this, зазвичай варто
+              використовувати звичайну функцію для створення методу об'єкта.
+            </p>
+            <p class="this_keyword__description">
+              Але це не означає, що ми взагалі не можемо використовувати
+              стрілкові функції разом із this. Навпаки, вони дуже корисні, коли
+              знаходяться всередині звичайного методу об'єкта.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Alex",
+
+  sayHello: function () {
+    const greeting = () => {
+      console.log(`Hello, ${this.name}!`);
+    };
+
+    greeting();
+  },
+};
+
+user.sayHello();
+//Hello, Alex!
+</code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description uppercase">
+              Розберімо по черзі:
+            </p>
+            <br />
+            <ol class="this_keyword__list m-list">
+              <li>Ми створили об'єкт user.</li>
+              <li>Усередині нього створили звичайний метод sayHello().</li>
+              <li>
+                Метод викликається через user.sayHello(), тому this у методі
+                посилається на user.
+              </li>
+              <li>Усередині методу створили стрілкову функцію greeting().</li>
+              <li>
+                Стрілкова функція бере this із зовнішньої функції sayHello().
+              </li>
+            </ol>
+            <br />
+            <p class="this_keyword__description">
+              Ще одна ситуація, де стрілкові функції дуже корисні, — це
+              callback-функції (функції зворотного виклику). Наприклад,
+              використання setTimeout():
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Alex",
+
+  sayHello: function () {
+    setTimeout(() => {
+      console.log(`Hello, ${this.name}!`);
+    }, 1000);
+  },
+};
+
+user.sayHello();
+//Hello, Alex!
+</code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description uppercase">Чому це працює?</p>
+            <br />
+            <ol class="this_keyword__list m-list">
+              <li>Метод sayHello() викликається через user.</li>
+              <li>Тому this у ньому посилається на user.</li>
+              <li>
+                Стрілкова функція всередині setTimeout() успадковує це значення
+                this.
+              </li>
+              <li>Через одну секунду виводиться ім'я користувача.</li>
+            </ol>
+          </div>
+
+          <div class="this_keyword__div border-bottom p15">
+            <h2 class="this_keyword__title m-b15">
+              4. this у різних типах функцій
+            </h2>
+            <br />
+            <p class="this_keyword__description">
+              <span>Function Declaration</span> — це оголошення функції за
+              допомогою ключового слова function.
+            </p>
+            <br />
+            <div class="this_keyword__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>function showName() {
+  console.log(this.name);
+}</b></code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description">
+              Така функція має власне this. Його значення залежить від способу
+              виклику.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Alex",
+};
+
+function showName() {
+  console.log(this.name);
+}
+
+user.showName = showName;
+
+user.showName();
+//Alex
+</code></pre>
+            </div>
+            <br />
+            <br />
+            <p class="this_keyword__description">
+              <span>Function Expression</span> — це створення функції та
+              присвоєння її змінній.
+            </p>
+            <br />
+            <div class="this_keyword__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>const showName = function () {
+  console.log(this.name);
+};</b></code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description">
+              Щодо this, Function Expression працює так само, як Function
+              Declaration.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+};
+
+const showName = function () {
+  console.log(this.name);
+};
+
+user.showName = showName;
+
+user.showName();
+//Anna
+</code></pre>
+            </div>
+            <br />
+            <br />
+            <p class="this_keyword__description">
+              <span>Arrow Function</span> — це стрілкова функція, яка
+              записується за допомогою стрілки =>.
+            </p>
+            <br />
+            <div class="this_keyword__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>const showName = () => {
+  console.log(this.name);
+};</b></code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description">
+              На відміну від двох попередніх варіантів, стрілкова функція не має
+              власного this. Вона використовує this із зовнішнього контексту, у
+              якому була створена.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+
+  showName: () => {
+    console.log(this.name);
+  },
+};
+
+user.showName();
+//У звичайному браузерному скрипті
+результат буде undefined
+(якщо глобальне this.name не задано).
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arrays__subtitle velvet-dusk">
+              Порівняння трьох типів функцій
+            </h3>
+            <br />
+            <table class="this_keyword__table">
+              <thead>
+                <tr>
+                  <th>Особливість</th>
+                  <th>Function Declaration</th>
+                  <th>Function Expression</th>
+                  <th>Arrow Function</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Має власний this</td>
+                  <td>Так</td>
+                  <td>Так</td>
+                  <td>Ні</td>
+                </tr>
+
+                <tr>
+                  <td>this визначається під час виклику</td>
+                  <td>Так</td>
+                  <td>Так</td>
+                  <td>Ні</td>
+                </tr>
+
+                <tr>
+                  <td>Успадковує this із зовнішнього контексту</td>
+                  <td>Ні</td>
+                  <td>Ні</td>
+                  <td>Так</td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Може використовуватися як метод об'єкта з власним this
+                  </td>
+                  <td>Так</td>
+                  <td>Так</td>
+                  <td>Ні</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="this_keyword__div p15">
+            <h2 class="this_keyword__title m-b15">
+              5. Методи call(), apply() та bind()
+            </h2>
+            <br />
+            <h3 class="arrays__subtitle velvet-dusk">5.1 Метод call()</h3>
+            <br />
+            <p class="this_keyword__description">
+              <span>call()</span> дозволяє викликати функцію та самостійно
+              вказати, який об'єкт використовувати як this.
+            </p>
+            <br />
+            <div class="this_keyword__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>function.call(thisArg, arg1, arg2, ...);</b>
+Де:
+- thisArg — об'єкт,
+на який має посилатися this.
+- arg1, arg2 — аргументи,
+які передаються у функцію.</code></pre>
+            </div>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Alex",
+  age: 25,
+};
+
+function showInfo(city, country) {
+  console.log(`Мене звати ${this.name}.`);
+  console.log(`Мені ${this.age} років.`);
+  console.log(`Я живу в ${city}, ${country}.`);
+}
+
+showInfo.call(user, "Kyiv", "Ukraine");
+//Мене звати Alex.
+  Мені 25 років.
+  Я живу в Kyiv, Ukraine.
+</code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description">
+              Одна з переваг call() — ми можемо використовувати одну функцію для
+              різних об'єктів, не створюючи її повторно.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user1 = {
+  name: "Anna",
+  age: 22,
+};
+
+const user2 = {
+  name: "John",
+  age: 30,
+};
+
+function showUser() {
+  console.log(`Ім'я: ${this.name}, вік: ${this.age}`);
+}
+
+showUser.call(user1);
+showUser.call(user2);
+//Ім'я: Anna, вік: 22
+//Ім'я: John, вік: 30
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arrays__subtitle velvet-dusk">5.2 Метод apply()</h3>
+            <br />
+            <p class="this_keyword__description">
+              <span>apply()</span> працює майже так само, як call(): він
+              викликає функцію та дозволяє самостійно вказати, на який об'єкт
+              має посилатися this. Але є одна важлива відмінність:
+              <span>аргументи функції передаються у вигляді масиву.</span>
+            </p>
+            <br />
+            <div class="this_keyword__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>function.apply(thisArg, [arg1, arg2, ...]);</b>
+Де:
+- thisArg — об'єкт,
+на який має посилатися this.
+- [arg1, arg2, ...] — масив аргументів,
+які передаються у функцію.</code></pre>
+            </div>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Alex",
+  age: 25,
+};
+
+function showInfo(city, country) {
+  console.log(`Мене звати ${this.name}.`);
+  console.log(`Мені ${this.age} років.`);
+  console.log(`Я живу в ${city}, ${country}.`);
+}
+
+showInfo.apply(user, ["Kyiv", "Ukraine"]);
+//Мене звати Alex.
+  Мені 25 років.
+  Я живу в Kyiv, Ukraine.
+</code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description">
+              apply() зручно використовувати, коли аргументи функції вже зібрані
+              в масив.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [10, 20, 30, 40, 50];
+
+const result = Math.max.apply(null, numbers);
+
+console.log(result);
+//50
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arrays__subtitle velvet-dusk">5.3 Метод bind()</h3>
+            <br />
+            <p class="this_keyword__description">
+              <span>bind()</span> дозволяє створити нову функцію з прив'язаним
+              значенням this. На відміну від call() та apply(), він не викликає
+              функцію одразу. Він лише створює нову функцію, яку ми можемо
+              викликати пізніше.
+            </p>
+            <br />
+            <div class="this_keyword__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>const newFunction = functionName.bind(thisArg);</b>
+
+functionName — функція,
+для якої ми хочемо закріпити this.
+thisArg — об'єкт,
+який буде значенням this.
+newFunction — нова функція
+з прив'язаним this.</code></pre>
+            </div>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Олена",
+};
+
+function showName() {
+  console.log(this.name);
+}
+
+const showUserName = showName.bind(user);
+
+showUserName();
+//Олена
+</code></pre>
+            </div>
+            <br />
+            <p class="this_keyword__description">
+              Як і call() та apply(), метод bind() може приймати аргументи
+              функції.
+            </p>
+            <br />
+            <div
+              class="this_keyword__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Олена",
+};
+
+function greet(message) {
+  console.log(`${message}, ${this.name}!`);
+}
+
+const greetUser = greet.bind(user, "Привіт");
+
+greetUser();
+//Привіт, Олена!
+</code></pre>
+            </div>
+            <br />
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

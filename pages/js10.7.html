@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data linking and copying</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Data linking and copying</h1>
+          <p class="header__description peach-veil fs15">
+            зв'язування та копіювання даних
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="copying">
+        <div class="copying__container container">
+          <div class="copying__div border-bottom p15">
+            <h2 class="copying__title m-b15">
+              Data Linking (Зв'язування даних)
+            </h2>
+            <br />
+            <p class="copying__description">
+              <span>Зв'язування даних</span> — це ситуація, коли декілька
+              змінних посилаються на один і той самий об'єкт у пам'яті. Тобто
+              замість створення нового об'єкта JavaScript копіює посилання на
+              вже існуючий об'єкт.
+            </p>
+            <br />
+            <div
+              class="copying__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user1 = {
+  name: "Alex",
+  age: 25,
+};
+
+const user2 = user1;
+
+user2.age = 30;
+
+console.log(user1.age);
+// 30
+console.log(user2.age);
+// 30
+</code></pre>
+            </div>
+            <br />
+            <p class="copying__description">
+              Оскільки обидві змінні посилаються на один об'єкт, зміни через
+              будь-яку з них будуть видимі через іншу.
+            </p>
+            <br />
+            <div
+              class="copying__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let user1 = {
+  name: "Alex",
+};
+
+let user2 = user1;
+
+user2 = {
+  name: "John",
+};
+
+console.log(user1.name);
+// Alex
+console.log(user2.name);
+// John
+</code></pre>
+            </div>
+            <br />
+            <p class="copying__description">
+              А це переприсвоєння змінної - user2 посилається на новий об'єкт, а
+              user1 продовжує посилатися на початковий.
+            </p>
+          </div>
+
+          <div class="copying__div border-bottom p15">
+            <h2 class="copying__title m-b15">
+              Copying Primitive Values (Копіювання примітивних значень)
+            </h2>
+            <br />
+            <p class="copying__description">
+              <span>Копіювання примітивних значень</span> — це копіювання
+              примітивного значення з однієї змінної в іншу. Коли ми присвоюємо
+              одну змінну іншій, JavaScript копіює саме значення, а не посилання
+              на нього. У результаті кожна змінна має власне незалежне значення.
+            </p>
+            <br />
+            <div
+              class="copying__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let firstNumber = 10;
+let secondNumber = firstNumber;
+
+secondNumber = 20;
+
+console.log(firstNumber);
+// 10
+console.log(secondNumber);
+// 20
+</code></pre>
+            </div>
+            <br />
+            <p class="copying__description">
+              Такий принцип працює з усіма примітивними типами даних (String,
+              Boolean, Number...).
+            </p>
+            <br />
+            <h3 class="copying__subtitle velvet-dusk">
+              Головне, що потрібно запам'ятати:
+            </h3>
+            <br />
+            <ol class="copying__list m-list">
+              <li>Примітивні значення копіюються незалежно одне від одного.</li>
+              <li>Зміна однієї змінної не впливає на іншу.</li>
+              <li>Кожна змінна зберігає власне значення.</li>
+            </ol>
+          </div>
+
+          <div class="copying__div border-bottom p15">
+            <h2 class="copying__title m-b15">
+              Copying Reference Values (Копіювання посилальних значень)
+            </h2>
+            <br />
+            <p class="copying__description">
+              <span>Копіювання посилальних значень</span> — це копіювання
+              посилання на об'єкт з однієї змінної в іншу. На відміну від
+              примітивних значень, під час присвоєння об'єкта іншій змінній
+              JavaScript не створює його незалежну копію. Натомість копіюється
+              посилання на той самий об'єкт.
+            </p>
+            <br />
+            <div
+              class="copying__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user1 = {
+  name: "Alex",
+  age: 25,
+};
+
+const user2 = user1;
+</code></pre>
+            </div>
+            <br />
+            <h3 class="copying__subtitle velvet-dusk">Що відбувається:</h3>
+            <br />
+            <ol class="copying__list m-list">
+              <li>Створюється об'єкт із властивостями name та age.</li>
+              <li>Змінна user1 отримує посилання на цей об'єкт.</li>
+              <li>Змінна user2 отримує копію цього посилання.</li>
+              <li>Обидві змінні звертаються до одного об'єкта.</li>
+            </ol>
+            <br />
+            <p class="copying__description">
+              Якщо ми змінюємо властивість об'єкта через одну змінну, ця зміна
+              буде доступна і через іншу.
+            </p>
+            <br />
+            <div
+              class="copying__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user1 = {
+  name: "Alex",
+  age: 25,
+};
+
+const user2 = user1;
+
+user2.name = "John";
+user2.age = 30;
+
+console.log(user1.name);
+// John
+console.log(user1.age);
+// 30
+</code></pre>
+            </div>
+            <br />
+            <p class="copying__description">
+              Такий самий принцип працює і з масивами, оскільки масиви в
+              JavaScript є об'єктами.
+            </p>
+            <br />
+            <div
+              class="copying__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers1 = [1, 2, 3];
+
+const numbers2 = numbers1;
+
+numbers2.push(4);
+
+console.log(numbers1);
+// [1, 2, 3, 4]
+console.log(numbers2);
+// [1, 2, 3, 4]
+</code></pre>
+            </div>
+            <br />
+            <p class="copying__description">
+              Важливо пам'ятати:
+              <span
+                >зміна об'єкта та переприсвоєння змінної — це різні
+                операції.</span
+              >
+            </p>
+            <br />
+            <div
+              class="copying__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let user1 = {
+  name: "Alex",
+};
+
+let user2 = user1;
+
+user2 = {
+  name: "John",
+};
+
+console.log(user1.name);
+// Alex
+console.log(user2.name);
+// John
+</code></pre>
+            </div>
+            <br />
+            <h3 class="copying__subtitle velvet-dusk">
+              Головне, що потрібно запам'ятати:
+            </h3>
+            <br />
+            <ol class="copying__list m-list">
+              <li>Об'єкти та масиви копіюються за посиланням.</li>
+              <li>Декілька змінних можуть посилатися на один об'єкт.</li>
+              <li>
+                Зміна властивостей через одну змінну впливає на спільний об'єкт.
+              </li>
+              <li>
+                Переприсвоєння змінної не змінює об'єкт, на який посилається
+                інша змінна.
+              </li>
+            </ol>
+          </div>
+
+          <div class="copying__div border-bottom p15">
+            <h2 class="copying__title m-b15">
+              Shallow Copy (Поверхневе копіювання)
+            </h2>
+            <br />
+            <p class="copying__description">
+              <span>Поверхневе копіювання</span> — це створення поверхневої
+              копії об'єкта або масиву, під час якого копіюються його
+              властивості першого рівня, але вкладені об'єкти не копіюються
+              повністю.
+            </p>
+            <br />
+            <p class="copying__description">
+              Простіше кажучи, ми створюємо новий об'єкт, який має власні
+              властивості, але вкладені об'єкти продовжують використовувати
+              спільні посилання.
+            </p>
+            <br />
+            <div
+              class="copying__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user1 = {
+  name: "Alex",
+  age: 25,
+};
+
+const user2 = { ...user1 };
+
+user2.name = "John";
+
+console.log(user1.name);
+// Alex
+console.log(user2.name);
+// John
+</code></pre>
+            </div>
+            <br />
+            <h3 class="copying__subtitle velvet-dusk">Що відбувається:</h3>
+            <br />
+            <ol class="copying__list m-list">
+              <li>Створюється початковий об'єкт user1.</li>
+              <li>
+                За допомогою оператора ... створюється його поверхнева копія
+                user2.
+              </li>
+              <li>user1 та user2 тепер є окремими об'єктами.</li>
+              <li>Зміна властивості name в user2 не впливає на user1.</li>
+            </ol>
+            <br />
+            <p class="copying__description">
+              Але є важливий нюанс!
+              <span
+                >Якщо об'єкт містить інший об'єкт, поверхнева копія не створює
+                незалежну копію вкладеного об'єкта.</span
+              >
+            </p>
+            <br />
+            <div
+              class="copying__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user1 = {
+  name: "Alex",
+  address: {
+    city: "Kyiv",
+  },
+};
+
+const user2 = { ...user1 };
+
+user2.name = "John";
+user2.address.city = "Lviv";
+
+console.log(user1.name);
+// Alex
+console.log(user1.address.city);
+// Lviv
+</code></pre>
+            </div>
+            <br />
+            <p class="copying__description">Чому так відбувається?</p>
+            <br />
+            <ul class="copying__list m-list list">
+              <li>
+                <span>name</span> — примітивне значення, тому воно копіюється
+                незалежно.
+              </li>
+              <li>
+                <span>address</span> — вкладений об'єкт, тому копіюється лише
+                посилання на нього.
+              </li>
+            </ul>
+            <br />
+            <p class="copying__description">
+              У результаті обидва об'єкти мають власну властивість name, але
+              посилаються на один і той самий вкладений об'єкт address.
+            </p>
+            <br />
+            <p class="copying__description">
+              У JavaScript є декілька способів створення поверхневих копій:
+              <span>Spread Operator (...), Object.assign(), slice()</span>.
+            </p>
+            <br />
+            <h3 class="copying__subtitle velvet-dusk">
+              Головне, що потрібно запам'ятати:
+            </h3>
+            <br />
+            <ol class="copying__list m-list">
+              <li>Shallow Copy створює новий об'єкт або масив.</li>
+              <li>Властивості першого рівня копіюються.</li>
+              <li>
+                Вкладені об'єкти не копіюються незалежно, а залишаються
+                спільними.
+              </li>
+              <li>
+                Найчастіше для копіювання використовують Spread Operator (...)..
+              </li>
+            </ol>
+            <br />
+            <p class="copying__description">
+              <span>Важливий момент:</span> поверхневе копіювання — це не те
+              саме, що звичайне присвоєння.
+            </p>
+            <br />
+            <div
+              class="copying__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user2 = user1;
+// Копіюється посилання
+
+const user3 = { ...user1 };
+// Створюється новий об'єкт
+</code></pre>
+            </div>
+          </div>
+
+          <div class="copying__div p15">
+            <h2 class="copying__title m-b15">Deep Copy (Глибоке копіювання)</h2>
+            <br />
+            <p class="copying__description">
+              <span>Глибоке копіювання</span> — це створення повністю незалежної
+              копії об'єкта або масиву, включно з усіма вкладеними об'єктами та
+              масивами.
+            </p>
+            <br />
+            <p class="copying__description">
+              Простіше кажучи, на відміну від Shallow Copy, глибоке копіювання
+              створює копії не лише зовнішнього об'єкта, а й вкладених структур.
+            </p>
+            <br />
+            <div
+              class="copying__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user1 = {
+  name: "Alex",
+  age: 25,
+  address: {
+    city: "Kyiv",
+  },
+};
+
+const user2 = structuredClone(user1);
+</code></pre>
+            </div>
+            <br />
+            <h3 class="copying__subtitle velvet-dusk">У цьому прикладі:</h3>
+            <br />
+            <ol class="copying__list m-list">
+              <li>Створюється початковий об'єкт user1.</li>
+              <li>Метод structuredClone() створює його глибоку копію.</li>
+              <li>Властивості та вкладені об'єкти копіюються незалежно.</li>
+              <li>Зміни в user2 не впливають на user1.</li>
+            </ol>
+            <br />
+            <div
+              class="copying__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user1 = {
+  name: "Alex",
+  age: 25,
+  address: {
+    city: "Kyiv",
+  },
+};
+
+const user2 = structuredClone(user1);
+
+user2.name = "John";
+user2.address.city = "Lviv";
+
+console.log(user1.name);
+// Alex
+console.log(user1.address.city);
+// Kyiv
+
+console.log(user2.name);
+// John
+console.log(user2.address.city);
+// Lviv
+</code></pre>
+            </div>
+            <br />
+            <p class="copying__description">
+              Спосіб глибокого копіювання — <span>structuredClone()</span> -
+              вбудований метод JavaScript, який створює глибоку копію значення.
+            </p>
+            <br />
+            <span>Синтаксис:</span>
+            <div class="copying__code-box fig-nectar">
+              <pre><code>const copy = structuredClone(original);
+
+Де:
+- original — початковий об'єкт або масив.
+- copy — нова незалежна копія.
+</code></pre>
+            </div>
+            <br />
+            <p class="copying__description">
+              Метод підтримує багато типів даних, зокрема вкладені об'єкти,
+              масиви, Date, Map, Set та інші.
+            </p>
+            <br />
+            <p class="copying__description">
+              <span>Важливо:</span> structuredClone() не підтримує всі можливі
+              типи значень. Наприклад, функції та DOM-вузли не можна клонувати
+              цим методом — буде помилка DataCloneError.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

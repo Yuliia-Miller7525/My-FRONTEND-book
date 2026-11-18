@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread & Rest operators</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Spread & Rest operators</h1>
+          <p class="header__description peach-veil fs15">
+            to expand elements & to collect elements
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="spread_rest">
+        <div class="spread_rest__container container">
+          <div class="spread_rest__div border-bottom p15">
+            <p class="spread_rest__description">
+              У JavaScript є два оператори, які використовують однаковий
+              синтаксис — <span>три крапки (...)</span>.
+            </p>
+            <br />
+            <p class="spread_rest__description">
+              <span>Spread Operator</span> — розгортає елементи масиву або
+              властивості об'єкта.
+            </p>
+            <br />
+            <p class="spread_rest__description">
+              <span>Rest Operator</span> — збирає декілька елементів або
+              аргументів в один масив.
+            </p>
+          </div>
+
+          <div class="spread_rest__div border-bottom p15">
+            <h2 class="spread_rest__title m-b15">1. Spread Operator</h2>
+            <br />
+            <p class="spread_rest__description">
+              Spread Operator дозволяє розгорнути елементи масиву або
+              властивості об'єкта в окремі значення.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3];
+
+console.log(...numbers);
+//1 2 3
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              Тут оператор ... розгорнув масив numbers на окремі елементи.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b class="uppercase">Без Spread:</b>
+console.log(numbers);
+//[1, 2, 3]
+
+<b class="uppercase">З Spread:</b>
+console.log(...numbers);
+//1 2 3
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              Отже, Spread дозволяє працювати з елементами масиву окремо, а не
+              передавати весь масив як одне значення.
+            </p>
+            <br />
+            <p class="spread_rest__description">
+              За допомогою Spread можна створити копію масиву, не змінюючи
+              оригінал.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3];
+
+const copiedNumbers = [...numbers];
+
+console.log(copiedNumbers);
+// [1, 2, 3]
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              Чому не можна просто написати
+              <span>const copiedNumbers = numbers?</span> Тому що в такому
+              випадку ми не створюємо копію, а передаємо посилання на той самий
+              масив.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3];
+
+const copiedNumbers = numbers;
+
+copiedNumbers.push(4);
+
+console.log(numbers);
+// [1, 2, 3, 4]
+
+<b class="uppercase">Змінилася також початкова змінна numbers.</b>
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b class="uppercase">А якщо використати Spread:</b>
+                
+const numbers = [1, 2, 3];
+
+const copiedNumbers = [...numbers];
+
+copiedNumbers.push(4);
+
+console.log(numbers);       // [1, 2, 3]
+console.log(copiedNumbers); // [1, 2, 3, 4]
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              Spread дозволяє об'єднати декілька масивів в один.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const firstArray = [1, 2, 3];
+const secondArray = [4, 5, 6];
+
+const result = [...firstArray, ...secondArray];
+
+console.log(result);
+// [1, 2, 3, 4, 5, 6]
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              За допомогою Spread можна створити новий масив із додатковими
+              елементами.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3];
+
+const newNumbers = [...numbers, 4, 5];
+
+console.log(newNumbers);
+// [1, 2, 3, 4, 5]
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              <span>Важливо запам'ятати:</span> Spread створює новий масив, але
+              це поверхнева копія (Shallow Copy). Якщо всередині масиву є
+              вкладені масиви або об'єкти, вони продовжують використовувати
+              спільні посилання.
+            </p>
+            <br />
+            <br />
+            <p class="spread_rest__description">
+              За допомогою Spread можна створити копію об'єкта.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+};
+
+const copiedUser = { ...user };
+
+console.log(copiedUser);
+//{
+  name: "Anna",
+  age: 25
+  }
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              Якщо змінити властивість нового об'єкта, початковий об'єкт
+              залишиться незмінним:
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>copiedUser.age = 30;
+
+console.log(user.age);
+// 25
+console.log(copiedUser.age);
+// 30
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              Spread дозволяє об'єднати властивості декількох об'єктів в один.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const userInfo = {
+  name: "Anna",
+  age: 25,
+};
+
+const userAddress = {
+  city: "Kyiv",
+  country: "Ukraine",
+};
+
+const user = {
+  ...userInfo,
+  ...userAddress,
+};
+
+console.log(user);
+//{
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+  country: "Ukraine"
+  }
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              За допомогою Spread можна створити новий об'єкт і змінити окремі
+              його властивості.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+};
+
+const updatedUser = {
+  ...user,
+  age: 26,
+};
+
+console.log(updatedUser);
+//{
+  name: "Anna",
+  age: 26,
+  city: "Kyiv"
+  }
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              <span>Невелике уточнення:</span> копіювання об'єктів через Spread
+              також є поверхневим (Shallow Copy). Вкладені об'єкти не копіюються
+              окремо.
+            </p>
+            <br />
+            <br />
+            <p class="spread_rest__description">
+              Spread Operator дозволяє передавати елементи масиву у функцію як
+              окремі аргументи.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b class="uppercase">Без Spread:</b>
+                
+function calculateSum(a, b, c) {
+  return a + b + c;
+}
+
+const numbers = [10, 20, 30];
+
+console.log(calculateSum(numbers));
+
+<b class="uppercase">Результат буде не таким,
+як ми очікуємо,
+оскільки функція отримує
+весь масив як один аргумент.</b>
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b class="uppercase">З використанням Spread:</b>
+                
+function calculateSum(a, b, c) {
+  return a + b + c;
+}
+
+const numbers = [10, 20, 30];
+
+console.log(calculateSum(...numbers));
+// 60
+
+<b class="uppercase">Тут ...numbers розгортає масив
+і передає його елементи окремо</b>
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              Spread особливо корисний із вбудованими математичними функціями.
+              Наприклад, <span>Math.max()</span> знаходить найбільше число серед
+              переданих аргументів, а <span>Math.min()</span> — найменше.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [10, 5, 25, 3, 15];
+
+console.log(Math.max(...numbers));
+// 25
+console.log(Math.min(...numbers));
+// 3
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              Spread можна використовувати під час виклику функції, щоб передати
+              елементи масиву як окремі аргументи -
+              <span>functionName(...array);</span>.
+            </p>
+          </div>
+
+          <div class="spread_rest__div p15">
+            <h2 class="spread_rest__title m-b15">2. Rest Operator</h2>
+            <br />
+            <p class="spread_rest__description">
+              Rest Operator також записується за допомогою трьох крапок (...),
+              але виконує протилежну дію до Spread.
+            </p>
+            <br />
+            <p class="spread_rest__description">
+              Rest найчастіше використовують у функціях, коли заздалегідь
+              невідомо, скільки аргументів буде передано.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function showNumbers(...numbers) {
+  console.log(numbers);
+}
+
+showNumbers(10, 20, 30, 40);
+//[10, 20, 30, 40]
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              Оскільки Rest збирає аргументи в масив, ми можемо використовувати
+              методи масивів для роботи з ними.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function calculateSum(...numbers) {
+  return numbers.reduce(function (sum, number) {
+    return sum + number;
+  }, 0);
+}
+
+console.log(calculateSum(10, 20, 30));
+// 60
+console.log(calculateSum(5, 15));
+// 20
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              Rest можна використовувати разом зі звичайними параметрами
+              функції.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function showUserInfo(name, age, ...hobbies) {
+  console.log(`Ім'я: ${name}`);
+  console.log(`Вік: ${age}`);
+  console.log(`Хобі: ${hobbies}`);
+}
+
+showUserInfo
+("Anna", 25, "books", "music", "trips");
+//Ім'я: Anna
+  Вік: 25
+  Хобі: books,music,trips
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              <span>Важливе правило: </span>Rest завжди повинен бути останнім
+              параметром функції.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b class="uppercase">Правильно:</b>
+function example(a, b, ...rest) {}
+
+<b class="uppercase">Неправильно:</b>
+function example(...rest, a, b) {}
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              Rest Operator можна використовувати не лише у функціях, а й під
+              час деструктуризації масивів та об'єктів. Його завдання
+              залишається таким самим — зібрати всі елементи, які залишилися, в
+              одну змінну. Під час деструктуризації масиву можна отримати окремі
+              елементи, а решту зібрати за допомогою Rest.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [10, 20, 30, 40, 50];
+
+const [first, second, ...rest] = numbers;
+
+console.log(first);
+// 10
+console.log(second);
+// 20
+console.log(rest);
+// [30, 40, 50]
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              Можна також пропустити непотрібні елементи:
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [10, 20, 30, 40, 50];
+
+const [first, , third, ...rest] = numbers;
+
+console.log(first);
+// 10
+console.log(third);
+// 30
+console.log(rest);
+// [40, 50]
+</code></pre>
+            </div>
+            <br />
+            <p class="spread_rest__description">
+              З об'єктами Rest працює схожим чином: ми можемо отримати окремі
+              властивості, а всі інші зібрати в новий об'єкт.
+            </p>
+            <br />
+            <div
+              class="spread_rest__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+  country: "Ukraine",
+};
+
+const { name, age, ...rest } = user;
+
+console.log(name);
+// "Anna"
+console.log(age);
+// 25
+console.log(rest);
+//{
+  city: "Kyiv",
+  country: "Ukraine"
+  }
+</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

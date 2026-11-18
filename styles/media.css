@@ -107,7 +107,8 @@
   .operators__code-box,
   .syntax__code-box,
   .console__code-box,
-  .arrays__code-box {
+  .arrays__code-box,
+  .this_keyword__code-box {
     font-size: 11px;
   }
   .operators__table code {
@@ -133,7 +134,11 @@
   .objects__title,
   .obj-methods__title,
   .arrays__title,
-  .arr-methods__title {
+  .arr-methods__title,
+  .destr__title,
+  .spread_rest__title,
+  .copying__title,
+  .this_keyword__title {
     font-size: 25px;
   }
   .arr-methods__subdiv {
@@ -141,6 +146,9 @@
   }
   .arr-methods__code-box {
     font-size: 9px;
+  }
+  .this_keyword__table {
+    font-size: 10px;
   }
 }
 @media (max-width: 404px) {
@@ -167,7 +175,9 @@
   .lexical__code-box,
   .higher-order__code-box,
   .recursion__code-box,
-  .objects__code-box {
+  .objects__code-box,
+  .destr__code-box,
+  .spread_rest__code-box {
     font-size: 10px;
   }
   .conditions__title,
@@ -184,13 +194,19 @@
   .objects__title,
   .obj-methods__title,
   .arrays__title,
-  .arr-methods__title {
+  .arr-methods__title,
+  .destr__title,
+  .spread_rest__title,
+  .copying__title,
+  .this_keyword__title {
     font-size: 20px;
   }
   .objects__table {
     font-size: 12px;
   }
-  .arrays__code-box {
+  .arrays__code-box,
+  .this_keyword__code-box,
+  .this_keyword__table {
     font-size: 9px;
   }
 }

@@ -281,7 +281,7 @@ console.log(user.address.street);
             </div>
           </div>
 
-          <div class="objects__div border-bottom p15">
+          <div class="objects__div p15">
             <h2 class="objects__title m-b15">
               2. Додавання, зміна та видалення властивостей об'єкта (Adding,
               Updating and Deleting Properties)
@@ -390,123 +390,6 @@ console.log(user);
               <span>Важливо:</span> оператор delete видаляє саме властивість
               об'єкта, а не змінну, у якій зберігається об'єкт.
             </p>
-          </div>
-
-          <div class="objects__div p15">
-            <h2 class="objects__title m-b15">
-              3. Копіювання об'єктів (Copying Objects)
-            </h2>
-            <p class="objects__description">
-              У JavaScript примітивні типи даних (string, number, boolean тощо)
-              копіюються за значенням. А от об'єкти, масиви та функції під час
-              присвоєння передаються за посиланням. Це означає, що коли ми
-              присвоюємо один об'єкт іншій змінній, JavaScript не створює новий
-              об'єкт. Обидві змінні посилаються на один і той самий об'єкт.
-            </p>
-            <br />
-            <div
-              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
-            >
-              <pre><code>const user = {
-  name: "Anna",
-  age: 25,
-};
-
-const anotherUser = user;
-
-anotherUser.age = 26;
-
-console.log(user.age); // 26
-console.log(anotherUser.age); // 26
-</code></pre>
-            </div>
-            <br />
-            <p class="objects__description">
-              Тобто <span>user</span> та <span>anotherUser</span> — це дві
-              змінні, але об'єкт у них спільний.
-            </p>
-            <br />
-            <p class="objects__description">
-              Порівняймо з примітивними типами:
-            </p>
-            <br />
-            <div
-              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
-            >
-              <pre><code>let firstNumber = 10;
-
-let secondNumber = firstNumber;
-
-secondNumber = 20;
-
-console.log(firstNumber);  // 10
-console.log(secondNumber); // 20
-</code></pre>
-            </div>
-            <br />
-            <p class="objects__description">
-              Тут усе інакше: <span>secondNumber</span> отримала копію значення
-              10. Тому зміна secondNumber ніяк не вплинула на
-              <span>firstNumber</span>.
-            </p>
-            <br />
-            <p class="objects__description">
-              Якщо нам потрібен новий незалежний об'єкт, який можна змінювати,
-              не зачіпаючи оригінал - використовуємо поверхневе копіювання —
-              Shallow Copy.
-            </p>
-            <br />
-            <p class="objects__description">
-              <span>Shallow Copy</span> — це створення нового об'єкта, у який
-              копіюються всі властивості початкового об'єкта.
-            </p>
-            <br />
-            <div
-              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
-            >
-              <pre><code>const user = {
-  name: "Anna",
-  age: 25,
-};
-
-const anotherUser = { ...user };
-
-anotherUser.name = "Maria";
-
-console.log(user.name);
-// Anna
-console.log(anotherUser.name);
-// Maria
-</code></pre>
-            </div>
-            <br />
-            <p class="objects__description">
-              <span>Важливий нюанс:</span> поверхневе копіювання має одну
-              особливість - якщо об'єкт містить інші об'єкти або масиви, вони не
-              копіюються окремо.
-            </p>
-            <br />
-            <div
-              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
-            >
-              <pre><code>const user = {
-  name: "Anna",
-  address: {
-    city: "Kyiv",
-  },
-};
-
-const anotherUser = { ...user };
-
-anotherUser.name = "Maria";
-anotherUser.address.city = "Lviv";
-
-console.log(user.name); 
-// Anna
-console.log(user.address.city);
-// Lviv
-</code></pre>
-            </div>
           </div>
         </div>
       </section>

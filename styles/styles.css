@@ -255,7 +255,8 @@ span {
 .functions__table,
 .arrow__table,
 .recursion__table,
-.objects__table {
+.objects__table,
+.this_keyword__table {
   width: 100%;
   max-width: 700px;
   border-collapse: collapse;
@@ -265,7 +266,8 @@ span {
 .syntax__table,
 .functions__table,
 .arrow__table,
-.objects__table {
+.objects__table,
+.this_keyword__table {
   text-align: left;
 }
 .operators__table th,
@@ -281,7 +283,9 @@ span {
 .recursion__table th,
 .recursion__table td,
 .objects__table th,
-.objects__table td {
+.objects__table td,
+.this_keyword__table th,
+.this_keyword__table td {
   padding: 5px;
   border: 1px solid #8c3c4a;
 }
@@ -291,7 +295,8 @@ span {
 .functions__table th,
 .arrow__table th,
 .recursion__table th,
-.objects__table th {
+.objects__table th,
+.this_keyword__table th {
   background-color: #8c3c4a;
   color: #fffde5;
   font-weight: 700;

@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+    <link rel="stylesheet" href="../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Destructuring</h1>
+          <p class="header__description peach-veil fs15">
+            a way to unpack values from arrays or properties from objects into
+            separate variables
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="destr">
+        <div class="destr__container container">
+          <div class="destr__div border-bottom p15">
+            <p class="destr__description">
+              <span>Деструктуризація</span> — це спосіб витягувати значення з
+              масивів або властивості з об'єктів і записувати їх в окремі
+              змінні.
+            </p>
+            <br />
+            <p class="destr__description">
+              Простіше кажучи, замість того щоб окремо звертатися до кожного
+              елемента масиву або властивості об'єкта, ми можемо отримати їх
+              одразу за допомогою спеціального синтаксису.
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b class="uppercase">Без деструктуризації:</b>
+
+const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+};
+
+const name = user.name;
+const age = user.age;
+const city = user.city;
+
+console.log(name);
+// Anna
+console.log(age);
+// 25
+console.log(city);
+// Kyiv
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b class="uppercase">З деструктуризацією:</b>
+                
+const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+};
+
+const { name, age, city } = user;
+
+console.log(name);
+// Anna
+console.log(age);
+// 25
+console.log(city);
+// Kyiv
+</code></pre>
+            </div>
+            <br />
+            <h3 class="destr__subtitle velvet-dusk">Види деструктуризації:</h3>
+            <br />
+            <ol class="destr__list m-list">
+              <li>
+                <span>Array Destructuring</span> — деструктуризація масивів.
+              </li>
+              <li>
+                <span>Object Destructuring</span> — деструктуризація об'єктів.
+              </li>
+            </ol>
+          </div>
+
+          <div class="destr__div border-bottom p15">
+            <h2 class="destr__title m-b15">1. Array Destructuring</h2>
+            <br />
+            <p class="destr__description">
+              <span>Array Destructuring</span> — це спосіб отримувати значення з
+              масиву та записувати їх в окремі змінні.
+            </p>
+            <br />
+            <p class="destr__description">
+              Головна особливість: значення присвоюються змінним
+              <span>за порядком розташування елементів у масиві.</span>
+            </p>
+            <br />
+            <p class="destr__description">
+              Для деструктуризації масивів використовуються
+              <span>квадратні дужки [].</span>
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [10, 20, 30];
+
+const [first, second, third] = numbers;
+
+console.log(first);
+// 10
+console.log(second)
+// 20
+console.log(third);
+// 30
+</code></pre>
+            </div>
+            <br />
+            <p class="destr__description">
+              <span>Зверни увагу:</span> назви змінних ми обираємо самостійно.
+              Важливий саме порядок.
+            </p>
+            <br />
+            <br />
+            <p class="destr__description">
+              Ми не зобов'язані отримувати всі елементи масиву. Якщо певне
+              значення нам не потрібне, його можна пропустити, залишивши порожнє
+              місце між комами.
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const colors = ["red", "green", "blue"];
+
+const [first, , third] = colors;
+
+console.log(first);
+// red
+console.log(third);
+// blue
+</code></pre>
+            </div>
+            <br />
+            <p class="destr__description">
+              <span>Важливо:</span> коми визначають позиції елементів, тому їх
+              не можна прибирати, якщо потрібно пропустити значення.
+            </p>
+            <br />
+            <br />
+            <p class="destr__description">
+              Якщо в масиві немає значення для певної змінної, їй можна
+              призначити значення за замовчуванням. Для цього використовується
+              <span>оператор =.</span>
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [10, 20];
+
+const [first, second, third = 30] = numbers;
+
+console.log(first);
+// 10
+console.log(second);
+// 20
+console.log(third);
+// 30
+</code></pre>
+            </div>
+            <br />
+            <p class="destr__description">
+              <span>Зверни увагу:</span> значення за замовчуванням
+              використовується тільки тоді, коли значення відсутнє (undefined).
+            </p>
+            <br />
+            <br />
+            <p class="destr__description">
+              Деструктуризація дозволяє легко поміняти значення двох змінних
+              місцями без створення додаткової змінної.
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>let a = 10;
+let b = 20;
+
+[a, b] = [b, a];
+
+console.log(a);
+// 20
+console.log(b);
+// 10
+</code></pre>
+            </div>
+          </div>
+
+          <div class="destr__div border-bottom p15">
+            <h2 class="destr__title m-b15">2. Object Destructuring</h2>
+            <br />
+            <p class="destr__description">
+              <span>Object Destructuring</span> — це спосіб отримувати значення
+              властивостей об'єкта та записувати їх в окремі змінні.
+            </p>
+            <br />
+            <p class="destr__description">
+              На відміну від масивів, де значення отримуються за порядком, в
+              об'єктах ми звертаємося до властивостей
+              <span>за їхніми назвами (ключами).</span>
+            </p>
+            <br />
+            <p class="destr__description">
+              Для деструктуризації об'єктів використовуються
+              <span>фігурні дужки {}.</span>
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+};
+
+const { name, age, city } = user;
+
+console.log(name);
+// Anna
+console.log(age);
+// 25
+console.log(city);
+// Kyiv
+</code></pre>
+            </div>
+            <br />
+            <p class="destr__description">
+              <span>Зверни увагу:</span> назви змінних за замовчуванням повинні
+              збігатися з назвами властивостей об'єкта.
+            </p>
+            <br />
+            <br />
+            <p class="destr__description">
+              На відміну від деструктуризації масивів, порядок змінних в об'єкті
+              не має значення.
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+};
+
+const { city, name, age } = user;
+
+console.log(city);
+// Kyiv
+console.log(name);
+// Anna
+console.log(age);
+// 25
+</code></pre>
+            </div>
+            <br />
+            <p class="destr__description">
+              JavaScript знаходить потрібні значення за назвами властивостей, а
+              не за їхнім порядком.
+            </p>
+            <br />
+            <br />
+            <p class="destr__description">
+              Ми можемо отримувати лише ті властивості об'єкта, які нам
+              потрібні. Не обов'язково деструктуризувати весь об'єкт.
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  city: "Kyiv",
+  country: "Ukraine",
+};
+
+const { name, age } = user;
+
+console.log(name);
+// Anna
+console.log(age);
+// 25
+</code></pre>
+            </div>
+            <br />
+            <br />
+            <p class="destr__description">
+              Під час деструктуризації об'єктів ми можемо присвоїти властивості
+              іншу назву змінної. Для цього використовується
+              <span>двокрапка :</span>.
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+};
+
+const { name: userName, age: userAge } = user;
+
+console.log(userName);
+// Anna
+console.log(userAge);
+// 25
+</code></pre>
+            </div>
+            <br />
+            <p class="destr__description">
+              Якщо об'єкт не містить певної властивості або її значення дорівнює
+              undefined, ми можемо встановити значення за замовчуванням. Для
+              цього використовується <span>оператор =</span>.
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+};
+
+const { name, age, city = "Kyiv" } = user;
+
+console.log(name);
+// Anna
+console.log(age);
+// 25
+console.log(city);
+// Kyiv
+</code></pre>
+            </div>
+            <br />
+            <p class="destr__description">
+              <span>Зверни увагу:</span> якщо властивість існує та має значення
+              null, значення за замовчуванням не застосовується.
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  city: null,
+};
+
+const { city = "Kyiv" } = user;
+
+console.log(city);
+// null
+</code></pre>
+            </div>
+          </div>
+
+          <div class="destr__div p15">
+            <h2 class="destr__title m-b15">3. Nested Destructuring</h2>
+            <br />
+            <p class="destr__description">
+              <span>Nested Destructuring (Вкладена деструктуризація)</span> — це
+              спосіб отримувати значення з об'єктів або масивів, які знаходяться
+              всередині інших об'єктів або масивів.
+            </p>
+            <br />
+            <p class="destr__description">
+              Якщо один об'єкт знаходиться всередині іншого, ми можемо отримати
+              його властивості за допомогою вкладеної деструктуризації.
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+  address: {
+    city: "Kyiv",
+    country: "Ukraine",
+  },
+};
+
+const {
+  address: { city, country },
+} = user;
+
+console.log(city);
+// Kyiv
+console.log(country);
+// Ukraine
+</code></pre>
+            </div>
+            <br />
+            <span>Синтаксис:</span>
+            <div class="destr__code-box fig-nectar">
+              <pre><code>const {
+  address: { city, country },
+} = user;
+</code></pre>
+            </div>
+            <br />
+            <p class="destr__description">
+              Тут ми не створюємо змінну address, а одразу отримуємо city та
+              country.
+            </p>
+            <br />
+            <p class="destr__description">
+              Якщо нам потрібна також змінна address, її можна додати окремо:
+            </p>
+            <br />
+            <span>Синтаксис:</span>
+            <div class="destr__code-box fig-nectar">
+              <pre><code>const {
+  address,
+  address: { city, country },
+} = user;
+</code></pre>
+            </div>
+            <br />
+            <p class="destr__description">
+              Так само можна отримувати значення з масивів, які знаходяться
+              всередині інших масивів.
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [10, [20, 30], 40];
+
+const [first, [second, third], fourth] = numbers;
+
+console.log(first);
+// 10
+console.log(second);
+// 20
+console.log(third);
+// 30
+console.log(fourth);
+// 40
+</code></pre>
+            </div>
+            <br />
+            <p class="destr__description">
+              Можна також використовувати деструктуризацію об'єктів і масивів
+              одночасно.
+            </p>
+            <br />
+            <div
+              class="destr__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  scores: [90, 85, 100],
+};
+
+const {
+  name,
+  scores: [firstScore, secondScore, thirdScore],
+} = user;
+
+console.log(name);
+// Anna
+console.log(firstScore);
+// 90
+console.log(secondScore);
+// 85
+console.log(thirdScore);
+// 100
+</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
