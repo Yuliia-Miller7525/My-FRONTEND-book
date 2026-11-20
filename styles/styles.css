@@ -51,8 +51,6 @@ main {
 }
 span {
   font-weight: 700;
-  text-transform: uppercase;
-  color: #8c3c4a;
 }
 .relative {
   position: relative;

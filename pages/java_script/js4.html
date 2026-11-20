@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>basics of functions</title>
-    <link rel="stylesheet" href="../fonts/stylesheet.css" />
-    <link rel="stylesheet" href="../styles/styles.css" />
-    <link rel="stylesheet" href="../styles/media.css" />
+    <link rel="stylesheet" href="../../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../../styles/styles.css" />
+    <link rel="stylesheet" href="../../styles/media.css" />
   </head>
   <body>
     <header class="header background-accent center-txt basic-padding">
@@ -120,8 +120,8 @@ console.log(addNumbers(5, 3));
             </h2>
             <br />
             <p class="functions__description">
-              <span>functions Declaration (Оголошення функції)</span> — це
-              спосіб створення (оголошення) функції за допомогою ключового слова
+              <span>Function Declaration (Оголошення функції)</span> — це спосіб
+              створення (оголошення) функції за допомогою ключового слова
               functions, назви функції та блоку коду.
             </p>
             <br />
@@ -132,7 +132,7 @@ console.log(addNumbers(5, 3));
             <br />
             <div class="functions__code-box">
               <span>Синтаксис:</span>
-              <pre><code><b>functions functionsName() {
+              <pre><code><b>function functionName() {
 }</b></code></pre>
             </div>
             <br />
@@ -145,13 +145,13 @@ console.log(addNumbers(5, 3));
               </thead>
               <tbody>
                 <tr>
-                  <td><code>functions</code></td>
+                  <td><code>function</code></td>
                   <td>
                     Ключове слово, яке використовується для створення функції.
                   </td>
                 </tr>
                 <tr>
-                  <td><code>functionsName</code></td>
+                  <td><code>functionName</code></td>
                   <td>Назва функції.</td>
                 </tr>
                 <tr>
@@ -396,7 +396,8 @@ sayHello();
 
 // Викликаємо функцію та передаємо аргумент
 greetUser("Олена");
-Результат у консолі: Привіт, Олена!</code></pre>
+Результат у консолі:
+Привіт, Олена!</code></pre>
             </div>
             <br />
             <p class="functions__description">
@@ -439,13 +440,13 @@ greetUser("Марія");
             <div
               class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
             >
-              <pre><code>function showMessage() {
-  console.log("Вітаю на нашому сайті!");
+              <pre><code>function calculateSum(a, b) {
+  console.log(a + b);
 }
 
-showMessage();
-Результат у консолі:
-Вітаю на нашому сайті!</code></pre>
+// Викликаємо функцію
+calculateSum(5, 3);
+Результат у консолі: 8</code></pre>
             </div>
             <br />
             <p class="functions__description">
@@ -457,13 +458,14 @@ showMessage();
             <div
               class="functions__code-box fig-nectar-bg border-radius p15 peach-veil"
             >
-              <pre><code>function calculateSum(a, b) {
-  console.log(a + b);
+              <pre><code>function showMessage() {
+  console.log("Вітаю на нашому сайті!");
 }
 
-// Викликаємо функцію
-calculateSum(5, 3);
-Результат у консолі: 8</code></pre>
+showMessage();
+Результат у консолі:
+Вітаю на нашому сайті!
+</code></pre>
             </div>
             <br />
           </div>
@@ -614,7 +616,8 @@ greetUser();
   return a + b;
 }
 
-calculateSum(5, 3);</code></pre>
+calculateSum(5, 3);
+//8</code></pre>
             </div>
             <br />
             <h3 class="functions__subtitle velvet-dusk">У цьому прикладі:</h3>
@@ -709,7 +712,7 @@ console.log(result);
               </div>
               <br />
               <li class="functions__item">
-                Використати результат у математичних операціях.
+                Передати результат в іншу функцію.
               </li>
               <br />
               <div
@@ -776,7 +779,7 @@ let result = sayHello();
 
 console.log(result);
 //Привіт!
-  undefined</code></pre>
+//undefined</code></pre>
             </div>
             <br />
             <div
