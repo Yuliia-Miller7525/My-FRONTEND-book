@@ -23,7 +23,9 @@
       <section class="objects">
         <div class="objects__container container">
           <div class="objects__div border-bottom p15">
-            <h2 class="objects__title m-b15">1. Основи об'єктів</h2>
+            <h2 class="objects__title m-b15 title-adaptation">
+              1. Основи об'єктів
+            </h2>
             <p class="objects__description">
               <span>об'єкт</span> — це тип даних, який дозволяє зберігати
               декілька пов'язаних між собою значень у вигляді пар
@@ -281,8 +283,8 @@ console.log(user.address.street);
             </div>
           </div>
 
-          <div class="objects__div p15">
-            <h2 class="objects__title m-b15">
+          <div class="objects__div border-bottom p15">
+            <h2 class="objects__title m-b15 title-adaptation">
               2. Додавання, зміна та видалення властивостей об'єкта (Adding,
               Updating and Deleting Properties)
             </h2>
@@ -390,6 +392,166 @@ console.log(user);
               <span>Важливо:</span> оператор delete видаляє саме властивість
               об'єкта, а не змінну, у якій зберігається об'єкт.
             </p>
+          </div>
+
+          <div class="objects__div border-bottom p15">
+            <h2 class="objects__title m-b15 title-adaptation">
+              3. Функції-конструктори (Constructor Functions)
+            </h2>
+            <p class="objects__description">
+              <span>Функція-конструктор</span> — це звичайна функція, яку
+              використовують як шаблон для створення однотипних об'єктів.
+            </p>
+            <br />
+            <p class="objects__description">
+              Наприклад, уявімо, що нам потрібно створити декілька об'єктів
+              користувачів. Кожен користувач повинен мати однакові властивості:
+              ім'я, вік та місто.
+            </p>
+            <br />
+            <p class="objects__description">
+              Можна створювати об'єкти вручну. Але якщо таких об'єктів буде 50
+              або 100, доведеться постійно повторювати однаковий код. Для цього
+              і використовують функції-конструктори.
+            </p>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function User(name, age, city) {
+  this.name = name;
+  this.age = age;
+  this.city = city;
+}
+</code></pre>
+            </div>
+            <br />
+            <p class="objects__description">Розберімо його:</p>
+            <br />
+            <ul class="objects__list m-list">
+              <li class="objects__item">
+                <span>function User() </span> - оголошення функції-конструктора
+              </li>
+              <li class="objects__item">
+                <span>name, age, city</span> - параметри, які отримує функція
+              </li>
+              <li class="objects__item">
+                <span>this.name</span> - властивість майбутнього об'єкта
+              </li>
+              <li class="objects__item">
+                <span>name</span> - значення, яке передається у властивість
+              </li>
+            </ul>
+            <br />
+            <h3 class="objects__subtitle velvet-dusk">Важливо запам'ятати:</h3>
+            <br />
+            <ol class="objects__list m-list">
+              <li class="objects__item">
+                Назву функції-конструктора прийнято починати з великої літери
+                (User, Car, Product).
+              </li>
+              <li class="objects__item">
+                Для створення властивостей майбутнього об'єкта використовують
+                ключове слово this.
+              </li>
+              <li class="objects__item">
+                Функція-конструктор зазвичай використовується разом з оператором
+                new.
+              </li>
+            </ol>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function User(name, age, city) {
+  this.name = name;
+  this.age = age;
+  this.city = city;
+}
+
+const user1 = new User("Anna", 25, "Kyiv");
+const user2 = new User("Alex", 30, "Lviv");
+
+console.log(user1);
+console.log(user2);
+//{
+  name: "Anna",
+  age: 25,
+  city: "Kyiv"
+  }
+
+//{
+  name: "Alex",
+  age: 30,
+  city: "Lviv"
+  }
+</code></pre>
+            </div>
+          </div>
+
+          <div class="objects__div p15">
+            <h2 class="objects__title m-b15 title-adaptation">
+              4. Оператор new
+            </h2>
+            <p class="objects__description">
+              Тепер розберімо, що саме відбувається, коли ми пишемо:
+              <span>const user1 = new User("Anna", 25, "Kyiv");</span>
+            </p>
+            <br />
+            <p class="objects__description">
+              <span>Оператор new</span> використовується для виклику
+              функції-конструктора та створення нового об'єкта.
+            </p>
+            <br />
+            <h3 class="objects__subtitle velvet-dusk">
+              Коли ми використовуємо new, JavaScript автоматично виконує
+              декілька дій:
+            </h3>
+            <br />
+            <ol class="objects__list m-list">
+              <li class="objects__item">Створює новий порожній об'єкт.</li>
+              <li class="objects__item">
+                Пов'язує цей об'єкт із прототипом функції-конструктора.
+              </li>
+              <li class="objects__item">Прив'язує this до нового об'єкта.</li>
+              <li class="objects__item">Виконує код функції-конструктора.</li>
+              <li class="objects__item">
+                Повертає створений об'єкт (якщо функція явно не повернула інший
+                об'єкт).
+              </li>
+            </ol>
+            <br />
+            <p class="objects__description">
+              При використанні функцій-конструкторів важливо не забувати про
+              new.
+            </p>
+            <br />
+            <div
+              class="objects__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b class="uppercase">З оператором new:</b>
+                
+function User(name) {
+  this.name = name;
+}
+
+const user1 = new User("Anna");
+
+console.log(user1.name);
+// Anna
+
+<b class="uppercase">Без оператора new:</b>
+
+function User(name) {
+  this.name = name;
+}
+
+const user1 = User("Anna");
+
+console.log(user1);
+// undefined
+</code></pre>
+            </div>
           </div>
         </div>
       </section>

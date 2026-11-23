@@ -265,7 +265,8 @@ span {
 .functions__table,
 .arrow__table,
 .objects__table,
-.this_keyword__table {
+.this_keyword__table,
+.arr-methods__table {
   text-align: left;
 }
 .operators__table th,
@@ -283,7 +284,9 @@ span {
 .objects__table th,
 .objects__table td,
 .this_keyword__table th,
-.this_keyword__table td {
+.this_keyword__table td,
+.arr-methods__table th,
+.arr-methods__table td {
   padding: 5px;
   border: 1px solid #8c3c4a;
 }
@@ -294,7 +297,8 @@ span {
 .arrow__table th,
 .recursion__table th,
 .objects__table th,
-.this_keyword__table th {
+.this_keyword__table th,
+.arr-methods__table th {
   background-color: #8c3c4a;
   color: #fffde5;
   font-weight: 700;
@@ -335,4 +339,25 @@ span {
 .arr-methods__subdiv {
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+}
+.prototypes-chain__item {
+  width: 100%;
+  max-width: 250px;
+  padding: 15px;
+  text-align: center;
+  border: 2px solid #8c3c4a;
+  border-radius: 10px;
+}
+.prototypes-chain__item h3 {
+  margin-bottom: 5px;
+}
+.prototypes-chain__item p {
+  margin: 0;
+  color: #888;
+}
+.prototypes-chain__arrow {
+  font-size: 24px;
+}
+.arr-methods__table {
+  margin: 0 auto;
 }

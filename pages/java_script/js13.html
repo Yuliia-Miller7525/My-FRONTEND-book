@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes</title>
+    <link rel="stylesheet" href="../../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../../styles/styles.css" />
+    <link rel="stylesheet" href="../../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">Classes</h1>
+          <p class="header__description peach-veil fs15">
+            templates for creating objects with shared properties and methods in
+            JavaScript
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="classes">
+        <div class="classes__container container">
+          <div class="classes__div border-bottom p15">
+            <h2 class="classes__title m-b15 title-adaptation">
+              Basics of classes (Основи класів)
+            </h2>
+            <p class="classes__description">
+              <span>Class</span> — це шаблон для створення об'єктів, який описує
+              їхні властивості та методи.
+            </p>
+            <br />
+            <p class="classes__description">
+              Простіше кажучи, клас — це шаблон, за яким можна створювати багато
+              схожих об'єктів із різними значеннями властивостей.
+            </p>
+            <br />
+            <p class="classes__description">
+              Наприклад, ми можемо створити клас User, який описуватиме
+              користувача. А потім на його основі створити декількох
+              користувачів із різними іменами та віком.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  // Властивості та методи класу
+}
+</code></pre>
+            </div>
+            <br />
+            <h3 class="classes__subtitle velvet-dusk">Класи допомагають:</h3>
+            <br />
+            <ul class="classes__list m-list">
+              <li>Створювати багато однотипних об'єктів.</li>
+              <li>Об'єднувати властивості та методи в одному місці.</li>
+              <li>Повторно використовувати код.</li>
+              <li>Організовувати код і робити його зрозумілішим.</li>
+            </ul>
+            <br />
+            <p class="classes__description">
+              Для створення класу використовується ключове слово class, після
+              якого вказується назва класу.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  name = "Anna";
+  age = 25;
+
+  sayHello() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Щоб створити об'єкт на основі класу, використовується оператор
+              new.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  name = "Anna";
+  age = 25;
+
+  sayHello() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+
+const user1 = new User();
+const user2 = new User();
+
+user1.sayHello();
+// Hello, my name is Anna
+
+
+<b>user1 та user2 —
+це окремі екземпляри класу User.</b>
+</code></pre>
+            </div>
+          </div>
+
+          <div class="classes__div border-bottom p15">
+            <h2 class="classes__title m-b15 title-adaptation">
+              Конструктор класу (Constructor)
+            </h2>
+            <p class="classes__description">
+              <span>Конструктор (constructor)</span> — це спеціальний метод
+              класу, який автоматично викликається під час створення нового
+              екземпляра класу за допомогою оператора new.
+            </p>
+            <br />
+            <p class="classes__description">
+              Його основне завдання — встановити початкові значення властивостей
+              нового об'єкта.
+            </p>
+            <br />
+            <div class="classes__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}</b>
+
+
+constructor — спеціальний метод,
+який викликається під час створення об'єкта.
+
+name та age — параметри,
+які отримує конструктор.
+
+this.name та this.age — властивості
+нового об'єкта.
+
+this — посилається на
+конкретний екземпляр класу.</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Щоб передати значення конструктору, використовуємо оператор new:
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const user1 = new User("Anna", 25);
+const user2 = new User("John", 30);
+
+console.log(user1.name);
+// Anna
+console.log(user2.name);
+// John
+</code></pre>
+            </div>
+            <br />
+            <h3 class="classes__subtitle velvet-dusk">Важливо запам'ятати</h3>
+            <br />
+            <ol class="classes__list m-list">
+              <li>У класі може бути лише один метод constructor.</li>
+              <li>
+                Конструктор автоматично викликається під час створення об'єкта
+                через new.
+              </li>
+              <li>
+                Якщо конструктор не вказати, JavaScript автоматично створить
+                порожній конструктор.
+              </li>
+              <li>Конструктор не потрібно викликати вручну.</li>
+            </ol>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class Car {
+  constructor(brand, year) {
+    this.brand = brand;
+    this.year = year;
+  }
+}
+
+const car1 = new Car("BMW", 2020);
+const car2 = new Car("Audi", 2023);
+
+console.log(car2.brand)
+//Audi
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const user1 = new User("Anna", 25);
+const user2 = new User("John", 30);
+
+console.log(user1.age + user2.age);
+//55
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const user1 = new User("Anna");
+
+console.log(user1.name);
+console.log(user1.age);
+//Anna
+//undefined
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>А як зробити, щоб вік за замовчуванням дорівнював 18?</b>
+                
+class User {
+  constructor(name, age = 18) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const user1 = new User("Anna");
+
+console.log(user1.age);
+// 18
+</code></pre>
+            </div>
+          </div>
+
+          <div class="classes__div border-bottom p15">
+            <h2 class="classes__title m-b15 title-adaptation">
+              Властивості класу (Class Properties)
+            </h2>
+            <p class="classes__description">
+              <span>Властивості класу (Properties)</span> — це змінні, які
+              зберігають дані об'єктів, створених на основі класу.
+            </p>
+            <br />
+            <p class="classes__description">
+              У JavaScript є два основні способи оголошення властивостей класу:
+              через конструктор та безпосередньо в класі.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>Властивості через конструктор</b>
+                
+class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const user1 = new User("Anna", 25);
+
+console.log(user1.name);
+// Anna
+console.log(user1.age);
+// 25
+
+<b>Тут властивості створюються всередині
+конструктора за допомогою this.
+Значення передаються під час створення об'єкта.</b>
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>Властивості безпосередньо в класі</b>
+                
+class User {
+  name = "Anna";
+  age = 25;
+}
+
+const user1 = new User();
+
+console.log(user1.name);
+// Anna
+console.log(user1.age);
+// 25
+
+<b>У цьому випадку властивості
+отримують значення безпосередньо
+під час створення екземпляра класу.</b>
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Ці два способи можна поєднувати в одному класі.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  role = "user";
+
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const user1 = new User("Anna", 25);
+
+console.log(user1.name);
+// Anna
+console.log(user1.role);
+// user
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class Car {
+  wheels = 4;
+
+  constructor(brand) {
+    this.brand = brand;
+  }
+}
+
+const car1 = new Car("BMW");
+const car2 = new Car("Audi");
+
+console.log(car1.wheels);
+//4
+console.log(car2.brand);
+//Audi
+</code></pre>
+            </div>
+          </div>
+
+          <div class="classes__div border-bottom p15">
+            <h2 class="classes__title m-b15 title-adaptation">
+              Методи класу (Class Methods)
+            </h2>
+            <p class="classes__description">
+              <span>Методи класу (Methods)</span> — це функції, які визначають
+              дії, доступні об'єктам, створеним на основі класу.
+            </p>
+            <br />
+            <div class="classes__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>class Car {
+  drive() {
+    console.log("Автомобіль їде");
+  }
+
+  stop() {
+    console.log("Автомобіль зупинився");
+  }
+}</b></code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Щоб викликати метод, спочатку потрібно створити екземпляр класу:
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const car1 = new Car();
+
+car1.drive();
+// Автомобіль їде
+car1.stop();
+// Автомобіль зупинився
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Методи класу можуть звертатися до властивостей конкретного об'єкта
+              за допомогою this.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class Car {
+  constructor(brand, year) {
+    this.brand = brand;
+    this.year = year;
+  }
+
+  showInfo() {
+    console.log(`Марка: ${this.brand}, рік: ${this.year}`);
+  }
+}
+
+const car1 = new Car("BMW", 2020);
+const car2 = new Car("Audi", 2023);
+
+car1.showInfo();
+// Марка: BMW, рік: 2020
+car2.showInfo();
+// Марка: Audi, рік: 2023
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Зверни увагу: ми створили один метод showInfo(), але він працює з
+              даними різних об'єктів.
+            </p>
+          </div>
+
+          <div class="classes__div border-bottom p15">
+            <h2 class="classes__title m-b15 title-adaptation">
+              Геттери та сеттери (Getters and Setters)
+            </h2>
+            <p class="classes__description">
+              <span>Геттери (Getters) та сеттери (Setters)</span> — це
+              спеціальні методи, які дозволяють отримувати та змінювати значення
+              властивостей об'єкта.
+            </p>
+            <br />
+            <ul class="classes__list m-list">
+              <li><span>get</span> — отримує значення властивості.</li>
+              <li>
+                <span>set</span> — встановлює або змінює значення властивості.
+              </li>
+            </ul>
+            <br />
+            <br />
+            <p class="classes__description">
+              Геттер дозволяє отримати значення властивості, використовуючи
+              синтаксис звернення до властивості.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  constructor(name) {
+    this.name = name;
+  }
+
+  get userName() {
+    return this.name;
+  }
+}
+
+const user1 = new User("Anna");
+
+console.log(user1.userName);
+// Anna
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Перед назвою методу використовується get. Ми звертаємося до нього
+              як до властивості — user1.userName, без круглих дужок.
+            </p>
+            <br />
+            <br />
+            <p class="classes__description">
+              Сеттер дозволяє змінювати значення властивості.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  constructor(name) {
+    this.name = name;
+  }
+
+  set userName(newName) {
+    this.name = newName;
+  }
+}
+
+const user1 = new User("Anna");
+
+user1.userName = "Maria";
+
+console.log(user1.name);
+// Maria
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Сеттер викликається через звичайне присвоєння, без круглих дужок.
+            </p>
+            <br />
+            <br />
+            <p class="classes__description">
+              Звичайні властивості дозволяють безпосередньо отримувати та
+              змінювати дані, але не контролюють, які саме значення ми
+              записуємо. Саме тут нам допомагають сеттери та геттери.
+            </p>
+            <br />
+            <p class="classes__description">
+              Сеттер дозволяє перевіряти значення перед тим, як записати його у
+              властивість, а геттер дозволяє визначити, яке значення
+              повертатиметься під час звернення до властивості. Найчастіше їх
+              використовують разом.
+            </p>
+            <br />
+            <p class="classes__description">
+              Наприклад, ми хочемо заборонити від'ємний вік:
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  get age() {
+    return this._age;
+  }
+
+  set age(value) {
+    if (value >= 0) {
+      this._age = value;
+    } else {
+      console.log("Вік не може бути від'ємним!");
+    }
+  }
+}
+
+const user1 = new User("Anna", 25);
+
+console.log(user1.age);
+// 25
+
+user1.age = 30;
+
+console.log(user1.age);
+// 30
+
+user1.age = -5;
+// Вік не може бути від'ємним!
+
+console.log(user1.age);
+// 30
+</code></pre>
+            </div>
+          </div>
+
+          <div class="classes__div border-bottom p15">
+            <h2 class="classes__title m-b15 title-adaptation">
+              Статичні властивості та методи (Static Properties and Methods)
+            </h2>
+            <p class="classes__description">
+              <span>Статичні властивості та методи</span> — це властивості й
+              методи, які належать самому класу, а не його окремим екземплярам.
+              Для їх оголошення використовується ключове слово
+              <span>static.</span>
+            </p>
+            <br />
+            <p class="classes__description">
+              Статичний метод можна викликати без створення екземпляра класу.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  static sayHello() {
+    console.log("Привіт!");
+  }
+}
+
+User.sayHello();
+// Привіт!
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Якщо спробувати викликати цей метод через екземпляр класу,
+              отримаємо помилку:
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user1 = new User();
+
+user1.sayHello();
+// Помилка
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Так само можна створювати статичні властивості:
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  static role = "Administrator";
+}
+
+console.log(User.role);
+// Administrator
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Статичні методи зручно використовувати для дій, які не залежать
+              від конкретного екземпляра класу. Наприклад, можна створити метод
+              для перевірки віку:
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  static isAdult(age) {
+    return age >= 18;
+  }
+}
+
+console.log(User.isAdult(25));
+// true
+console.log(User.isAdult(15));
+// false
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class Car {
+  static wheels = 4;
+
+  constructor(brand) {
+    this.brand = brand;
+  }
+
+  showBrand() {
+    console.log(this.brand);
+  }
+
+  static showWheels() {
+    console.log(Car.wheels);
+  }
+}
+
+const car1 = new Car("BMW");
+
+car1.showBrand();
+// BMW
+Car.showWheels();
+// 4
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Статичні властивості та методи використовують, коли певні дані або
+              дії стосуються всього класу, а не окремого об'єкта. Наприклад:
+            </p>
+            <br />
+            <ul class="classes__list m-list">
+              <li>Зберігання загальної інформації про клас.</li>
+              <li>Перевірка даних.</li>
+              <li>Виконання допоміжних обчислень.</li>
+              <li>
+                Створення методів, для роботи яких не потрібен конкретний
+                екземпляр.
+              </li>
+            </ul>
+          </div>
+
+          <div class="classes__div border-bottom p15">
+            <h2 class="classes__title m-b15 title-adaptation">
+              Наслідування (Inheritance)
+            </h2>
+            <p class="classes__description">
+              <span>Наслідування (Inheritance)</span> — це механізм, який
+              дозволяє одному класу отримувати властивості та методи іншого
+              класу.
+            </p>
+            <br />
+            <p class="classes__description">
+              Простіше кажучи, ми можемо створити один основний клас, а потім на
+              його основі створювати інші класи, які використовуватимуть його
+              властивості та методи.
+            </p>
+            <br />
+            <p class="classes__description">
+              Уявімо, що ми створюємо програму для роботи з транспортними
+              засобами. У нас є автомобіль і мотоцикл. Обидва транспортні засоби
+              мають: марку (brand), рік випуску (year), метод показу інформації
+              (showInfo()). Ми могли б окремо описати всі ці властивості та
+              методи в кожному класі. Але це призвело б до повторення коду.
+              Натомість можна створити загальний клас Vehicle, а від нього
+              успадкувати класи Car та Motorcycle.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>Це батьківський клас,
+який містить спільні властивості та методи.</b>
+                
+class Vehicle {
+  constructor(brand, year) {
+    this.brand = brand;
+    this.year = year;
+  }
+
+  showInfo() {
+    console.log(`Марка: ${this.brand}, рік: ${this.year}`);
+  }
+}
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Для наслідування використовується ключове слово
+              <span>extends.</span>
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class Car extends Vehicle {
+
+}
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class Vehicle {
+  constructor(brand, year) {
+    this.brand = brand;
+    this.year = year;
+  }
+
+  showInfo() {
+    console.log(`Марка: ${this.brand}, рік: ${this.year}`);
+  }
+}
+
+class Car extends Vehicle {
+
+}
+
+const car1 = new Car("BMW", 2020);
+
+car1.showInfo();
+
+// Марка: BMW, рік: 2020
+
+<b>Зверни увагу:
+ми не створювали конструктор у класі Car,
+але змогли передати значення brand та year.
+Це тому, що дочірній клас успадкував
+конструктор батьківського класу.</b>
+</code></pre>
+            </div>
+            <br />
+            <h3 class="classes__subtitle velvet-dusk">Що дає наслідування?</h3>
+            <br />
+            <ul class="classes__list m-list">
+              <li>Дозволяє повторно використовувати готовий код.</li>
+              <li>Допомагає уникати дублювання властивостей та методів.</li>
+              <li>
+                Дозволяє створювати більш спеціалізовані класи на основі
+                загальних.
+              </li>
+            </ul>
+          </div>
+
+          <div class="classes__div border-bottom p15">
+            <h2 class="classes__title m-b15 title-adaptation">
+              Ключове слово super
+            </h2>
+            <p class="classes__description">
+              <span>super</span> — це ключове слово, яке дозволяє дочірньому
+              класу звертатися до конструктора та методів батьківського класу.
+              Воно використовується під час наслідування (extends).
+            </p>
+            <br />
+            <p class="classes__description">
+              Уявімо, що ми маємо батьківський клас Vehicle та дочірній клас
+              Car. Батьківський клас зберігає марку автомобіля, а дочірній
+              повинен додатково зберігати кількість дверей.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class Vehicle {
+  constructor(brand) {
+    this.brand = brand;
+  }
+}
+
+class Car extends Vehicle {
+  constructor(brand, doors) {
+    super(brand);
+    this.doors = doors;
+  }
+}
+
+const car1 = new Car("BMW", 4);
+
+console.log(car1.brand);
+// BMW
+console.log(car1.doors);
+// 4
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">Розберімо цей приклад:</p>
+            <br />
+            <ol class="classes__list m-list">
+              <li>Створюємо дочірній клас Car, який успадковує Vehicle.</li>
+              <li>У конструкторі Car використовуємо super(brand).</li>
+              <li>
+                super(brand) викликає конструктор батьківського класу Vehicle і
+                передає йому значення brand.
+              </li>
+              <li>Батьківський конструктор записує значення у this.brand.</li>
+              <li>Далі дочірній клас створює власну властивість this.doors.</li>
+            </ol>
+            <br />
+            <p class="classes__description">
+              <span>Важливо запам'ятати:</span> якщо дочірній клас має власний
+              конструктор, то перед використанням this необхідно викликати
+              super(). Без цього JavaScript видасть помилку.
+            </p>
+            <br />
+            <br />
+            <p class="classes__description">
+              super можна використовувати не тільки для виклику конструктора, а
+              й для звернення до методів батьківського класу.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class Animal {
+  makeSound() {
+    console.log("Тварина видає звук");
+  }
+}
+
+class Dog extends Animal {
+  makeSound() {
+    super.makeSound();
+
+    console.log("Собака гавкає");
+  }
+}
+
+const dog1 = new Dog();
+
+dog1.makeSound();
+//Тварина видає звук
+  Собака гавкає
+</code></pre>
+            </div>
+            <br />
+            <h3 class="classes__subtitle velvet-dusk">Коротко про super</h3>
+            <br />
+            <ul class="classes__list m-list">
+              <li>
+                <span>super()</span> - викликає конструктор батьківського класу
+              </li>
+              <li>
+                <span>super.method()</span> - викликає метод батьківського класу
+              </li>
+            </ul>
+          </div>
+
+          <div class="classes__div p15">
+            <h2 class="classes__title m-b15 title-adaptation">
+              Приватні властивості та методи (Private Properties and Methods)
+            </h2>
+            <p class="classes__description">
+              <span>Приватні властивості (Private Properties)</span> — це
+              властивості класу, до яких не можна отримати прямий доступ за
+              межами цього класу.
+            </p>
+            <br />
+            <p class="classes__description">
+              Для створення приватних властивостей використовується символ
+              <span>#</span> перед назвою властивості.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  #password;
+
+  constructor(name, password) {
+    this.name = name;
+    this.#password = password;
+  }
+}
+
+const user1 = new User("Anna", "12345");
+
+console.log(user1.name);
+// Anna
+console.log(user1.#password);
+// Помилка
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              <span>Важливо:</span> приватні властивості не можна просто
+              прочитати або змінити через зовнішній об'єкт.
+            </p>
+            <br />
+            <p class="classes__description">
+              Якщо нам усе-таки потрібно отримати доступ до приватної
+              властивості - можна створити звичайний метод класу:
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  #password;
+
+  constructor(name, password) {
+    this.name = name;
+    this.#password = password;
+  }
+
+  showPassword() {
+    return this.#password;
+  }
+}
+
+const user1 = new User("Anna", "12345");
+
+console.log(user1.showPassword());
+// 12345
+</code></pre>
+            </div>
+            <br />
+            <p class="classes__description">
+              Так само, як властивості, методи також можуть бути приватними. Для
+              цього перед назвою методу ставиться <span>#</span>.
+            </p>
+            <br />
+            <div
+              class="classes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>class User {
+  #showMessage() {
+    console.log("Це приватний метод");
+  }
+
+  sayHello() {
+    this.#showMessage();
+  }
+}
+
+const user1 = new User();
+
+user1.sayHello();
+// Це приватний метод
+</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

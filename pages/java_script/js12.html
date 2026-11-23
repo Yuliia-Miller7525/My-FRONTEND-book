@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototypes</title>
+    <link rel="stylesheet" href="../../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../../styles/styles.css" />
+    <link rel="stylesheet" href="../../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">prototypes</h1>
+          <p class="header__description peach-veil fs15">
+            objects that allow other objects to inherit properties and methods
+            in JavaScript
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="prototypes">
+        <div class="prototypes__container container">
+          <div class="prototypes__div border-bottom p15">
+            <p class="prototypes__description">
+              <span>Прототип (prototypes)</span> — це об'єкт, від якого інший
+              об'єкт може успадковувати властивості та методи. Якщо JavaScript
+              не знаходить властивість або метод в об'єкті, він шукає їх у його
+              прототипі.
+            </p>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+};
+
+console.log(user.toString());
+
+<b class="uppercase">Метод toString() не створений
+у самому об'єкті user.
+Він успадковується від Object.prototypes.</b>
+</code></pre>
+            </div>
+            <br />
+            <h3 class="prototypes__subtitle velvet-dusk">
+              Основне, що потрібно запам'ятати:
+            </h3>
+            <br />
+            <ol class="prototypes__list m-list">
+              <li>Об'єкти можуть успадковувати властивості та методи.</li>
+              <li>У кожного звичайного об'єкта є прототип.</li>
+              <li>
+                Якщо властивість не знайдена в об'єкті, JavaScript шукає її в
+                прототипі.
+              </li>
+            </ol>
+            <br />
+            <p class="prototypes__description">
+              <span>Ланцюжок прототипів (prototypes Chain)</span> — це
+              послідовність об'єктів, через які JavaScript шукає потрібну
+              властивість або метод, якщо не знаходить їх у самому об'єкті.
+            </p>
+            <br />
+            <h3 class="prototypes__subtitle velvet-dusk">Як це працює:</h3>
+            <br />
+            <ol class="prototypes__list m-list">
+              <li>JavaScript шукає властивість у самому об'єкті.</li>
+              <li>Якщо не знаходить — шукає в його прототипі.</li>
+              <li>
+                Якщо не знаходить і там — переходить до наступного прототипу.
+              </li>
+              <li>Пошук завершується, коли JavaScript доходить до null.</li>
+            </ol>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+  age: 25,
+};
+
+console.log(user.toString());
+
+<b class="uppercase">Методу toString() немає
+в об'єкті user, тому
+JavaScript шукає його в
+прототипі Object.prototypes і знаходить.</b>
+</code></pre>
+            </div>
+            <br />
+            <h3 class="prototypes__subtitle velvet-dusk center-txt">
+              Схема ланцюжка:
+            </h3>
+            <br />
+            <div class="prototypes-chain flex column gap center">
+              <div class="prototypes-chain__item">
+                <h3>user</h3>
+                <p>name, age</p>
+              </div>
+              <div class="prototypes-chain__arrow">↓</div>
+              <div class="prototypes-chain__item">
+                <h3>Object.prototypes</h3>
+                <p>toString(), valueOf() та інші методи</p>
+              </div>
+              <div class="prototypes-chain__arrow">↓</div>
+              <div class="prototypes-chain__item">
+                <h3>null</h3>
+                <p>Кінець ланцюжка прототипів</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="prototypes__div border-bottom p15">
+            <p class="prototypes__description">
+              <span>__proto__</span> — це спосіб отримати доступ до прототипу
+              об'єкта або змінити його.
+            </p>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+};
+
+console.log(user.__proto__);
+</code></pre>
+            </div>
+            <br />
+            <p class="prototypes__description">
+              У консолі побачимо прототип об'єкта user — Object.prototype.
+            </p>
+            <br />
+            <p class="prototypes__description">
+              <span>Важливо:</span> __proto__ — це застарілий спосіб доступу до
+              прототипу. Замість нього рекомендується використовувати
+              Object.getPrototypeOf().
+            </p>
+          </div>
+
+          <div class="prototypes__div border-bottom p15">
+            <p class="prototypes__description">
+              <span>Метод Object.getPrototypeOf()</span> - це вбудований метод
+              JavaScript, який повертає прототип вказаного об'єкта.
+              Object.getPrototypeOf().
+            </p>
+            <br />
+            <div class="prototypes__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>Object.getPrototypeOf(object);</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const user = {
+  name: "Anna",
+};
+
+const prototype = Object.getPrototypeOf(user);
+
+console.log(prototype);
+//Object.prototype
+</code></pre>
+            </div>
+            <br />
+            <h3 class="prototypes__subtitle velvet-dusk">Запам'ятай:</h3>
+            <br />
+            <ul class="prototypes__list m-list">
+              <li>
+                <span>__proto__</span> — доступ до прототипу через властивість.
+              </li>
+              <li>
+                <span>Object.getPrototypeOf()</span> — рекомендований спосіб
+                отримати прототип об'єкта.
+              </li>
+            </ul>
+          </div>
+
+          <div class="prototypes__div border-bottom p15">
+            <p class="prototypes__description">
+              <span>Object.setPrototypeOf()</span> — це метод, який дозволяє
+              встановити або змінити прототип об'єкта.
+            </p>
+            <br />
+            <div class="prototypes__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>Object.setPrototypeOf(object, prototype);</b></code></pre>
+            </div>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const animal = {
+  eat: function () {
+    console.log("Тварина їсть");
+  },
+};
+
+const dog = {
+  bark: function () {
+    console.log("Гав-гав!");
+  },
+};
+
+Object.setPrototypeOf(dog, animal);
+
+dog.eat();
+// Тварина їсть
+dog.bark();
+// Гав-гав!
+
+
+<b>Ми встановили об'єкту dog прототип animal.</b>
+</code></pre>
+            </div>
+            <br />
+            <p class="prototypes__description">
+              <span>Важливо:</span> цей метод корисний для навчання та окремих
+              випадків, але в реальному коді краще встановлювати прототип під
+              час створення об'єкта, а не змінювати його пізніше.
+            </p>
+          </div>
+
+          <div class="prototypes__div border-bottom p15">
+            <p class="prototypes__description">
+              <span>Object.create()</span> — це метод, який створює новий об'єкт
+              із вказаним прототипом.
+            </p>
+            <br />
+            <div class="prototypes__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>Object.create(prototype);</b>
+
+Тут prototype — об'єкт,
+який стане прототипом нового об'єкта.</code></pre>
+            </div>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const animal = {
+  eat: function () {
+    console.log("Тварина їсть");
+  },
+};
+
+const dog = Object.create(animal);
+
+dog.bark = function () {
+  console.log("Гав-гав!");
+};
+
+dog.eat();
+// Тварина їсть
+dog.bark();
+// Гав-гав!
+</code></pre>
+            </div>
+            <br />
+            <h3 class="prototypes__subtitle velvet-dusk">Що відбулося?</h3>
+            <br />
+            <ol class="prototypes__list m-list">
+              <li>Ми створили об'єкт animal із методом eat().</li>
+              <li>
+                За допомогою Object.create(animal) створили новий об'єкт dog.
+              </li>
+              <li>Об'єкт animal став прототипом об'єкта dog.</li>
+              <li>
+                Тому dog може використовувати метод eat(), хоча він не створений
+                безпосередньо в ньому.
+              </li>
+            </ol>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>Перевіримо прототип:</b>
+
+console.log(Object.getPrototypeOf(dog) === animal);
+// true
+</code></pre>
+            </div>
+          </div>
+
+          <div class="prototypes__div border-bottom p15">
+            <h2 class="prototypes__title m-b15 title-adaptation">
+              Власні та успадковані властивості (Own and Inherited Properties)
+            </h2>
+            <p class="prototypes__description">
+              В JavaScript властивості об'єктів поділяються на два види:
+            </p>
+            <br />
+            <ul class="prototypes__list m-list list">
+              <li>
+                <span>Власні властивості (Own Properties)</span> — властивості,
+                які створені безпосередньо в самому об'єкті.
+              </li>
+              <li>
+                <span>Успадковані властивості (Inherited Properties)</span> —
+                властивості, які об'єкт отримує від свого прототипу.
+              </li>
+            </ul>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const animal = {
+  eat: function () {
+    console.log("Тварина їсть");
+  },
+};
+
+const dog = Object.create(animal);
+
+dog.name = "Rex";
+</code></pre>
+            </div>
+            <br />
+            <p class="prototypes__description">
+              Для перевірки використовують два способи:
+            </p>
+            <br />
+            <ol class="prototypes__list m-list list">
+              <li>
+                <span>Object.hasOwn()</span> — перевіряє, чи є властивість
+                власною властивістю об'єкта.
+              </li>
+              <br />
+              <div
+                class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>console.log(Object.hasOwn(dog, "name"));
+// true
+
+console.log(Object.hasOwn(dog, "eat"));
+// false
+</code></pre>
+              </div>
+              <br />
+              <li>
+                <span>Оператор in</span> — перевіряє, чи існує властивість в
+                об'єкті або в його ланцюжку прототипів.
+              </li>
+              <br />
+              <div
+                class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>console.log("name" in dog);
+// true
+
+console.log("eat" in dog);
+// true
+</code></pre>
+              </div>
+            </ol>
+          </div>
+
+          <div class="prototypes__div border-bottom p15">
+            <h2 class="prototypes__title m-b15 title-adaptation">
+              Прототипування (Prototyping)
+            </h2>
+            <p class="prototypes__description">
+              <span>prototype</span> — це властивість функції-конструктора, яка
+              визначає прототип для об'єктів, створених за допомогою цієї
+              функції та оператора new.
+            </p>
+            <br />
+            <p class="prototypes__description">
+              Простіше кажучи, ми можемо додати метод до prototype, і всі
+              об'єкти, створені цим конструктором, зможуть його використовувати.
+            </p>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function Animal(name) {
+  this.name = name;
+}
+
+// Додаємо метод до prototype
+Animal.prototype.sayHello = function () {
+  console.log(`Привіт! Я ${this.name}`);
+};
+
+// Створюємо об'єкти
+const dog = new Animal("Rex");
+const cat = new Animal("Murka");
+
+dog.sayHello();
+// Привіт! Я Rex
+cat.sayHello();
+// Привіт! Я Murka
+</code></pre>
+            </div>
+            <br />
+            <h3 class="prototypes__subtitle velvet-dusk">Як це працює?</h3>
+            <br />
+            <ol class="prototypes__list m-list">
+              <li>Створюємо функцію-конструктор Animal.</li>
+              <li>Додаємо метод sayHello() до Animal.prototype.</li>
+              <li>За допомогою new створюємо об'єкти dog і cat.</li>
+              <li>
+                Обидва об'єкти отримують доступ до методу sayHello() через свій
+                прототип.
+              </li>
+            </ol>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>Перевіримо прототип:</b>
+                
+console.log(
+  Object.getPrototypeOf(dog) === Animal.prototype
+);
+// true
+</code></pre>
+            </div>
+            <br />
+            <br />
+            <p class="prototypes__description">
+              <span>constructor</span> — це властивість прототипу, яка містить
+              посилання на функцію-конструктор, що створила об'єкт.
+            </p>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function User(name) {
+  this.name = name;
+}
+
+const user = new User("Anna");
+
+console.log(user.constructor === User);
+// true
+</code></pre>
+            </div>
+            <br />
+            <h3 class="prototypes__subtitle velvet-dusk">Як це працює?</h3>
+            <br />
+            <ol class="prototypes__list m-list">
+              <li>Ми створили функцію-конструктор User.</li>
+              <li>Створили об'єкт user за допомогою new.</li>
+              <li>
+                Об'єкт user успадкував властивість constructor від
+                User.prototype.
+              </li>
+              <li>Ця властивість посилається на функцію User.</li>
+            </ol>
+            <br />
+            <p class="prototypes__description">
+              Важливо розуміти, що constructor зазвичай знаходиться не в самому
+              об'єкті, а в його прототипі.
+            </p>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function User(name) {
+  this.name = name;
+}
+
+const user = new User("Anna");
+
+console.log(user.constructor);
+// User
+
+console.log(Object.hasOwn(user, "constructor"));
+// false
+
+console.log(Object.hasOwn(User.prototype, "constructor"));
+// true
+</code></pre>
+            </div>
+            <br />
+            <p class="prototypes__description">
+              Також властивість constructor можна змінити. Наприклад, якщо ми
+              повністю замінимо прототип. Це відбувається тому, що під час
+              заміни прототипу ми втратили його початкову властивість
+              constructor.
+            </p>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function User(name) {
+  this.name = name;
+}
+
+User.prototype = {
+  sayHello: function () {
+    console.log("Hello!");
+  },
+};
+
+const user = new User("Anna");
+
+console.log(user.constructor === User);
+// false
+
+
+<b>Її можна відновити:</b>
+User.prototype.constructor = User;
+
+console.log(user.constructor === User); // true
+</code></pre>
+            </div>
+            <br />
+            <h3 class="prototypes__subtitle velvet-dusk">
+              Що варто запам'ятати?
+            </h3>
+            <br />
+            <ul class="prototypes__list m-list">
+              <li>
+                constructor — властивість прототипу, яка зазвичай посилається на
+                функцію-конструктор.
+              </li>
+              <li>
+                Об'єкти можуть успадковувати цю властивість через прототип.
+              </li>
+              <li>Її можна змінити або втратити під час заміни прототипу.</li>
+              <li>
+                constructor не створює об'єкти — для цього використовується
+                оператор new разом із функцією-конструктором.
+              </li>
+            </ul>
+            <br />
+            <br />
+            <p class="prototypes__description">
+              <span>instanceof</span> — це оператор, який перевіряє, чи є об'єкт
+              екземпляром певної функції-конструктора або класу. Повертає
+              результат true або false.
+            </p>
+            <br />
+            <div class="prototypes__code-box">
+              <span>Синтаксис:</span>
+              <pre><code><b>object instanceof Constructor;</b>
+
+object — об'єкт, який перевіряємо.
+Constructor —функція-конструктор або клас.</code></pre>
+            </div>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>function User(name) {
+  this.name = name;
+}
+
+const user = new User("Anna");
+
+console.log(user instanceof User);
+// true
+console.log(user instanceof Object);
+// true
+console.log(user instanceof Array);
+// false
+</code></pre>
+            </div>
+            <br />
+            <h3 class="prototypes__subtitle velvet-dusk">
+              Важливі особливості
+            </h3>
+            <br />
+            <ul class="prototypes__list m-list">
+              <li>
+                instanceof перевіряє весь ланцюжок прототипів, а не тільки
+                безпосередній прототип.
+              </li>
+              <li>Оператор повертає тільки true або false.</li>
+              <li>
+                instanceof не створює об'єкт, а лише перевіряє його прототипний
+                ланцюжок.
+              </li>
+            </ul>
+            <br />
+            <div
+              class="prototypes__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>Ще один приклад:</b>
+                
+function Animal() {}
+
+function Dog() {}
+
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+const dog = new Dog();
+
+console.log(dog instanceof Dog);
+// true
+console.log(dog instanceof Animal);
+// true
+console.log(dog instanceof Object);
+// true
+
+<b>Об'єкт dog є екземпляром Dog,
+але також проходить перевірку Animal та Object,
+оскільки їхні прототипи присутні
+в його прототипному ланцюжку.</b>
+</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

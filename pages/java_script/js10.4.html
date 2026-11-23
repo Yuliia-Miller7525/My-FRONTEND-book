@@ -60,7 +60,7 @@ console.log(fruits);
           </div>
 
           <div class="arr-methods__div border-bottom p15">
-            <h2 class="arr-methods__title m-b15">
+            <h2 class="arr-methods__title m-b15 title-adaptation">
               1. Методи додавання та видалення елементів масиву
             </h2>
             <br />
@@ -306,7 +306,7 @@ console.log(result);
           </div>
 
           <div class="arr-methods__div border-bottom p15">
-            <h2 class="arr-methods__title m-b15">
+            <h2 class="arr-methods__title m-b15 title-adaptation">
               2. Методи пошуку елементів масиву
             </h2>
             <br />
@@ -565,7 +565,9 @@ console.log(result);
           </div>
 
           <div class="arr-methods__div border-bottom p15">
-            <h2 class="arr-methods__title m-b15">3. Методи перебору масивів</h2>
+            <h2 class="arr-methods__title m-b15 title-adaptation">
+              3. Методи перебору масивів
+            </h2>
             <br />
             <h3 class="arr-methods__subtitle velvet-dusk">
               3.1 Метод forEach()
@@ -792,7 +794,7 @@ console.log(result);
           </div>
 
           <div class="arr-methods__div border-bottom p15">
-            <h2 class="arr-methods__title m-b15">
+            <h2 class="arr-methods__title m-b15 title-adaptation">
               4. Перетворення та обробка масивів
             </h2>
             <br />
@@ -1079,6 +1081,523 @@ console.log(result);
               <li>Розгортає результат лише на один рівень вкладеності.</li>
               <li>Не приймає аргумент depth, на відміну від flat().</li>
             </ol>
+          </div>
+
+          <div class="arr-methods__div border-bottom p15">
+            <h2 class="arr-methods__title m-b15 title-adaptation">
+              5. Сортування та зміна порядку елементів масиву
+            </h2>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">5.1 Метод sort()</h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>sort()</span> — метод масиву, який сортує його елементи та
+              змінює порядок безпосередньо в оригінальному масиві.
+            </p>
+            <br />
+            <p class="arr-methods__description">
+              За замовчуванням sort() сортує елементи як рядки в порядку
+              зростання (за Unicode-кодами).
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Banana", "Apple", "Orange", "Cherry"];
+
+fruits.sort();
+
+console.log(fruits);
+// ["Apple", "Banana", "Cherry", "Orange"]
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              За замовчуванням sort() порівнює елементи як рядки, а не як числа.
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [10, 5, 40, 25, 100];
+
+numbers.sort();
+
+console.log(numbers);
+// [10, 100, 25, 40, 5]
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              Щоб правильно сортувати числа, потрібно передати функцію
+              порівняння (Compare Function).
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b class="uppercase">За зростанням:</b>
+                
+const numbers = [10, 5, 40, 25, 100];
+
+numbers.sort(function (a, b) {
+  return a - b;
+});
+
+console.log(numbers);
+// [5, 10, 25, 40, 100]
+
+<b class="uppercase">За спаданням:</b>
+
+const numbers = [10, 5, 40, 25, 100];
+
+numbers.sort(function (a, b) {
+  return b - a;
+});
+
+console.log(numbers);
+// [100, 40, 25, 10, 5]
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">
+              5.2 Метод reverse()
+            </h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>reverse()</span> — метод масиву, який змінює порядок його
+              елементів на протилежний.
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3, 4, 5];
+
+numbers.reverse();
+
+console.log(numbers);
+// [5, 4, 3, 2, 1]
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              Метод reverse() не сортує елементи за зростанням чи спаданням. Він
+              лише перевертає їхній поточний порядок.
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [3, 1, 5, 2, 4];
+
+numbers.reverse();
+
+console.log(numbers);
+// [4, 2, 5, 1, 3]
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">
+              5.3 Метод toSorted()
+            </h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>toSorted()</span> — метод масиву, який сортує елементи та
+              повертає новий масив, не змінюючи оригінальний. Працює так само,
+              як sort(), але не змінює початковий масив.
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [10, 5, 40, 25, 100];
+
+const sortedNumbers = numbers.toSorted(function (a, b) {
+  return a - b;
+});
+
+console.log(sortedNumbers);
+// [5, 10, 25, 40, 100]
+
+console.log(numbers);
+// [10, 5, 40, 25, 100]
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              Можна використовувати й без функції порівняння:
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Banana", "Apple", "Orange"];
+
+const sortedFruits = fruits.toSorted();
+
+console.log(sortedFruits);
+// ["Apple", "Banana", "Orange"]
+</code></pre>
+            </div>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">
+              5.4 Метод toReversed()
+            </h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>toReversed()</span> — метод масиву, який повертає новий
+              масив зі зворотним порядком елементів, не змінюючи оригінальний.
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3, 4, 5];
+
+const reversedNumbers = numbers.toReversed();
+
+console.log(reversedNumbers);
+// [5, 4, 3, 2, 1]
+
+console.log(numbers);
+// [1, 2, 3, 4, 5]
+</code></pre>
+            </div>
+            <br />
+            <table class="arr-methods__table">
+              <thead>
+                <tr>
+                  <th>Метод</th>
+                  <th>Призначення</th>
+                  <th>Змінює оригінал</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>sort()</code></td>
+                  <td>Сортує елементи</td>
+                  <td>Так</td>
+                </tr>
+                <tr>
+                  <td><code>reverse()</code></td>
+                  <td>Перевертає порядок</td>
+                  <td>Так</td>
+                </tr>
+                <tr>
+                  <td><code>toSorted()</code></td>
+                  <td>Сортує елементи</td>
+                  <td>Ні</td>
+                </tr>
+                <tr>
+                  <td><code>toReversed()</code></td>
+                  <td>Перевертає порядок</td>
+                  <td>Ні</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="arr-methods__div border-bottom p15">
+            <h2 class="arr-methods__title m-b15 title-adaptation">
+              6. Перевірка елементів масиву
+            </h2>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">6.1 Метод some()</h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>some()</span> — перевіряє, чи хоча б один елемент масиву
+              відповідає заданій умові:
+            </p>
+            <ul class="arr-methods__list list m-list-small">
+              <li>Повертає true, якщо хоча б один елемент відповідає умові.</li>
+              <li>Повертає false, якщо жоден елемент не відповідає умові.</li>
+              <li>
+                Припиняє перевірку, щойно знаходить перший елемент, який
+                відповідає умові.
+              </li>
+            </ul>
+            <br />
+            <span>Синтаксис:</span>
+            <div class="arr-methods__code-box fig-nectar">
+              <pre><code>array.some(function(element) {
+  return умова;
+});
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [2, 4, 7, 8, 10];
+
+const hasOddNumber = numbers.some(function(number) {
+  return number % 2 !== 0;
+});
+
+console.log(hasOddNumber);
+// true
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description uppercase">Як це працює:</p>
+            <br />
+            <ol class="arr-methods__list list m-list-small">
+              <li>Метод some() перевіряє кожен елемент масиву.</li>
+              <li>Перевіряє, чи є число непарним.</li>
+              <li>Знаходить число 7, яке відповідає умові.</li>
+              <li>Повертає true і припиняє перевірку.</li>
+            </ol>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">6.2 Метод every()</h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>every()</span> — перевіряє, чи всі елементи масиву
+              відповідають заданій умові:
+            </p>
+            <ul class="arr-methods__list list m-list-small">
+              <li>Повертає true, якщо всі елементи відповідають умові.</li>
+              <li>
+                Повертає false, якщо хоча б один елемент не відповідає умові.
+              </li>
+              <li>
+                Припиняє перевірку, щойно знаходить перший елемент, який не
+                відповідає умові.
+              </li>
+            </ul>
+            <br />
+            <span>Синтаксис:</span>
+            <div class="arr-methods__code-box fig-nectar">
+              <pre><code>array.every(function(element) {
+  return умова;
+});
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [2, 4, 6, 8, 10];
+
+const allEvenNumbers = numbers.every(function(number) {
+  return number % 2 === 0;
+});
+
+console.log(allEvenNumbers);
+// true
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description uppercase">Як це працює:</p>
+            <br />
+            <ol class="arr-methods__list list m-list-small">
+              <li>Метод every() перевіряє кожен елемент масиву.</li>
+              <li>Перевіряє, чи є число парним.</li>
+              <li>Усі числа відповідають умові.</li>
+              <li>Повертає true.</li>
+            </ol>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">
+              Важливі особливості
+            </h3>
+            <br />
+            <ol class="arr-methods__list list m-list-small">
+              <li>Обидва методи не змінюють початковий масив.</li>
+              <li>
+                Якщо масив порожній: some() повертає false, а every() — true.
+              </li>
+              <br />
+              <div
+                class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>const numbers = [];
+
+console.log(numbers.some(number => number > 0));
+// false
+console.log(numbers.every(number => number > 0));
+// true
+</code></pre>
+              </div>
+              <br />
+              <li>
+                Обидва методи підтримують callback-функції, які можуть приймати
+                три аргументи: element — поточний елемент, index — індекс
+                поточного елемента, array — початковий масив.
+              </li>
+              <br />
+              <div
+                class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+              >
+                <pre><code>array.some(function(element, index, array) {
+  // умова
+});
+</code></pre>
+              </div>
+              <br />
+            </ol>
+          </div>
+
+          <div class="arr-methods__div p15">
+            <h2 class="arr-methods__title m-b15 title-adaptation">
+              7. Інші корисні методи масивів JavaScript
+            </h2>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">7.1 Метод join()</h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>join()</span> — перетворює всі елементи масиву в один рядок
+              (string), об'єднуючи їх за допомогою вказаного роздільника.
+            </p>
+            <br />
+            <span>Синтаксис:</span>
+            <div class="arr-methods__code-box fig-nectar">
+              <pre><code>array.join(separator);
+
+array — масив, елементи
+якого потрібно об'єднати.
+separator — роздільник між елементами 
+(необов'язковий параметр).
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              Якщо не вказати роздільник, JavaScript використовує кому
+              <span>,</span>.
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const fruits = ["Apple", "Banana", "Orange"];
+
+const result = fruits.join(", ");
+
+console.log(result);
+// "Apple, Banana, Orange"
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              Можна використовувати різні роздільники:
+            </p>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const words = ["Hello", "world"];
+
+console.log(words.join(" "));
+// "Hello world"
+console.log(words.join("-"));
+// "Hello-world"
+console.log(words.join(""));
+// "Helloworld"
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              <span>Важливо!</span> Метод join() не змінює початковий масив, а
+              повертає новий рядок.
+            </p>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">7.2 Метод fill()</h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>fill()</span> — заповнює масив одним і тим самим значенням у
+              зазначеному діапазоні.
+            </p>
+            <br />
+            <span>Синтаксис:</span>
+            <div class="arr-methods__code-box fig-nectar">
+              <pre><code>array.fill(value, start, end);
+
+value — значення, яким потрібно
+заповнити масив.
+start — індекс, з якого починається
+заповнення (необов'язковий).
+end — індекс, на якому заповнення
+закінчується (не включно, необов'язковий).
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3, 4, 5];
+
+numbers.fill(0);
+
+console.log(numbers);
+// [0, 0, 0, 0, 0]
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3, 4, 5];
+
+numbers.fill(0, 1, 4);
+
+console.log(numbers);
+// [1, 0, 0, 0, 5]
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              <span>Важливо!</span> Метод fill() змінює початковий масив.
+            </p>
+            <br />
+            <h3 class="arr-methods__subtitle velvet-dusk">
+              7.3 Метод copyWithin()
+            </h3>
+            <br />
+            <p class="arr-methods__description">
+              <span>copyWithin()</span> — копіює частину елементів масиву та
+              вставляє їх в інше місце в межах того самого масиву.
+            </p>
+            <br />
+            <span>Синтаксис:</span>
+            <div class="arr-methods__code-box fig-nectar">
+              <pre><code>array.copyWithin(target, start, end);
+
+target — індекс, куди потрібно
+скопіювати елементи.
+start — індекс, з якого починається
+копіювання.
+end — індекс, на якому копіювання
+закінчується (не включно).
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3, 4, 5];
+
+numbers.copyWithin(0, 3);
+
+console.log(numbers);
+// [4, 5, 3, 4, 5]
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="arr-methods__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>const numbers = [1, 2, 3, 4, 5];
+
+numbers.copyWithin(1, 3, 5);
+
+console.log(numbers);
+// [1, 4, 5, 4, 5]
+</code></pre>
+            </div>
+            <br />
+            <p class="arr-methods__description">
+              <span>Важливо!</span> Метод copyWithin() змінює початковий масив.
+              Він не створює новий масив.
+            </p>
           </div>
         </div>
       </section>
