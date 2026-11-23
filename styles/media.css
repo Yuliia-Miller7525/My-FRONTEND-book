@@ -69,8 +69,12 @@
   .operators__table td {
     padding: 4px 6px;
   }
-  .operators__table th {
+  .operators__table th,
+  .ecmascript__table th {
     font-weight: 400;
+  }
+  .ecmascript__table {
+    font-size: 12px;
   }
 }
 @media (max-width: 475px) {
@@ -132,7 +136,11 @@
   .this_keyword__table,
   .arr-methods__table,
   .prototypes__code-box,
-  .classes__code-box {
+  .classes__code-box,
+  .ecmascript__table {
+    font-size: 10px;
+  }
+  .ecmascript__table {
     font-size: 10px;
   }
 }
@@ -175,7 +183,8 @@
   .this_keyword__code-box,
   .this_keyword__table,
   .prototypes__code-box,
-  .classes__code-box {
+  .classes__code-box,
+  .ecmascript__table {
     font-size: 9px;
   }
 }
