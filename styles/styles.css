@@ -104,10 +104,7 @@ span {
   margin-top: 15px;
 }
 .m-list {
-  margin-left: 50px;
-}
-.m-list-small {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 .m-t-b20 {
   margin: 20px 0;
@@ -131,7 +128,7 @@ span {
   color: #674874;
 }
 .card-border {
-  border: 3px solid #8c3c4a;
+  border: 3px solid #674874;
 }
 .fw700 {
   font-weight: 700;
@@ -255,7 +252,8 @@ span {
 .recursion__table,
 .objects__table,
 .this_keyword__table,
-.ecmascript__table {
+.ecmascript__table,
+.dom__table {
   width: 100%;
   max-width: 700px;
   border-collapse: collapse;
@@ -268,7 +266,8 @@ span {
 .objects__table,
 .this_keyword__table,
 .arr-methods__table,
-.ecmascript__table {
+.ecmascript__table,
+.dom__table {
   text-align: left;
 }
 .operators__table th,
@@ -290,7 +289,9 @@ span {
 .arr-methods__table th,
 .arr-methods__table td,
 .ecmascript__table th,
-.ecmascript__table td {
+.ecmascript__table td,
+.dom__table th,
+.dom__table td {
   padding: 5px;
   border: 1px solid #8c3c4a;
 }
@@ -303,7 +304,8 @@ span {
 .objects__table th,
 .this_keyword__table th,
 .arr-methods__table th,
-.ecmascript__table th {
+.ecmascript__table th,
+.dom__table th {
   background-color: #8c3c4a;
   color: #fffde5;
   font-weight: 700;
@@ -341,7 +343,8 @@ span {
   display: block;
   margin: 0 auto;
 }
-.arr-methods__subdiv {
+.arr-methods__subdiv,
+.dom__subdiv {
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }

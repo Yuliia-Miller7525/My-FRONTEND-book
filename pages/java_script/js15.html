@@ -1,0 +1,1135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <link rel="stylesheet" href="../../fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../../styles/styles.css" />
+    <link rel="stylesheet" href="../../styles/media.css" />
+  </head>
+  <body>
+    <header class="header background-accent center-txt basic-padding">
+      <div class="container">
+        <div class="header__div flex column gap">
+          <h1 class="header__title">DOM</h1>
+          <p class="header__description peach-veil fs15">
+            a programming interface that allows JavaScript to access and
+            manipulate HTML documents.
+          </p>
+        </div>
+      </div>
+    </header>
+    <main class="main background basic-padding">
+      <section class="dom">
+        <div class="dom__container container">
+          <div class="dom__div border-bottom p15">
+            <p class="dom__description">
+              <span>DOM (Document Object Model)</span> — це об'єктна модель
+              документа, яка дозволяє JavaScript взаємодіяти з HTML-сторінкою:
+              знаходити елементи, змінювати їхній вміст, стилі, атрибути та
+              реагувати на дії користувача.
+            </p>
+            <br />
+            <p class="dom__description">
+              Коли браузер завантажує HTML-документ, він перетворює його на
+              структуру об'єктів — дерево DOM (DOM Tree).
+            </p>
+            <br />
+            <img class="arrays__img" src="../../images/DOM.png" alt="schema" />
+            <br />
+            <h3 class="dom__subtitle velvet-dusk">
+              Завдяки DOM JavaScript може:
+            </h3>
+            <br />
+            <ol class="dom__list m-list">
+              <li>
+                <span>Знаходити HTML-елементи</span> - наприклад, заголовки,
+                кнопки, зображення.
+              </li>
+              <li><span>Змінювати вміст</span> - змінювати текст або HTML.</li>
+              <li><span>Змінювати стилі</span> - колір, розмір, відступи.</li>
+              <li>
+                <span>Додавати та видаляти елементи</span> - створювати нові
+                блоки на сторінці.
+              </li>
+              <li>
+                <span>Обробляти події</span> - натискання кнопок, введення
+                тексту тощо.
+              </li>
+            </ol>
+            <br />
+            <div
+              class="dom__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>HTML</b>
+&lt;h1 id="title"&gt;Hello!&lt;/h1&gt;
+
+<b>JAVA SCRIPT</b>
+const title = document.getElementById("title");
+
+title.textContent = "Hello, JavaScript!";
+
+
+<b>JavaScript знаходить заголовок
+за його id і змінює текст.</b>
+</code></pre>
+            </div>
+            <br />
+            <br />
+            <p class="dom__description">
+              <span>DOM Tree (дерево DOM)</span> — це ієрархічна структура, у
+              якій усі вузли документа розташовані у вигляді дерева та пов'язані
+              між собою.
+            </p>
+            <br />
+            <p class="dom__description">
+              <span>Node (вузол)</span> — це окрема частина DOM-дерева. Кожен
+              HTML-елемент, текст або коментар може бути окремим вузлом.
+            </p>
+            <br />
+            <h3 class="dom__subtitle velvet-dusk">
+              У DOM існують різні типи вузлів:
+            </h3>
+            <br />
+            <table class="dom__table">
+              <thead>
+                <tr>
+                  <th>Тип вузла</th>
+                  <th>Опис</th>
+                  <th>Приклад</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Document</td>
+                  <td>Весь HTML-документ</td>
+                  <td><code>document</code></td>
+                </tr>
+                <tr>
+                  <td>Element</td>
+                  <td>HTML-елемент</td>
+                  <td><code>&lt;p&gt;</code>, <code>&lt;div&gt;</code></td>
+                </tr>
+                <tr>
+                  <td>Text</td>
+                  <td>Текст усередині елемента</td>
+                  <td><code>Hello!</code></td>
+                </tr>
+                <tr>
+                  <td>Comment</td>
+                  <td>HTML-коментар</td>
+                  <td><code>&lt;!-- comment --&gt;</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <p class="dom__description">
+              <span>Важливо:</span> кожен Element є Node, але не кожен Node є
+              Element.
+            </p>
+            <br />
+            <h3 class="dom__subtitle velvet-dusk">
+              У DOM є спеціальні поняття, які описують взаємне розташування
+              вузлів:
+            </h3>
+            <br />
+            <table class="dom__table">
+              <thead>
+                <tr>
+                  <th>Термін</th>
+                  <th>Значення</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Parent</td>
+                  <td>Батьківський вузол</td>
+                </tr>
+                <tr>
+                  <td>Child</td>
+                  <td>Дочірній вузол</td>
+                </tr>
+                <tr>
+                  <td>Sibling</td>
+                  <td>Сусідній вузол</td>
+                </tr>
+                <tr>
+                  <td>Ancestor</td>
+                  <td>Будь-який вузол-предок</td>
+                </tr>
+                <tr>
+                  <td>Descendant</td>
+                  <td>Будь-який вузол-нащадок</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <div
+              class="dom__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>HTML</b>
+&lt;div&gt;
+  &lt;h1&gt;Title&lt;/h1&gt;
+  &lt;p&gt;Text&lt;/p&gt;
+&lt;/div&gt;
+
+
+div — Parent для h1 та p.
+h1 та p — Children для div.
+h1 та p — Siblings між собою.
+</code></pre>
+            </div>
+          </div>
+
+          <div class="dom__div border-bottom p15">
+            <h2 class="dom__title m-b15 title-adaptation">Document Object</h2>
+            <p class="dom__description">
+              <span>Document</span> — це об'єкт, який представляє HTML-документ
+              і надає JavaScript доступ до його вмісту.
+            </p>
+            <br />
+            <p class="dom__description">
+              Простіше кажучи, document — це точка входу для роботи JavaScript
+              із HTML-сторінкою.
+            </p>
+            <br />
+            <div
+              class="dom__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>console.log(document);
+
+<b>У консолі браузера ми побачимо
+об'єкт документа, який містить
+інформацію про HTML-сторінку.</b>
+</code></pre>
+            </div>
+            <br />
+            <h3 class="dom__subtitle velvet-dusk">
+              Найважливіші властивості об'єкта document:
+            </h3>
+            <br />
+            <table class="dom__table">
+              <thead>
+                <tr>
+                  <th>Властивість</th>
+                  <th>Опис</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>document.documentElement</code></td>
+                  <td>
+                    Повертає кореневий HTML-елемент <code>&lt;html&gt;</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>document.head</code></td>
+                  <td>Повертає елемент <code>&lt;head&gt;</code></td>
+                </tr>
+                <tr>
+                  <td><code>document.body</code></td>
+                  <td>Повертає елемент <code>&lt;body&gt;</code></td>
+                </tr>
+                <tr>
+                  <td><code>document.title</code></td>
+                  <td>Повертає або змінює назву сторінки</td>
+                </tr>
+                <tr>
+                  <td><code>document.URL</code></td>
+                  <td>Повертає URL поточного документа</td>
+                </tr>
+                <tr>
+                  <td><code>document.domain</code></td>
+                  <td>
+                    Повертає домен документа (застаріла властивість, не
+                    рекомендована для використання)
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <h3 class="dom__subtitle velvet-dusk">Приклади використання</h3>
+            <br />
+            <div
+              class="dom__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>1. Отримання HTML-елементів документа</b>
+                
+const html = document.documentElement;
+const head = document.head;
+const body = document.body;
+
+console.log(html);
+console.log(head);
+console.log(body);
+
+
+<b>За допомогою цих властивостей
+ми можемо отримати доступ до
+основних частин HTML-документа.</b>
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="dom__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>2. Отримання та зміна заголовка сторінки</b>
+                
+// Отримуємо назву сторінки
+console.log(document.title);
+
+// Змінюємо назву сторінки
+document.title = "My Website";
+</code></pre>
+            </div>
+            <br />
+            <div
+              class="dom__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>3. Отримання HTML-елементів документа</b>
+
+console.log(document.URL);
+
+
+<b>Повертає адресу поточного HTML-документа.</b>
+</code></pre>
+            </div>
+          </div>
+
+          <div class="dom__div border-bottom p15">
+            <h2 class="dom__title m-b15 title-adaptation">
+              DOM Selection (Пошук HTML-елементів)
+            </h2>
+            <p class="dom__description">
+              Для того, щоб знайти конкретний елемент на сторінці, наприклад,
+              заголовок, кнопку або блок, JavaScript має спеціальні методи
+              пошуку елементів.
+            </p>
+            <br />
+            <h3 class="dom__subtitle velvet-dusk">
+              Найпоширеніші методи пошуку елементів:
+            </h3>
+            <br />
+            <table class="dom__table">
+              <thead>
+                <tr>
+                  <th>Метод</th>
+                  <th>Опис</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>getElementById()</code></td>
+                  <td>Знаходить елемент за його <code>id</code></td>
+                </tr>
+                <tr>
+                  <td><code>getElementsByClassName()</code></td>
+                  <td>Знаходить елементи за назвою класу</td>
+                </tr>
+                <tr>
+                  <td><code>getElementsByTagName()</code></td>
+                  <td>Знаходить елементи за назвою HTML-тега</td>
+                </tr>
+                <tr>
+                  <td><code>querySelector()</code></td>
+                  <td>
+                    Знаходить перший елемент, який відповідає CSS-селектору
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>querySelectorAll()</code></td>
+                  <td>
+                    Знаходить усі елементи, які відповідають CSS-селектору
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <p class="dom__description">
+              Методи getElement...() не потребують CSS-синтаксису. У них ми
+              вказуємо безпосередньо назву ID, класу або HTML-тегу.
+            </p>
+            <br />
+            <div
+              class="dom__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>// За ID — без символу #
+document.getElementById("title");
+
+// За класом — без символу .
+document.getElementsByClassName("item");
+
+// За назвою тегу
+document.getElementsByTagName("p");
+</code></pre>
+            </div>
+            <br />
+            <p class="dom__description">
+              Методи querySelector() та querySelectorAll() потребують
+              CSS-синтаксису, оскільки дозволяють шукати елементи за
+              CSS-селекторами. Тому під час запису потрібно використовувати
+              відповідні символи:
+            </p>
+            <br />
+            <div
+              class="dom__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code>// За ID — використовуємо #
+document.querySelector("#title");
+
+// За класом — використовуємо .
+document.querySelector(".item");
+
+// За тегом — вказуємо назву тегу
+document.querySelector("p");
+
+// За вкладеністю елементів
+document.querySelector("div .item");
+
+// За атрибутом
+document.querySelector("[type='text']");
+</code></pre>
+            </div>
+            <br />
+            <h3 class="dom__subtitle velvet-dusk">Важливо запам'ятати</h3>
+            <br />
+            <ol class="dom__list m-list">
+              <li>
+                <span>getElementById() та querySelector()</span> повертають один
+                елемент або null, якщо його не знайдено.
+              </li>
+              <li>
+                <span>getElementsByClassName() та getElementsByTagName()</span>
+                повертають HTMLCollection.
+              </li>
+              <li><span>querySelectorAll()</span> повертає NodeList.</li>
+              <li>
+                <span>HTMLCollection</span> — жива колекція, а
+                <span>NodeList</span>, отриманий через querySelectorAll(), —
+                статична.
+              </li>
+            </ol>
+          </div>
+
+          <div class="dom__div border-bottom p15">
+            <h2 class="dom__title m-b15 title-adaptation">
+              DOM Navigation (Навігація DOM)
+            </h2>
+            <p class="dom__description">
+              <span>DOM Navigation</span> — це можливість переміщатися між
+              елементами HTML-документа за допомогою властивостей DOM.
+            </p>
+            <br />
+            <p class="dom__description">
+              Простіше кажучи, ми можемо знайти певний елемент і через нього
+              отримати доступ до його батьківського елемента, дочірніх елементів
+              або сусідніх елементів.
+            </p>
+            <br />
+            <h3 class="dom__subtitle velvet-dusk">
+              Основні властивості навігації DOM
+            </h3>
+            <br />
+            <table class="dom__table">
+              <thead>
+                <tr>
+                  <th>Властивість</th>
+                  <th>Що повертає</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>parentElement</code></td>
+                  <td>Батьківський HTML-елемент</td>
+                </tr>
+                <tr>
+                  <td><code>children</code></td>
+                  <td>Усі дочірні HTML-елементи</td>
+                </tr>
+                <tr>
+                  <td><code>firstElementChild</code></td>
+                  <td>Перший дочірній HTML-елемент</td>
+                </tr>
+                <tr>
+                  <td><code>lastElementChild</code></td>
+                  <td>Останній дочірній HTML-елемент</td>
+                </tr>
+                <tr>
+                  <td><code>nextElementSibling</code></td>
+                  <td>Наступний сусідній HTML-елемент</td>
+                </tr>
+                <tr>
+                  <td><code>previousElementSibling</code></td>
+                  <td>Попередній сусідній HTML-елемент</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <h3 class="dom__subtitle velvet-dusk">Приклад використання</h3>
+            <br />
+            <div
+              class="dom__code-box fig-nectar-bg border-radius p15 peach-veil"
+            >
+              <pre><code><b>HTML</b>
+&lt;div class="container"&gt;
+  &lt;h2&gt;Заголовок&lt;/h2&gt;
+  &lt;p&gt;Перший абзац&lt;/p&gt;
+  &lt;p&gt;Другий абзац&lt;/p&gt;
+&lt;/div&gt;
+
+
+<b>JAVA SCRIPT</b>
+const container = document.querySelector(".container");
+
+// Отримати батьківський елемент
+container.parentElement;
+
+// Отримати всі дочірні елементи
+container.children;
+
+// Отримати перший дочірній елемент
+container.firstElementChild;
+
+// Отримати останній дочірній елемент
+container.lastElementChild;
+
+
+<b>А якщо ми хочемо перейти від
+одного сусіднього елемента до іншого:</b>
+const firstParagraph = document.querySelector("p");
+
+// Наступний сусідній елемент
+firstParagraph.nextElementSibling;
+
+// Попередній сусідній елемент
+firstParagraph.previousElementSibling;
+</code></pre>
+            </div>
+            <br />
+            <h3 class="dom__subtitle velvet-dusk">
+              Важлива відмінність: Element та Node
+            </h3>
+            <br />
+            <table class="dom__table">
+              <thead>
+                <tr>
+                  <th>Властивості</th>
+                  <th>Що враховують</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <code>parentElement</code>, <code>children</code>,
+                    <code>firstElementChild</code>,
+                    <code>nextElementSibling</code>
+                  </td>
+                  <td>Тільки HTML-елементи</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>parentNode</code>, <code>childNodes</code>,
+                    <code>firstChild</code>, <code>nextSibling</code>
+                  </td>
+                  <td>Усі типи вузлів: елементи, текстові вузли, коментарі</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            <p class="dom__description">
+              Наприклад, пробіли та переноси рядків між HTML-тегами браузер
+              сприймає як текстові вузли. Тому для звичайної навігації між
+              HTML-елементами часто зручніше використовувати властивості з
+              Element у назві.
+            </p>
+          </div>
+
+          <div class="dom__div p15">
+            <h2 class="dom__title m-b15 title-adaptation">
+              DOM Manipulation (Маніпуляції з DOM)
+            </h2>
+            <p class="dom__description">
+              <span>DOM Manipulation</span> — це процес зміни HTML-документа за
+              допомогою JavaScript: його вмісту, атрибутів, класів, стилів і
+              самої структури.
+            </p>
+            <br />
+            <h3 class="dom__subtitle velvet-dusk">
+              1. Робота з вмістом (Working with Content)
+            </h3>
+            <br />
+            <div class="dom__subdiv grid">
+              <div class="dom__box card-border border-radius p15">
+                <h3 class="dom__subtitle velvet-dusk center-txt">
+                  textContent
+                </h3>
+                <br />
+                <p class="dom__description">
+                  дозволяє отримати або змінити весь текстовий вміст елемента,
+                  включно з текстом усередині вкладених елементів
+                </p>
+                <br />
+                <div class="dom__code-box fig-nectar">
+                  <pre><code><b>HTML</b>
+&lt;div class="container"&gt;
+  &lt;h2&gt;Привіт!&lt;/h2&gt;
+  &lt;p&gt;Вивчаємо JavaScript&lt;/p&gt;
+&lt;/div&gt;
+
+
+<b>JAVA SCRIPT</b>
+const container = document.querySelector(".container");
+
+// Отримати текст
+console.log(container.textContent);
+
+// Змінити текст
+container.textContent = "Новий текст";
+</code></pre>
+                </div>
+                <br />
+                <p class="dom__description">
+                  У результаті весь попередній вміст елемента буде замінено
+                  звичайним текстом.
+                </p>
+              </div>
+
+              <div class="dom__box card-border border-radius p15">
+                <h3 class="dom__subtitle velvet-dusk center-txt">innerHTML</h3>
+                <br />
+                <p class="dom__description">
+                  дозволяє отримати або змінити HTML-вміст елемента, включно з
+                  HTML-тегами
+                </p>
+                <br />
+                <div class="dom__code-box fig-nectar">
+                  <pre><code>const container = document.querySelector(".container");
+
+// Отримати HTML-вміст
+console.log(container.innerHTML);
+
+// Додати HTML-розмітку
+container.innerHTML = 
+"&lt;h2&gt;Новий заголовок&lt;/h2&gt;
+&lt;p&gt;Новий текст&lt;/p&gt;";
+</code></pre>
+                </div>
+                <br />
+                <p class="dom__description">
+                  На відміну від textContent, браузер розпізнає HTML-теги та
+                  створює відповідні елементи.
+                </p>
+              </div>
+
+              <div class="dom__box card-border border-radius p15">
+                <h3 class="dom__subtitle velvet-dusk center-txt">innerText</h3>
+                <br />
+                <p class="dom__description">
+                  дозволяє отримати або змінити текст, який відображається
+                  користувачу на сторінці
+                </p>
+                <br />
+                <span>Синтаксис:</span>
+                <div class="dom__code-box fig-nectar">
+                  <pre><code>const container = document.querySelector(".container");
+
+// Отримати видимий текст
+console.log(container.innerText);
+
+// Змінити текст
+container.innerText = "Новий текст";
+</code></pre>
+                </div>
+                <br />
+                <p class="dom__description">
+                  На відміну від textContent, ця властивість враховує видимість
+                  тексту та особливості його відображення на сторінці.
+                </p>
+              </div>
+            </div>
+            <br />
+            <h3 class="dom__subtitle velvet-dusk">Важливо запам'ятати</h3>
+            <br />
+            <ol class="dom__list m-list">
+              <li>
+                <span>textContent</span> - працює з текстом, включно з
+                прихованим текстом.
+              </li>
+              <li><span>innerHTML</span> - працює з HTML-розміткою.</li>
+              <li>
+                <span>innerText</span> - враховує видимість тексту на сторінці.
+              </li>
+              <li>
+                Якщо присвоїти нове значення будь-якій із цих властивостей,
+                попередній вміст елемента буде замінено.
+              </li>
+            </ol>
+          </div>
+
+          <h3 class="dom__subtitle velvet-dusk">
+            2. Робота з атрибутами (Working with Attributes)
+          </h3>
+          <br />
+          <div class="dom__subdiv grid">
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">
+                getAttribute()
+              </h3>
+              <br />
+              <p class="dom__description">
+                дозволяє отримати значення певного атрибута HTML-елемента.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>&lt;img src="photo.jpg" alt="Фото"&gt;
+
+// Отримати значення атрибута
+const image = document.querySelector("img");
+
+console.log(image.getAttribute("src"));
+// "photo.jpg"
+
+console.log(image.getAttribute("alt"));
+// "Фото"
+</code></pre>
+              </div>
+            </div>
+
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">
+                setAttribute()
+              </h3>
+              <br />
+              <p class="dom__description">
+                дозволяє встановити нове значення атрибута або створити атрибут,
+                якщо його ще немає.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>const image = document.querySelector("img");
+
+// Змінити значення атрибута
+image.setAttribute("alt", "Нове фото");
+
+// Додати новий атрибут
+image.setAttribute("title", "Моє фото");
+</code></pre>
+              </div>
+            </div>
+
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">
+                removeAttribute()
+              </h3>
+              <br />
+              <p class="dom__description">
+                дозволяє видалити певний атрибут HTML-елемента.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>const image = document.querySelector("img");
+
+// Видалити атрибут
+image.removeAttribute("alt");
+</code></pre>
+              </div>
+            </div>
+          </div>
+          <br />
+          <h3 class="dom__subtitle velvet-dusk">Важливо запам'ятати</h3>
+          <br />
+          <ol class="dom__list m-list">
+            <li><span>getAttribute()</span> - отримує значення атрибута.</li>
+            <li>
+              <span>setAttribute()</span> - встановлює або змінює атрибут.
+            </li>
+            <li><span>removeAttribute()</span> - видаляє атрибут.</li>
+          </ol>
+
+          <br />
+
+          <h3 class="dom__subtitle velvet-dusk">
+            3. Робота з класами (Working with Classes)
+          </h3>
+          <br />
+          <div class="dom__subdiv grid">
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">
+                classList.add()
+              </h3>
+              <br />
+              <p class="dom__description">
+                дозволяє додати один або декілька CSS-класів до HTML-елемента.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>const box = document.querySelector(".box");
+
+// Додати клас
+box.classList.add("active");
+
+// Додати декілька класів
+box.classList.add("active", "visible");
+</code></pre>
+              </div>
+            </div>
+
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">
+                classList.remove()
+              </h3>
+              <br />
+              <p class="dom__description">
+                дозволяє видалити один або декілька CSS-класів з HTML-елемента.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>const box = document.querySelector(".box");
+
+// Видалити клас
+box.classList.remove("active");
+
+// Видалити декілька класів
+box.classList.remove("active", "visible");
+</code></pre>
+              </div>
+            </div>
+
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">
+                classList.toggle()
+              </h3>
+              <br />
+              <p class="dom__description">
+                додає клас, якщо його немає, або видаляє, якщо він уже
+                присутній.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>const box = document.querySelector(".box");
+
+// Перемикання класу
+box.classList.toggle("active");
+</code></pre>
+              </div>
+            </div>
+
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">
+                classList.contains()
+              </h3>
+              <br />
+              <p class="dom__description">
+                перевіряє, чи має HTML-елемент певний CSS-клас. Повертає true
+                або false.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>const box = document.querySelector(".box");
+
+// Перевірити наявність класу
+console.log(box.classList.contains("active"));
+// true або false
+</code></pre>
+              </div>
+            </div>
+          </div>
+          <br />
+          <h3 class="dom__subtitle velvet-dusk">Важливо запам'ятати</h3>
+          <br />
+          <ol class="dom__list m-list">
+            <li><span>add()</span> - додає CSS-клас.</li>
+            <li><span>remove()</span> - видаляє CSS-клас.</li>
+            <li><span>toggle()</span> - перемикає наявність CSS-класу.</li>
+            <li><span>contains()</span> - перевіряє наявність CSS-класу.</li>
+          </ol>
+
+          <br />
+
+          <h3 class="dom__subtitle velvet-dusk">
+            4. Робота зі стилями (Working with Styles)
+          </h3>
+          <br />
+          <div class="dom__subdiv grid">
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">
+                element.style
+              </h3>
+              <br />
+              <p class="dom__description">
+                дозволяє отримувати та змінювати CSS-стилі HTML-елемента
+                безпосередньо через JavaScript.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>&lt;div class="box"&gt;Привіт!&lt;/div&gt;
+
+const box = document.querySelector(".box");
+
+// Змінити колір тексту
+box.style.color = "red";
+
+// Змінити колір фону
+box.style.backgroundColor = "lightblue";
+
+// Змінити розмір шрифту
+box.style.fontSize = "20px";
+
+// Видалити inline-стиль
+box.style.color = "";
+</code></pre>
+              </div>
+              <br />
+              <p class="dom__description">
+                Назви CSS-властивостей записуються у форматі camelCase:
+                background-color → backgroundColor.
+              </p>
+            </div>
+          </div>
+          <br />
+          <h3 class="dom__subtitle velvet-dusk">Важливо запам'ятати</h3>
+          <br />
+          <ol class="dom__list m-list">
+            <li>
+              <span>element.style</span> - змінює стилі безпосередньо в атрибуті
+              style HTML-елемента.
+            </li>
+            <li>
+              Для CSS-властивостей із дефісом використовуємо camelCase,
+              наприклад <span>font-size</span> → <span>fontSize</span>.
+            </li>
+            <li>
+              Через <span>element.style</span> можна отримати переважно
+              inline-стилі, а не всі стилі, задані через CSS-файли.
+            </li>
+          </ol>
+
+          <br />
+
+          <h3 class="dom__subtitle velvet-dusk">
+            5. Створення елементів (Creating Elements)
+          </h3>
+          <br />
+          <div class="dom__subdiv grid">
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">
+                createElement()
+              </h3>
+              <br />
+              <p class="dom__description">
+                дозволяє створити новий HTML-елемент за допомогою JavaScript.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>// Створити новий елемент
+const newParagraph = document.createElement("p");
+
+// Додати текст
+newParagraph.textContent = "Новий абзац";
+</code></pre>
+              </div>
+              <br />
+              <p class="dom__description">
+                Створений елемент поки що не відображається на сторінці,
+                оскільки його ще не додано до DOM.
+              </p>
+            </div>
+
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">append()</h3>
+              <br />
+              <p class="dom__description">
+                додає один або декілька елементів чи текстових значень у кінець
+                вмісту батьківського елемента.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>const container = document.querySelector(".container");
+
+const paragraph = document.createElement("p");
+paragraph.textContent = "Новий абзац";
+
+// Додати в кінець контейнера
+container.append(paragraph);
+</code></pre>
+              </div>
+            </div>
+
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">prepend()</h3>
+              <br />
+              <p class="dom__description">
+                додає один або декілька елементів чи текстових значень на
+                початок вмісту батьківського елемента.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>const container = document.querySelector(".container");
+
+const paragraph = document.createElement("p");
+paragraph.textContent = "Новий абзац";
+
+// Додати на початок контейнера
+container.prepend(paragraph);
+</code></pre>
+              </div>
+            </div>
+          </div>
+          <br />
+          <h3 class="dom__subtitle velvet-dusk">Важливо запам'ятати</h3>
+          <br />
+          <ol class="dom__list m-list">
+            <li><span>createElement()</span> - створює новий HTML-елемент.</li>
+            <li>
+              <span>append()</span> - додає елемент у кінець батьківського
+              елемента.
+            </li>
+            <li>
+              <span>prepend()</span> - додає елемент на початок батьківського
+              елемента.
+            </li>
+            <li>
+              <span>append()</span> та <span>prepend()</span> можуть додавати як
+              HTML-елементи, так і звичайний текст.
+            </li>
+          </ol>
+
+          <br />
+
+          <h3 class="dom__subtitle velvet-dusk">
+            6. Видалення та заміна елементів (Removing and Replacing Elements)
+          </h3>
+          <br />
+          <div class="dom__subdiv grid">
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">remove()</h3>
+              <br />
+              <p class="dom__description">
+                дозволяє видалити HTML-елемент безпосередньо з DOM.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>const paragraph = document.querySelector("p");
+
+// Видалити елемент
+paragraph.remove();
+</code></pre>
+              </div>
+            </div>
+
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">
+                replaceWith()
+              </h3>
+              <br />
+              <p class="dom__description">
+                дозволяє замінити HTML-елемент іншим елементом або текстом.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>const oldParagraph = document.querySelector("p");
+
+// Створити новий елемент
+const newParagraph = document.createElement("p");
+newParagraph.textContent = "Новий текст";
+
+// Замінити старий елемент
+oldParagraph.replaceWith(newParagraph);
+</code></pre>
+              </div>
+            </div>
+
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">
+                replaceChildren()
+              </h3>
+              <br />
+              <p class="dom__description">
+                видаляє всі дочірні елементи батьківського елемента та замінює
+                їх новими елементами або текстом.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>const container = document.querySelector(".container");
+
+const newParagraph = document.createElement("p");
+newParagraph.textContent = "Новий вміст";
+
+// Замінити весь дочірній вміст
+container.replaceChildren(newParagraph);
+</code></pre>
+              </div>
+            </div>
+          </div>
+          <br />
+          <h3 class="dom__subtitle velvet-dusk">Важливо запам'ятати</h3>
+          <br />
+          <ol class="dom__list m-list">
+            <li><span>remove()</span> - видаляє сам HTML-елемент.</li>
+            <li>
+              <span>replaceWith()</span> - замінює конкретний HTML-елемент.
+            </li>
+            <li>
+              <span>replaceChildren()</span> - замінює весь дочірній вміст
+              батьківського елемента.
+            </li>
+          </ol>
+
+          <br />
+
+          <h3 class="dom__subtitle velvet-dusk">
+            7. Завантаження DOM (DOMContentLoaded)
+          </h3>
+          <br />
+          <div class="dom__subdiv grid">
+            <div class="dom__box card-border border-radius p15">
+              <h3 class="dom__subtitle velvet-dusk center-txt">
+                DOMContentLoaded
+              </h3>
+              <br />
+              <p class="dom__description">
+                це подія, яка спрацьовує після того, як браузер повністю
+                завантажив та обробив HTML-документ, побудувавши DOM-дерево.
+              </p>
+              <br />
+              <div class="dom__code-box fig-nectar">
+                <pre><code>document.addEventListener("DOMContentLoaded", function () {
+
+  // Код виконається після побудови DOM
+  const title = document.querySelector("h1");
+
+  console.log(title);
+
+});
+</code></pre>
+              </div>
+              <br />
+              <p class="dom__description">
+                Це дозволяє переконатися, що HTML-елементи вже доступні для
+                пошуку та роботи з ними через JavaScript.
+              </p>
+            </div>
+          </div>
+          <br />
+          <h3 class="dom__subtitle velvet-dusk">Важливо запам'ятати</h3>
+          <br />
+          <ol class="dom__list m-list">
+            <li>
+              <span>DOMContentLoaded</span> - подія, яка спрацьовує після
+              побудови DOM-дерева.
+            </li>
+            <li>
+              Вона дозволяє безпечно виконувати JavaScript-код, який звертається
+              до HTML-елементів.
+            </li>
+            <li>
+              Ця подія не очікує повного завантаження зображень, відео та інших
+              ресурсів сторінки.
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

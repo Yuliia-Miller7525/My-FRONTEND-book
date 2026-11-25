@@ -33,7 +33,7 @@
             <br />
             <img
               class="arrays__img"
-              src="../images/arrays_pic.jpg"
+              src="../../images/arrays_pic.jpg"
               alt="schema"
             />
             <br />
@@ -55,7 +55,7 @@
               Основні особливості масивів:
             </h3>
             <br />
-            <ul class="arrays__list list m-list">
+            <ul class="arrays__list m-list">
               <li class="arrays__item">
                 Масив може зберігати декілька значень.
               </li>
@@ -273,50 +273,6 @@ console.log(lastIndex); // 3
 
 console.log(fruits[5]); // undefined
 console.log(fruits[-1]); // undefined
-</code></pre>
-            </div>
-            <br />
-            <p class="arrays__description">
-              <span>Array Constructor(Конструктор масиву)</span> - це спосіб
-              створення масиву за допомогою вбудованого конструктора Array().
-              Для цього використовують ключове слово <span>new</span>.
-            </p>
-            <br />
-            <div class="arrays__code-box">
-              <span>Синтаксис:</span>
-              <pre><code><b>const arrayName = new Array();</b></code></pre>
-            </div>
-            <br />
-            <div
-              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
-            >
-              <pre><code>const fruits = new Array("Apple", "Banana", "Orange");
-
-console.log(fruits);
-//["Apple", "Banana", "Orange"]
-</code></pre>
-            </div>
-            <br />
-            <p class="arrays__description">
-              Цей спосіб також дозволяє створити порожній масив:
-              <span>const users = new Array();</span>.
-            </p>
-            <br />
-            <p class="arrays__description">
-              <span>Важлива особливість конструктора:</span> якщо передати
-              конструктору одне числове значення, JavaScript сприйме його як
-              довжину масиву, а не як його елемент.
-            </p>
-            <br />
-            <div
-              class="arrays__code-box fig-nectar-bg border-radius p15 peach-veil"
-            >
-              <pre><code>const numbers = new Array(5);
-
-console.log(numbers.length);
-// 5
-console.log(numbers);
-// [empty × 5]
 </code></pre>
             </div>
             <br />

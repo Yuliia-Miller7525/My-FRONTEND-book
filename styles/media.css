@@ -15,7 +15,8 @@
   .conditions__subdiv {
     flex-direction: column;
   }
-  .arr-methods__subdiv {
+  .arr-methods__subdiv,
+  .dom__subdiv {
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -76,6 +77,9 @@
   .ecmascript__table {
     font-size: 12px;
   }
+  .dom__subdiv {
+    font-size: 11px;
+  }
 }
 @media (max-width: 475px) {
   .vscode_section__name {
@@ -127,9 +131,7 @@
   .title-adaptation {
     font-size: 25px;
   }
-  .arr-methods__subdiv {
-    font-size: 9px;
-  }
+  .arr-methods__subdiv,
   .arr-methods__code-box {
     font-size: 9px;
   }
@@ -137,10 +139,9 @@
   .arr-methods__table,
   .prototypes__code-box,
   .classes__code-box,
-  .ecmascript__table {
-    font-size: 10px;
-  }
-  .ecmascript__table {
+  .ecmascript__table,
+  .dom__code-box,
+  .dom__table {
     font-size: 10px;
   }
 }
@@ -184,7 +185,8 @@
   .this_keyword__table,
   .prototypes__code-box,
   .classes__code-box,
-  .ecmascript__table {
+  .ecmascript__table,
+  .dom__code-box {
     font-size: 9px;
   }
 }
